@@ -1,0 +1,565 @@
+{
+  "_note": "Kenlo placeholders are licensed for the mock phase only. Fill 'arboretum' for every slot before production.",
+  "slots": {
+    "home-hero-night": {
+      "src": "/photos/home-hero-night.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.55,
+      "alt": {
+        "en": "The hotel at dusk, lights tracing the roofline above the garden",
+        "fr": "L'hôtel au crépuscule, la lumière soulignant le toit au-dessus du jardin",
+        "rw": "Hoteli ku mugoroba, amatara amurikira igisenge hejuru y'ubusitani"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (202).jpg",
+      "arboretum": null
+    },
+    "home-day": {
+      "src": "/photos/home-day.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "The hotel's main building in morning light, framed by garden planting",
+        "fr": "Le bâtiment principal dans la lumière du matin, entouré du jardin",
+        "rw": "Inyubako nkuru mu rumuri rwa mu gitondo, ikikijwe n'ubusitani"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (125).jpg",
+      "arboretum": null
+    },
+    "home-garden": {
+      "src": "/photos/home-garden.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "A quiet paved courtyard between the garden rooms",
+        "fr": "Une cour pavée et calme entre les chambres jardin",
+        "rw": "Urugo rutuje rushashe amabuye hagati y'ibyumba byo mu busitani"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (103).jpg",
+      "arboretum": null
+    },
+    "grounds-cottages": {
+      "src": "/photos/grounds-cottages.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Garden room wing under a red roof",
+        "fr": "L'aile des chambres jardin sous un toit rouge",
+        "rw": "Igice cy'ibyumba byo mu busitani gifite igisenge gitukura"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (12).jpg",
+      "arboretum": null
+    },
+    "grounds-terrace": {
+      "src": "/photos/grounds-terrace.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Upper terrace and restaurant windows",
+        "fr": "La terrasse à l'étage et les baies du restaurant",
+        "rw": "Terasi yo hejuru n'amadirishya ya resitora"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (122).jpg",
+      "arboretum": null
+    },
+    "grounds-evening": {
+      "src": "/photos/grounds-evening.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.55,
+      "alt": {
+        "en": "Evening light along the restaurant and terrace",
+        "fr": "Lumière du soir le long du restaurant et de la terrasse",
+        "rw": "Urumuri rwa nimugoroba kuri resitora na terasi"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (201).jpg",
+      "arboretum": null
+    },
+    "grounds-entrance": {
+      "src": "/photos/grounds-entrance.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Restaurant entrance through the garden",
+        "fr": "L'entrée du restaurant par le jardin",
+        "rw": "Umuryango wa resitora unyuze mu busitani"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (138).jpg",
+      "arboretum": null
+    },
+    "room-deluxe-1": {
+      "src": "/photos/room-deluxe-1.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Deluxe room with a king bed, carved headboard and soft daylight",
+        "fr": "Chambre Deluxe avec lit king size, tête de lit sculptée et lumière douce",
+        "rw": "Icyumba cya Deluxe gifite igitanda kinini n'urumuri rworoheje"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (23).jpg",
+      "arboretum": null
+    },
+    "room-deluxe-2": {
+      "src": "/photos/room-deluxe-2.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Deluxe room seen from the doorway, with armchairs by the window",
+        "fr": "Chambre Deluxe vue depuis la porte, fauteuils près de la fenêtre",
+        "rw": "Icyumba cya Deluxe kirebwa uri ku muryango, intebe iruhande rw'idirishya"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (244).jpg",
+      "arboretum": null
+    },
+    "room-deluxe-3": {
+      "src": "/photos/room-deluxe-3.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Folded linens on the deluxe bed",
+        "fr": "Linge plié sur le lit de la chambre Deluxe",
+        "rw": "Amashuka azinze ku gitanda cy'icyumba cya Deluxe"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (26).jpg",
+      "arboretum": null
+    },
+    "room-garden-1": {
+      "src": "/photos/room-garden-1.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Garden room in warm evening light with wooden wardrobes",
+        "fr": "Chambre Jardin dans la lumière chaude du soir, armoires en bois",
+        "rw": "Icyumba cyo mu busitani mu rumuri rushyushye rwa nimugoroba"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (78).jpg",
+      "arboretum": null
+    },
+    "room-garden-2": {
+      "src": "/photos/room-garden-2.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Garden room with a coffered ceiling and lit wall panels",
+        "fr": "Chambre Jardin avec plafond à caissons et panneaux éclairés",
+        "rw": "Icyumba cyo mu busitani gifite igisenge gitatse n'imbaho zimurikirwa"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (80).jpg",
+      "arboretum": null
+    },
+    "room-garden-3": {
+      "src": "/photos/room-garden-3.jpg",
+      "width": 1600,
+      "height": 2400,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Garden room bed with a woven runner",
+        "fr": "Lit de la chambre Jardin avec un chemin de lit tissé",
+        "rw": "Igitanda cy'icyumba cyo mu busitani gifite umwenda uboshye"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (90).jpg",
+      "arboretum": null
+    },
+    "room-classic-1": {
+      "src": "/photos/room-classic-1.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Classic room with warm lighting and slippers set out",
+        "fr": "Chambre Classique à la lumière chaude, chaussons disposés",
+        "rw": "Icyumba gisanzwe gifite urumuri rushyushye n'inkweto zo mu nzu"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (49).jpg",
+      "arboretum": null
+    },
+    "room-classic-2": {
+      "src": "/photos/room-classic-2.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Classic room bed dressed with towels and runner",
+        "fr": "Lit de la chambre Classique avec serviettes et chemin de lit",
+        "rw": "Igitanda cy'icyumba gisanzwe giteguwe n'amasume"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (54).jpg",
+      "arboretum": null
+    },
+    "room-classic-3": {
+      "src": "/photos/room-classic-3.jpg",
+      "width": 1600,
+      "height": 2400,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Classic room with a carved wooden bed",
+        "fr": "Chambre Classique avec un lit en bois sculpté",
+        "rw": "Icyumba gisanzwe gifite igitanda cy'igiti gibajwe"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (73).jpg",
+      "arboretum": null
+    },
+    "room-signature-1": {
+      "src": "/photos/room-signature-1.jpg",
+      "width": 1600,
+      "height": 2400,
+      "focusY": 0.4,
+      "alt": {
+        "en": "Signature room with lit wall panels and artwork above the bed",
+        "fr": "Chambre Signature, panneaux éclairés et œuvre au-dessus du lit",
+        "rw": "Icyumba cyihariye gifite imbaho zimurikirwa n'igihangano hejuru y'igitanda"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (35).jpg",
+      "arboretum": null
+    },
+    "room-signature-2": {
+      "src": "/photos/room-signature-2.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Rolled towels and fresh linen on the signature bed",
+        "fr": "Serviettes roulées et linge frais sur le lit Signature",
+        "rw": "Amasume azinze n'amashuka asukuye ku gitanda"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (44).jpg",
+      "arboretum": null
+    },
+    "room-signature-3": {
+      "src": "/photos/room-signature-3.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Signature room with a writing desk and blue curtains",
+        "fr": "Chambre Signature avec bureau et rideaux bleus",
+        "rw": "Icyumba cyihariye gifite ameza yo kwandikiraho n'imyenda y'ubururu"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (22).jpg",
+      "arboretum": null
+    },
+    "detail-bath": {
+      "src": "/photos/detail-bath.jpg",
+      "width": 1600,
+      "height": 2400,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Bathroom with dark blue tiles and a pedestal basin",
+        "fr": "Salle de bain au carrelage bleu nuit et lavabo sur colonne",
+        "rw": "Ubwiherero bufite amakaro y'ubururu bwijimye"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (64).jpg",
+      "arboretum": null
+    },
+    "detail-slippers": {
+      "src": "/photos/detail-slippers.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Slippers on a bedside rug",
+        "fr": "Chaussons sur un tapis au pied du lit",
+        "rw": "Inkweto zo mu nzu ku itapi iruhande rw'igitanda"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (96).jpg",
+      "arboretum": null
+    },
+    "detail-linen": {
+      "src": "/photos/detail-linen.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Close view of bed linen",
+        "fr": "Gros plan sur le linge de lit",
+        "rw": "Amashuka y'igitanda arebwa hafi"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (238).jpg",
+      "arboretum": null
+    },
+    "dine-table": {
+      "src": "/photos/dine-table.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Table set with folded napkins and wine glasses",
+        "fr": "Table dressée, serviettes pliées et verres à vin",
+        "rw": "Ameza ateguwe, udutambaro tuzinze n'ibirahuri"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (154).jpg",
+      "arboretum": null
+    },
+    "dine-glasses": {
+      "src": "/photos/dine-glasses.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Glassware catching the evening light",
+        "fr": "Verrerie captant la lumière du soir",
+        "rw": "Ibirahuri bimurikiwe n'urumuri rwa nimugoroba"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (193).jpg",
+      "arboretum": null
+    },
+    "dine-room": {
+      "src": "/photos/dine-room.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Dining room under a slatted wood ceiling",
+        "fr": "Salle à manger sous un plafond à lattes de bois",
+        "rw": "Icyumba cyo kuriramo munsi y'igisenge cy'imbaho"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (183).jpg",
+      "arboretum": null
+    },
+    "dine-room-2": {
+      "src": "/photos/dine-room-2.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.4,
+      "alt": {
+        "en": "Lanterns under the slatted ceiling",
+        "fr": "Lanternes sous le plafond à lattes",
+        "rw": "Amatara amanitse munsi y'igisenge cy'imbaho"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (189).jpg",
+      "arboretum": null
+    },
+    "dine-booths": {
+      "src": "/photos/dine-booths.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Booth seating set for dinner",
+        "fr": "Banquettes dressées pour le dîner",
+        "rw": "Intebe ndende ziteguriwe ifunguro rya nimugoroba"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (179).jpg",
+      "arboretum": null
+    },
+    "dine-daylight": {
+      "src": "/photos/dine-daylight.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Daylight dining room with timber screens",
+        "fr": "Salle à manger en plein jour avec claustras en bois",
+        "rw": "Icyumba cyo kuriramo ku manywa"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (143).jpg",
+      "arboretum": null
+    },
+    "dine-chairs": {
+      "src": "/photos/dine-chairs.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Banquette and chairs set for lunch",
+        "fr": "Banquette et chaises dressées pour le déjeuner",
+        "rw": "Intebe ziteguriwe ifunguro rya saa sita"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (144).jpg",
+      "arboretum": null
+    },
+    "bar-counter": {
+      "src": "/photos/bar-counter.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "The bar, its shelves lit from behind",
+        "fr": "Le bar, ses étagères éclairées par l'arrière",
+        "rw": "Akabari, amasahani yako amurikiwe inyuma"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (157).jpg",
+      "arboretum": null
+    },
+    "bar-lounge": {
+      "src": "/photos/bar-lounge.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Bar and lounge under round ceiling lights",
+        "fr": "Bar et salon sous des luminaires ronds",
+        "rw": "Akabari n'aho kwicara munsi y'amatara y'uruziga"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (218).jpg",
+      "arboretum": null
+    },
+    "bar-lounge-2": {
+      "src": "/photos/bar-lounge-2.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Lounge and bar from the stone wall",
+        "fr": "Le salon et le bar vus depuis le mur de pierre",
+        "rw": "Aho kwicara n'akabari birebwa uri ku rukuta rw'amabuye"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (224).jpg",
+      "arboretum": null
+    },
+    "coffee-latte": {
+      "src": "/photos/coffee-latte.jpg",
+      "width": 1600,
+      "height": 2400,
+      "focusY": 0.5,
+      "alt": {
+        "en": "A latte with leaf art",
+        "fr": "Un latte avec un dessin de feuille",
+        "rw": "Latte iriho ishusho y'ikibabi"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (175).jpg",
+      "arboretum": null
+    },
+    "coffee-pour": {
+      "src": "/photos/coffee-pour.jpg",
+      "width": 1600,
+      "height": 2400,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Coffee being pulled on the espresso machine",
+        "fr": "Un espresso extrait à la machine",
+        "rw": "Ikawa itunganywa n'imashini ya espresso"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (170).jpg",
+      "arboretum": null
+    },
+    "coffee-milk": {
+      "src": "/photos/coffee-milk.jpg",
+      "width": 1600,
+      "height": 2400,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Steaming milk at the coffee bar",
+        "fr": "Lait moussé au bar à café",
+        "rw": "Amata ashyushywa aho banywera ikawa"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (168).jpg",
+      "arboretum": null
+    },
+    "coffee-grinder": {
+      "src": "/photos/coffee-grinder.jpg",
+      "width": 1600,
+      "height": 2400,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Espresso grinder at the coffee bar",
+        "fr": "Moulin à espresso au bar à café",
+        "rw": "Imashini isya ikawa"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (173).jpg",
+      "arboretum": null
+    },
+    "meet-banquet": {
+      "src": "/photos/meet-banquet.jpg",
+      "width": 1600,
+      "height": 2400,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Long table set for a private dinner",
+        "fr": "Longue table dressée pour un dîner privé",
+        "rw": "Ameza maremare ateguriwe ifunguro ryihariye"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (229).jpg",
+      "arboretum": null
+    },
+    "meet-hall": {
+      "src": "/photos/meet-hall.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Open room ready to be set for an event",
+        "fr": "Salle ouverte prête à être aménagée pour un événement",
+        "rw": "Icyumba kigari giteguwe kwakira ibirori"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (187).jpg",
+      "arboretum": null
+    },
+    "kitchen-pans": {
+      "src": "/photos/kitchen-pans.jpg",
+      "width": 1600,
+      "height": 2400,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Pans hanging above the range in the kitchen",
+        "fr": "Poêles suspendues au-dessus du fourneau en cuisine",
+        "rw": "Amasafuriya amanitse hejuru y'iziko mu gikoni"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437(24)k.jpg",
+      "arboretum": null
+    },
+    "reception": {
+      "src": "/photos/reception.jpg",
+      "width": 2400,
+      "height": 1600,
+      "focusY": 0.5,
+      "alt": {
+        "en": "Reception desk with marble front",
+        "fr": "Comptoir de réception en marbre",
+        "rw": "Ameza y'iyakira afite marimari imbere"
+      },
+      "placeholder": true,
+      "kenloSource": "Hagy Images Stud 0788360437 (17).jpg",
+      "arboretum": null
+    }
+  }
+}

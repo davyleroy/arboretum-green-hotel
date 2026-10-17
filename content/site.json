@@ -1,0 +1,58 @@
+{
+  "_schema": "site (singleton). Maps 1:1 to the Sanity 'siteSettings' document in phase 2.",
+  "name": "Arboretum Green Hotel",
+  "tagline": {
+    "en": "Comfort · Nature · Excellence",
+    "rw": "Ituze · Kamere · Ubudasa",
+    "fr": "Confort · Nature · Excellence"
+  },
+  "address": {
+    "en": "Huye–Tumba Road, Huye, Southern Province, Rwanda",
+    "rw": "Umuhanda Huye–Tumba, Huye, Intara y'Amajyepfo, Rwanda",
+    "fr": "Route Huye–Tumba, Huye, Province du Sud, Rwanda"
+  },
+  "phones": [
+    "+250 781 600 065",
+    "+250 781 560 066"
+  ],
+  "whatsapp": "250781600065",
+  "email": {
+    "value": "arboretumgreenhotel@gmail.com",
+    "placeholder": false
+  },
+  "mapsQuery": "Huye Tumba Road Huye Rwanda",
+  "reception": {
+    "value": {
+      "en": "Reception open 24 hours",
+      "rw": "Iyakira rifunguye amasaha 24",
+      "fr": "Réception ouverte 24 h/24"
+    },
+    "placeholder": false
+  },
+  "replyPromise": {
+    "value": {
+      "en": "We reply within 30 minutes, 7am to 10pm.",
+      "rw": "Dusubiza mu minota 30, kuva saa moya za mu gitondo kugeza saa yine z'ijoro.",
+      "fr": "Nous répondons sous 30 minutes, de 7 h à 22 h."
+    },
+    "placeholder": true
+  },
+  "checkIn": {
+    "value": "14:00",
+    "placeholder": true
+  },
+  "checkOut": {
+    "value": "11:00",
+    "placeholder": true
+  },
+  "social": {
+    "instagram": {
+      "value": "https://instagram.com/arboretumgreenhotel",
+      "placeholder": true
+    },
+    "facebook": {
+      "value": "https://facebook.com/arboretumgreenhotel",
+      "placeholder": true
+    }
+  }
+}

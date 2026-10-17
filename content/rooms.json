@@ -1,0 +1,65 @@
+{
+  "_schema": "room[] . Maps 1:1 to the Sanity 'room' document type in phase 2. Fields with placeholder:true must be confirmed by the hotel.",
+  "rooms": [
+    {
+      "slug": "classic",
+      "name": { "en": "Classic Room", "rw": "Icyumba Gisanzwe", "fr": "Chambre Classique" },
+      "summary": {
+        "en": "Warm wood, soft light and everything you need for a restful night.",
+        "rw": "Ibiti bishyushye, urumuri rworoheje n'ibyo ukeneye byose ngo uruhuke neza.",
+        "fr": "Bois chaleureux, lumière douce et tout le nécessaire pour une nuit paisible."
+      },
+      "bed": { "value": { "en": "Queen bed", "rw": "Igitanda kinini", "fr": "Lit queen size" }, "placeholder": true },
+      "guests": { "value": 2, "placeholder": true },
+      "rate": { "value": null, "placeholder": true },
+      "photos": ["room-classic-1", "room-classic-2", "room-classic-3"]
+    },
+    {
+      "slug": "deluxe",
+      "name": { "en": "Deluxe Room", "rw": "Icyumba cya Deluxe", "fr": "Chambre Deluxe" },
+      "summary": {
+        "en": "A larger room with a carved headboard, a sitting corner and morning light.",
+        "rw": "Icyumba kinini gifite igitanda gitatse, aho kwicara n'urumuri rwa mu gitondo.",
+        "fr": "Une chambre plus spacieuse, tête de lit sculptée, coin salon et lumière du matin."
+      },
+      "bed": { "value": { "en": "King bed", "rw": "Igitanda kinini cyane", "fr": "Lit king size" }, "placeholder": true },
+      "guests": { "value": 2, "placeholder": true },
+      "rate": { "value": null, "placeholder": true },
+      "photos": ["room-deluxe-1", "room-deluxe-2", "room-deluxe-3"]
+    },
+    {
+      "slug": "garden",
+      "name": { "en": "Garden Room", "rw": "Icyumba cyo mu Busitani", "fr": "Chambre Jardin" },
+      "summary": {
+        "en": "Set in the quiet wing beside the garden, with generous wardrobes for longer stays.",
+        "rw": "Kiri mu gice gituje iruhande rw'ubusitani, gifite utubati twagutse ku bazamara igihe kirekire.",
+        "fr": "Dans l'aile calme près du jardin, avec de grands rangements pour les longs séjours."
+      },
+      "bed": { "value": { "en": "King bed", "rw": "Igitanda kinini cyane", "fr": "Lit king size" }, "placeholder": true },
+      "guests": { "value": 2, "placeholder": true },
+      "rate": { "value": null, "placeholder": true },
+      "photos": ["room-garden-1", "room-garden-2", "room-garden-3"]
+    },
+    {
+      "slug": "signature",
+      "name": { "en": "Signature Room", "rw": "Icyumba Cyihariye", "fr": "Chambre Signature" },
+      "summary": {
+        "en": "Our most considered room: lit timber panels, original artwork and a writing desk.",
+        "rw": "Icyumba cyacu cyitondewe kurusha ibindi: imbaho zimurikirwa, ibihangano by'umwimerere n'ameza yo kwandikiraho.",
+        "fr": "Notre chambre la plus soignée : panneaux de bois éclairés, œuvres originales et bureau."
+      },
+      "bed": { "value": { "en": "King bed", "rw": "Igitanda kinini cyane", "fr": "Lit king size" }, "placeholder": true },
+      "guests": { "value": 3, "placeholder": true },
+      "rate": { "value": null, "placeholder": true },
+      "photos": ["room-signature-1", "room-signature-2", "room-signature-3"]
+    }
+  ],
+  "inEveryRoom": [
+    { "en": "Fresh linen and towels daily", "rw": "Amashuka n'amasume bisukuye buri munsi", "fr": "Linge et serviettes changés chaque jour" },
+    { "en": "Private bathroom with hot shower", "rw": "Ubwiherero bwite bufite amazi ashyushye", "fr": "Salle de bain privée avec douche chaude" },
+    { "en": "Free Wi-Fi", "rw": "Wi-Fi y'ubuntu", "fr": "Wi-Fi gratuit" },
+    { "en": "Flat-screen TV", "rw": "Televiziyo", "fr": "Télévision écran plat" },
+    { "en": "Slippers and bathrobe", "rw": "Inkweto zo mu nzu n'ikanzu yo kogeramo", "fr": "Chaussons et peignoir" },
+    { "en": "Breakfast available", "rw": "Ifunguro rya mu gitondo rirahari", "fr": "Petit-déjeuner disponible" }
+  ]
+}

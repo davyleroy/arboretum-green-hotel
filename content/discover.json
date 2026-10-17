@@ -1,0 +1,57 @@
+{
+  "_schema": "place[] . Maps to Sanity 'place' in phase 2. Sourced facts carry a source URL.",
+  "places": [
+    {
+      "slug": "ruhande",
+      "name": { "en": "Ruhande Arboretum", "rw": "Ishyamba rya Ruhande", "fr": "Arboretum de Ruhande" },
+      "text": {
+        "en": "Planted in 1933, about 200 hectares holding 210 tree species beside the University of Rwanda. A morning walk under its canopy is the quietest hour in Huye.",
+        "rw": "Ryatewe mu 1933, rifite hafi hegitari 200 n'amoko 210 y'ibiti, iruhande rwa Kaminuza y'u Rwanda. Gutembera munsi y'ibiti byaryo mu gitondo ni isaha ituje kurusha izindi i Huye.",
+        "fr": "Planté en 1933, environ 200 hectares et 210 espèces d'arbres près de l'Université du Rwanda. Une marche matinale sous sa canopée est l'heure la plus paisible de Huye."
+      },
+      "distance": { "value": { "en": "Minutes away", "rw": "Iminota mike", "fr": "À quelques minutes" }, "placeholder": true },
+      "source": "https://environment.gov.rw/news-detail/the-queen-commonwealth-canopy-forest"
+    },
+    {
+      "slug": "university",
+      "name": { "en": "University of Rwanda, Huye Campus", "rw": "Kaminuza y'u Rwanda, Ishami rya Huye", "fr": "Université du Rwanda, campus de Huye" },
+      "text": {
+        "en": "The country's historic campus. Visiting faculty, parents and examiners stay close by.",
+        "rw": "Ishami ry'amateka mu gihugu. Abarimu basura, ababyeyi n'abagenzuzi babona aho kuba hafi.",
+        "fr": "Le campus historique du pays. Enseignants invités, parents et examinateurs logent tout près."
+      },
+      "distance": { "value": { "en": "Minutes away", "rw": "Iminota mike", "fr": "À quelques minutes" }, "placeholder": true }
+    },
+    {
+      "slug": "museum",
+      "name": { "en": "Ethnographic Museum", "rw": "Ingoro y'Umurage y'i Huye", "fr": "Musée ethnographique" },
+      "text": {
+        "en": "Rwanda's story told through crafts, tools and traditional architecture. Allow a full morning.",
+        "rw": "Amateka y'u Rwanda abwirwa binyuze mu bukorikori, ibikoresho n'imyubakire gakondo. Wigenera igitondo cyose.",
+        "fr": "L'histoire du Rwanda racontée par l'artisanat, les outils et l'architecture traditionnelle. Prévoyez une matinée."
+      },
+      "distance": { "value": { "en": "A short drive", "rw": "Urugendo rugufi mu modoka", "fr": "À courte distance en voiture" }, "placeholder": true }
+    },
+    {
+      "slug": "nyungwe",
+      "name": { "en": "Nyungwe National Park", "rw": "Pariki y'Igihugu ya Nyungwe", "fr": "Parc national de Nyungwe" },
+      "text": {
+        "en": "Ancient montane rainforest, the canopy walkway and chimpanzee tracking. An early start makes it a day trip.",
+        "rw": "Ishyamba ry'imisozi rya kera, inzira yo hejuru y'ibiti no gukurikirana impundu. Uhagurutse kare, ni urugendo rw'umunsi umwe.",
+        "fr": "Forêt tropicale de montagne ancienne, passerelle dans la canopée et suivi des chimpanzés. Parti tôt, c'est une excursion d'une journée."
+      },
+      "distance": { "value": { "en": "About 2 hours by road", "rw": "Hafi amasaha 2 mu modoka", "fr": "Environ 2 heures de route" }, "placeholder": true }
+    },
+    {
+      "slug": "kigali",
+      "name": { "en": "From Kigali", "rw": "Uturutse i Kigali", "fr": "Depuis Kigali" },
+      "text": {
+        "en": "About 132 km south of Kigali International Airport by road.",
+        "rw": "Hafi km 132 mu majyepfo y'Ikibuga cy'Indege Mpuzamahanga cya Kigali, mu muhanda.",
+        "fr": "Environ 132 km au sud de l'aéroport international de Kigali par la route."
+      },
+      "distance": { "value": { "en": "About 132 km", "rw": "Hafi km 132", "fr": "Environ 132 km" }, "placeholder": false },
+      "source": "https://safarifind.com/destinations/ethnographic-museum"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+.frame {
+  position: relative;
+  overflow: hidden;
+  background: var(--sage-200);
+}
+.img {
+  object-fit: cover;
+  /* House grade: tames the saturated placeholder photography into one calm palette. */
+  filter: saturate(0.78) contrast(1.03) brightness(0.98);
+  transition: transform 1.6s var(--ease);
+}
+a:hover .img,
+a:focus-visible .img {
+  transform: scale(1.03);
+}
+@media (prefers-reduced-motion: reduce) {
+  .img { transition: none; }
+  a:hover .img { transform: none; }
+}

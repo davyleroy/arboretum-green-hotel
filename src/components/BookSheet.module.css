@@ -1,0 +1,64 @@
+.sheet {
+  border: 0;
+  padding: 0;
+  margin: auto 0 0 auto;
+  width: min(520px, 100vw);
+  max-width: 100vw;
+  height: 100dvh;
+  max-height: 100dvh;
+  background: var(--ivory-50);
+  color: var(--ink-900);
+}
+.sheet::backdrop { background: rgba(10, 22, 16, 0.55); backdrop-filter: blur(2px); }
+.sheet[open] { animation: slide 0.6s var(--ease); }
+@keyframes slide { from { transform: translateX(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .sheet[open] { animation: none; } }
+
+.inner { padding: 32px clamp(20px, 5vw, 44px) 40px; display: flex; flex-direction: column; min-height: 100%; }
+.head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.title { font-size: clamp(32px, 4vw, 44px); color: var(--forest-700); }
+.close {
+  width: 44px; height: 44px; border: 1px solid var(--sage-400); background: none; cursor: pointer;
+  font-size: 24px; line-height: 1; color: var(--forest-700); flex: none;
+}
+.close:hover { border-color: var(--forest-700); }
+.intro { color: var(--ink-600); margin: 14px 0 28px; }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 16px; }
+.field { display: flex; flex-direction: column; gap: 8px; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-600); font-weight: 400; }
+.field input, .field select {
+  min-height: 50px;
+  padding: 0 14px;
+  border: 1px solid var(--sage-400);
+  background: #fff;
+  font: 400 16px var(--font-body);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink-900);
+  border-radius: 0;
+  width: 100%;
+}
+.field input:focus, .field select:focus { border-color: var(--forest-700); outline: 2px solid var(--brass-500); outline-offset: 1px; }
+.field input[aria-invalid] { border-color: #9b3b2a; }
+.error { color: #9b3b2a; font-size: 14px; margin: 12px 0 0; }
+
+.primary { margin-top: 28px; width: 100%; }
+.primary[aria-disabled] { opacity: 0.45; pointer-events: none; }
+
+.alt { margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(169, 132, 79, 0.45); }
+.altLabel { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-600); margin: 0 0 10px; }
+.phones { display: flex; flex-direction: column; margin-bottom: 18px; }
+.phone {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--forest-700);
+  text-decoration: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+.phone:hover { color: var(--brass-600); }
+
+@media (max-width: 420px) {
+  .grid { grid-template-columns: 1fr; }
+}

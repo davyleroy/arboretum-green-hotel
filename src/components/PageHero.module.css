@@ -1,0 +1,28 @@
+.hero {
+  position: relative;
+  min-height: 74svh;
+  display: flex;
+  align-items: flex-end;
+  color: var(--ivory-50);
+  background: var(--forest-900);
+  isolation: isolate;
+}
+.tall { min-height: 100svh; }
+.photo { position: absolute !important; inset: 0; z-index: -2; }
+.shade {
+  position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(to top, rgba(10, 22, 16, 0.88) 0%, rgba(10, 22, 16, 0.45) 38%, rgba(10, 22, 16, 0.1) 70%),
+    linear-gradient(to right, rgba(10, 22, 16, 0.35), rgba(10, 22, 16, 0) 60%);
+}
+.content { padding-top: 140px; padding-bottom: clamp(56px, 9vw, 120px); }
+.eyebrow { color: var(--brass-300); }
+.title { max-width: 17ch; text-wrap: balance; }
+.text { margin-top: 24px; font-size: clamp(17px, 1.6vw, 21px); max-width: 46ch; color: #e4e9e0; }
+.actions { margin-top: 36px; display: flex; gap: 20px 32px; flex-wrap: wrap; align-items: center; }
+.hero h1 { animation: rise 1.4s var(--ease) both; }
+.hero .text, .hero .actions { animation: rise 1.4s 0.2s var(--ease) both; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .hero h1, .hero .text, .hero .actions { animation: none; }
+}

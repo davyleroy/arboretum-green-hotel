@@ -1,0 +1,134 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  transition: background 0.6s var(--ease), color 0.6s var(--ease), box-shadow 0.6s var(--ease);
+}
+.bar {
+  max-width: 1480px;
+  margin: 0 auto;
+  height: 84px;
+  padding: 0 var(--gutter);
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.isClear { color: var(--ivory-50); background: linear-gradient(to bottom, rgba(10, 22, 16, 0.55), rgba(10, 22, 16, 0)); }
+.isSolid { color: var(--forest-700); background: rgba(247, 243, 236, 0.97); box-shadow: 0 1px 0 rgba(169, 132, 79, 0.35); }
+.isSolid .bar, .isOpen .bar { height: 72px; }
+.isOpen { color: var(--ivory-50); background: var(--forest-900); }
+
+.logo { display: block; flex: none; line-height: 0; }
+.logo img { height: 44px; width: auto; }
+.logoDark { display: none; }
+.isSolid .logoLight { display: none; }
+.isSolid .logoDark { display: block; }
+
+.nav { display: flex; gap: clamp(16px, 2vw, 34px); margin: 0 auto; }
+.navLink {
+  font-size: 12.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-decoration: none;
+  padding: 12px 0;
+  position: relative;
+  white-space: nowrap;
+}
+.navLink::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 6px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--ease);
+}
+.navLink:hover::after, .navLink[aria-current="page"]::after { transform: scaleX(1); }
+
+.end { display: flex; align-items: center; gap: 20px; margin-left: auto; }
+
+.lang { list-style: none; display: flex; gap: 2px; margin: 0; padding: 0; }
+.langLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  min-height: 44px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  opacity: 0.86;
+}
+.langLink:hover { opacity: 1; }
+.langLink[aria-current="true"] { opacity: 1; text-decoration: underline; text-underline-offset: 6px; text-decoration-color: var(--brass-500); }
+
+.book {
+  min-height: 44px;
+  padding: 0 22px;
+  border: 1px solid currentColor;
+  background: transparent;
+  font-size: 12.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.5s var(--ease), color 0.5s var(--ease), border-color 0.5s var(--ease);
+}
+.isClear .book { border-color: var(--brass-300); }
+.isClear .book:hover { background: var(--brass-300); color: var(--forest-900); }
+.isSolid .book { background: var(--forest-700); color: var(--ivory-50); border-color: var(--forest-700); }
+.isSolid .book:hover { background: var(--forest-900); }
+
+.burger {
+  display: none;
+  width: 44px; height: 44px;
+  background: none; border: 0; padding: 0; cursor: pointer;
+  position: relative;
+}
+.burgerLines, .burgerLines::before, .burgerLines::after {
+  position: absolute; left: 10px; right: 10px; height: 1px; background: currentColor;
+  transition: transform 0.4s var(--ease), opacity 0.3s;
+}
+.burgerLines { top: 22px; }
+.burgerLines::before { content: ""; left: 0; right: 0; top: -7px; }
+.burgerLines::after { content: ""; left: 0; right: 0; top: 7px; }
+.isOpen .burgerLines { background: transparent; }
+.isOpen .burgerLines::before { transform: translateY(7px) rotate(45deg); }
+.isOpen .burgerLines::after { transform: translateY(-7px) rotate(-45deg); }
+
+.sheet {
+  position: fixed;
+  inset: 72px 0 0 0;
+  background: var(--forest-900);
+  color: var(--ivory-50);
+  padding: 24px var(--gutter) 40px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.sheet[hidden] { display: none; }
+.sheetNav { display: flex; flex-direction: column; border-top: 1px solid rgba(207, 178, 124, 0.35); }
+.sheetLink {
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 300;
+  text-decoration: none;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(207, 178, 124, 0.2);
+}
+.sheetLink[aria-current="page"] { color: var(--brass-300); }
+.sheetFoot { margin-top: auto; padding-top: 32px; }
+
+@media (max-width: 1180px) {
+  .nav { display: none; }
+  .burger { display: block; }
+  .end .lang { display: none; }
+  .sheet .lang { display: flex; }
+}
+@media (max-width: 420px) {
+  .logo img { height: 36px; }
+  .book { padding: 0 14px; letter-spacing: 0.16em; }
+  .end { gap: 8px; }
+}

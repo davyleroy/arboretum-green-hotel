@@ -1,0 +1,38 @@
+{
+  "_schema": "outlet[] . Maps to Sanity 'outlet' in phase 2.",
+  "outlets": [
+    {
+      "slug": "restaurant",
+      "name": { "en": "The Restaurant", "rw": "Resitora", "fr": "Le Restaurant" },
+      "text": {
+        "en": "Rwandan favourites and international plates, cooked to order and served without hurry.",
+        "rw": "Amafunguro ya Kinyarwanda n'ay'ahandi, ategurwa ako kanya kandi agatangwa nta kwihuta.",
+        "fr": "Saveurs rwandaises et assiettes internationales, préparées à la commande et servies sans hâte."
+      },
+      "hours": { "value": "06:30 – 22:30", "placeholder": true },
+      "photos": ["dine-table", "dine-booths", "dine-daylight"]
+    },
+    {
+      "slug": "bar",
+      "name": { "en": "The Bar", "rw": "Akabari", "fr": "Le Bar" },
+      "text": {
+        "en": "A low-lit room for a cold drink, a cocktail or the match with friends.",
+        "rw": "Icyumba gifite urumuri ruke cyo kunyweramo icyo kunywa gikonje, cocktail cyangwa kureba umupira n'inshuti.",
+        "fr": "Une salle tamisée pour un verre frais, un cocktail ou le match entre amis."
+      },
+      "hours": { "value": "12:00 – 00:00", "placeholder": true },
+      "photos": ["bar-counter", "bar-lounge", "bar-lounge-2"]
+    },
+    {
+      "slug": "coffee",
+      "name": { "en": "The Coffee Bar", "rw": "Aho Banywera Ikawa", "fr": "Le Bar à Café" },
+      "text": {
+        "en": "Rwandan beans, pulled properly. Stay for a second cup.",
+        "rw": "Ikawa y'u Rwanda, itunganyijwe neza. Gumaho unywe igikombe cya kabiri.",
+        "fr": "Café rwandais, extrait dans les règles. Restez pour une deuxième tasse."
+      },
+      "hours": { "value": "06:30 – 21:00", "placeholder": true },
+      "photos": ["coffee-latte", "coffee-pour", "coffee-milk"]
+    }
+  ]
+}
