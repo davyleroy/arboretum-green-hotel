@@ -164,7 +164,11 @@
     "sent": "Thank you. Your enquiry has reached reception and we will reply shortly.",
     "failed": "We could not send this right now. Please write to us on WhatsApp or call instead.",
     "required": "Please add your name and a phone number.",
-    "emailField": "Email (optional)"
+    "emailField": "Email (optional)",
+    "mapEyebrow": "Find us",
+    "mapTitle": "On the Huye–Tumba road.",
+    "mapLabel": "Map showing Arboretum Green Hotel in Huye",
+    "openMaps": "Open in Google Maps"
   },
   "footer": {
     "preview": "Preview site. Details with a dotted underline are still to be confirmed.",

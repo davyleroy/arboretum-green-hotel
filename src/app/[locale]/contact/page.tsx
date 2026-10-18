@@ -63,6 +63,27 @@ export default async function Contact({ params }: { params: Promise<{ locale: Lo
           </div>
         </div>
       </section>
+
+      <section className="section mood-sage" aria-labelledby="map-title">
+        <div className="wrap">
+          <div className={s.mapHead}>
+            <div>
+              <p className="eyebrow">{t("mapEyebrow")}</p>
+              <h2 id="map-title">{t("mapTitle")}</h2>
+            </div>
+            <a href={mapsLink()} className="textlink" target="_blank" rel="noopener noreferrer">{t("openMaps")}</a>
+          </div>
+          <div className={s.map}>
+            <iframe
+              src={site.mapsEmbed}
+              title={t("mapLabel")}
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      </section>
     </>
   );
 }

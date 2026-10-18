@@ -74,4 +74,4 @@ export const whatsappLink = (text: string) =>
 export const telLink = (phone: string) => `tel:${phone.replace(/\s+/g, "")}`;
 
 export const mapsLink = () =>
-  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.mapsQuery)}`;
+  site.mapsPlace;

@@ -164,7 +164,11 @@
     "sent": "Merci. Votre demande est arrivée à la réception, nous vous répondons rapidement.",
     "failed": "L'envoi a échoué. Écrivez-nous sur WhatsApp ou appelez-nous.",
     "required": "Merci d'indiquer votre nom et un numéro de téléphone.",
-    "emailField": "E-mail (facultatif)"
+    "emailField": "E-mail (facultatif)",
+    "mapEyebrow": "Nous trouver",
+    "mapTitle": "Sur la route Huye–Tumba.",
+    "mapLabel": "Carte situant l'Arboretum Green Hotel à Huye",
+    "openMaps": "Ouvrir dans Google Maps"
   },
   "footer": {
     "preview": "Site de prévisualisation. Les informations soulignées en pointillé restent à confirmer.",

@@ -54,5 +54,7 @@
       "value": "https://facebook.com/arboretumgreenhotel",
       "placeholder": true
     }
-  }
+  },
+  "mapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d510292.84952467016!2d29.939119900000005!3d-2.2788682000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19c30b007cd211e1%3A0x4ec0d2605d3974a3!2sArboretum%20Green%20H%C3%B4tel!5e0!3m2!1sen!2srw!4v1792358428492!5m2!1sen!2srw",
+  "mapsPlace": "https://www.google.com/maps?q=Arboretum+Green+H%C3%B4tel,+Huye&ftid=0x19c30b007cd211e1:0x4ec0d2605d3974a3"
 }

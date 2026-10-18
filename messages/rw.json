@@ -164,7 +164,11 @@
     "sent": "Murakoze. Ubusabe bwanyu bwageze ku iyakira, turabasubiza vuba.",
     "failed": "Ntibyashobotse kohereza ubu. Twandikire kuri WhatsApp cyangwa uduhamagare.",
     "required": "Andika amazina yawe na nimero ya telefoni.",
-    "emailField": "Imeli (si ngombwa)"
+    "emailField": "Imeli (si ngombwa)",
+    "mapEyebrow": "Aho turi",
+    "mapTitle": "Ku muhanda Huye–Tumba.",
+    "mapLabel": "Ikarita yerekana Arboretum Green Hotel i Huye",
+    "openMaps": "Fungura muri Google Maps"
   },
   "footer": {
     "preview": "Urubuga rw'igerageza. Amakuru afite akadomo munsi aracyategereje kwemezwa.",
