@@ -31,16 +31,21 @@ Any field with `"placeholder": true` renders with a dotted brass underline and a
 tooltip. Set the confirmed value and flip it to `false`. To hide all markers (for example for a clean
 screenshot), set `NEXT_PUBLIC_SHOW_PLACEHOLDERS=false`.
 
-## Replacing the Kenlo photos (release gate)
+## Photography
 
-The Kenlo Green Resort images are licensed for the mock phase only.
+All 40 photo slots use the official Arboretum shoot by HAGY Images Studio (October 2026, 90 frames).
+`content/photo-manifest.json` maps each slot to its source frame (`arboretumSource`) with EN/FR/RW alt text.
 
-1. Put each official Arboretum photo in `public/photos/arboretum/` (around 2400 px on the long edge, JPEG quality 80).
-2. In `content/photo-manifest.json`, set that slot's `"arboretum": "/photos/arboretum/<file>.jpg"` and update its `width`, `height` and `alt`.
-3. Delete the Kenlo file once every slot is replaced.
+Files in `public/photos/arboretum/` are 2400 px on the long side with a house grade baked in:
+a partial white balance that cools the studio's warm cast, softer highlights and slightly lower
+saturation, so the photos sit with the forest, brass and window-blue palette. Night frames get a
+lighter white balance so the lamps stay warm.
 
-`npm run build` runs `scripts/check-photos.mjs`. With `SITE_MODE=production` the build **fails** while
-any slot still points at a Kenlo image. Demo builds only warn.
+Frames deliberately not used on the site: the roadside billboard and beer-brand fridges (third-party
+advertising), and the street shots with children walking past.
+
+`npm run build` runs `scripts/check-photos.mjs`; with `SITE_MODE=production` it fails if any slot
+lacks an Arboretum file. The Kenlo mock photos have been removed from the repository.
 
 ## Environment variables
 

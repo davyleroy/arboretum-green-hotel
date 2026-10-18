@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     openGraph: {
       title: tm("title"),
       description: tm("description"),
-      images: ["/photos/home-hero-night.jpg"],
+      images: ["/photos/arboretum/home-hero-night.jpg"],
       locale,
       type: "website",
     },

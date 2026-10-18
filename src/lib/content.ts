@@ -62,7 +62,7 @@ const slots = manifest.slots as Record<string, Photo & { arboretum: string | nul
 export function photo(slot: string): Photo {
   const p = slots[slot];
   if (!p) throw new Error(`Unknown photo slot: ${slot}`);
-  // In production, an Arboretum file replaces the Kenlo placeholder at the same slot.
+  // Every slot now points at an official Arboretum file.
   return p.arboretum ? { ...p, src: p.arboretum, placeholder: false } : p;
 }
 

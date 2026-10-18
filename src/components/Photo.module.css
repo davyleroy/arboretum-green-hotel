@@ -5,8 +5,8 @@
 }
 .img {
   object-fit: cover;
-  /* House grade: tames the saturated placeholder photography into one calm palette. */
-  filter: saturate(0.78) contrast(1.03) brightness(0.98);
+  /* Light final touch. The main house grade is baked into the files (see README: Photography). */
+  filter: saturate(0.94) contrast(1.02);
   transition: transform 1.6s var(--ease);
 }
 a:hover .img,

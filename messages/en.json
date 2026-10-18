@@ -167,7 +167,7 @@
     "emailField": "Email (optional)"
   },
   "footer": {
-    "preview": "Preview site. Photography is placeholder imagery and details with a dotted underline are still to be confirmed.",
+    "preview": "Preview site. Details with a dotted underline are still to be confirmed.",
     "rights": "© {year} Arboretum Green Hotel",
     "follow": "Follow"
   }

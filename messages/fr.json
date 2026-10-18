@@ -167,7 +167,7 @@
     "emailField": "E-mail (facultatif)"
   },
   "footer": {
-    "preview": "Site de prévisualisation. Les photos sont provisoires et les informations soulignées en pointillé restent à confirmer.",
+    "preview": "Site de prévisualisation. Les informations soulignées en pointillé restent à confirmer.",
     "rights": "© {year} Arboretum Green Hotel",
     "follow": "Suivre"
   }

@@ -17,7 +17,7 @@ export function hotelJsonLd(locale: Locale) {
       addressCountry: "RW",
     },
     telephone: site.phones,
-    image: "/photos/home-hero-night.jpg",
+    image: "/photos/arboretum/home-hero-night.jpg",
     amenityFeature: ["Free Wi-Fi", "Restaurant", "Bar", "Parking", "Conference hall", "24-hour reception"].map(
       (name) => ({ "@type": "LocationFeatureSpecification", name, value: true }),
     ),
