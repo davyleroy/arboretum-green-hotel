@@ -177,3 +177,27 @@ p { margin: 0 0 1em; max-width: 62ch; }
   cursor: help;
 }
 .ph-off .ph { text-decoration: none; cursor: auto; }
+
+/* Window touch: a photo framed like the hotel's painted windows.
+   Light-blue casing, a centre mullion with a thin dark seam, a dark sill below. */
+.window {
+  border: 10px solid var(--sky-400);
+  border-bottom-width: 12px;
+  box-shadow: 0 14px 0 0 var(--forest-900);
+  margin-bottom: 14px;
+}
+.window::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(50% - 5px);
+  width: 10px;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--sky-400) 0 45%, #24323a 45% 55%, var(--sky-400) 55% 100%);
+}
+@media (max-width: 560px) {
+  .window { border-width: 7px; border-bottom-width: 9px; box-shadow: 0 10px 0 0 var(--forest-900); margin-bottom: 10px; }
+  .window::after { width: 7px; left: calc(50% - 3.5px); }
+}

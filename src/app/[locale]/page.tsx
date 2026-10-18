@@ -43,7 +43,7 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
             <h2>{t("introTitle")}</h2>
             <p className="lead" style={{ marginTop: 28 }}>{t("introText")}</p>
           </div>
-          <Photo slot="home-day" locale={locale} ratio="4 / 5" sizes="(max-width: 900px) 100vw, 42vw" className={`reveal ${s.introPhoto}`} />
+          <Photo slot="home-day" locale={locale} ratio="4 / 5" sizes="(max-width: 900px) 100vw, 42vw" className={`reveal window ${s.introPhoto}`} />
         </div>
       </section>
 

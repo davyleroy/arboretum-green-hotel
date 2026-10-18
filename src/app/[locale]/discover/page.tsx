@@ -55,7 +55,7 @@ export default async function Discover({ params }: { params: Promise<{ locale: L
               <BookButton>{tc("planVisit")}</BookButton>
             </div>
           </div>
-          <Photo slot="grounds-evening" locale={locale} ratio="4 / 5" sizes="(max-width: 900px) 100vw, 45vw" className="reveal" />
+          <Photo slot="grounds-evening" locale={locale} ratio="4 / 5" sizes="(max-width: 900px) 100vw, 45vw" className="reveal window" />
         </div>
       </section>
     </>
