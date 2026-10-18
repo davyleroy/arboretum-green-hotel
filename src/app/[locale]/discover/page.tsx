@@ -24,7 +24,7 @@ export default async function Discover({ params }: { params: Promise<{ locale: L
     <>
       <PageHero slot="home-garden" locale={locale} eyebrow={t("eyebrow")} title={t("title")} text={t("text")} />
 
-      <section className="section">
+      <section className="section mood-sky">
         <div className="wrap">
           <ul className={s.places}>
             {getPlaces().map((p) => (

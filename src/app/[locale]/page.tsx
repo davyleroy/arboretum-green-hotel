@@ -80,7 +80,7 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
       </section>
 
       {/* Amenities */}
-      <section className="section">
+      <section className="section mood-sky">
         <div className="wrap">
           <p className="eyebrow reveal">{t("amenitiesEyebrow")}</p>
           <ul className={s.amenities}>

@@ -19,6 +19,10 @@
   --brass-500: #a9844f;
   --brass-600: #7a5c31; /* brass text on ivory: AA for large and small caps labels */
   --brass-300: #cfb27c;
+  /* Secondary accent: the hotel's window-frame blue (sampled #74A6CC) */
+  --sky-700: #2e5f84; /* icons and text on light: AA */
+  --sky-400: #74a6cc; /* the true frame blue: accents on dark */
+  --sky-100: #e4eef5; /* calm section tint */
   --ink-900: #1a1f1c;
   --ink-600: #4a524d;
 
@@ -94,6 +98,8 @@ p { margin: 0 0 1em; max-width: 62ch; }
 .mood-dark .eyebrow { color: var(--brass-300); }
 .mood-dark .lead { color: #c9d2c4; }
 .mood-sage { background: var(--sage-100); }
+.mood-sky { background: var(--sky-100); }
+.mood-sky .eyebrow { color: var(--sky-700); }
 .mood-forest { background: var(--forest-700); color: var(--ivory-50); }
 .mood-forest .eyebrow { color: var(--brass-300); }
 .mood-forest .lead { color: #cdd6c8; }
@@ -139,7 +145,7 @@ p { margin: 0 0 1em; max-width: 62ch; }
   align-items: center;
   min-height: 44px;
 }
-.textlink:hover { color: var(--brass-600); }
+.textlink:hover { color: var(--sky-700); }
 .mood-dark .textlink:hover, .on-dark .textlink:hover { color: var(--brass-300); }
 
 :focus-visible { outline: 2px solid var(--brass-500); outline-offset: 3px; }
