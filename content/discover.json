@@ -3,54 +3,131 @@
   "places": [
     {
       "slug": "ruhande",
-      "name": { "en": "Ruhande Arboretum", "rw": "Ishyamba rya Ruhande", "fr": "Arboretum de Ruhande" },
+      "name": {
+        "en": "Ruhande Arboretum",
+        "rw": "Ishyamba rya Ruhande",
+        "fr": "Arboretum de Ruhande"
+      },
       "text": {
         "en": "Planted in 1933, about 200 hectares holding 210 tree species beside the University of Rwanda. A morning walk under its canopy is the quietest hour in Huye.",
         "rw": "Ryatewe mu 1933, rifite hafi hegitari 200 n'amoko 210 y'ibiti, iruhande rwa Kaminuza y'u Rwanda. Gutembera munsi y'ibiti byaryo mu gitondo ni isaha ituje kurusha izindi i Huye.",
         "fr": "Planté en 1933, environ 200 hectares et 210 espèces d'arbres près de l'Université du Rwanda. Une marche matinale sous sa canopée est l'heure la plus paisible de Huye."
       },
-      "distance": { "value": { "en": "Minutes away", "rw": "Iminota mike", "fr": "À quelques minutes" }, "placeholder": true },
+      "distance": {
+        "value": {
+          "en": "Minutes away",
+          "rw": "Iminota mike",
+          "fr": "À quelques minutes"
+        },
+        "placeholder": true
+      },
       "source": "https://environment.gov.rw/news-detail/the-queen-commonwealth-canopy-forest"
     },
     {
+      "slug": "kibeho",
+      "name": {
+        "en": "Kibeho Holy Land",
+        "rw": "Kibeho, Ubutaka Butagatifu",
+        "fr": "Kibeho, Terre sainte"
+      },
+      "text": {
+        "en": "Where the Virgin Mary is said to have appeared to young students in the early 1980s, recognised by the Catholic Church in 2001 and the only approved Marian apparition site in Africa. Pilgrims come from across the region, above all for 15 August and 28 November. Arboretum is a calm base before and after the journey.",
+        "rw": "Aho Bikira Mariya yabonekeye abanyeshuri mu ntangiriro z'imyaka ya 1980, bikemezwa na Kiliziya Gatolika mu 2001; ni ho honyine muri Afurika habonekewe na Bikira Mariya byemewe. Abakora urugendo nyobokamana baturuka hirya no hino, cyane cyane ku itariki ya 15 Kanama na 28 Ugushyingo. Arboretum ni ahantu hatuje ho kuruhukira mbere na nyuma y'urugendo.",
+        "fr": "Là où la Vierge Marie serait apparue à de jeunes élèves au début des années 1980, apparitions reconnues par l'Église catholique en 2001 : le seul site marial approuvé en Afrique. Les pèlerins viennent de toute la région, surtout le 15 août et le 28 novembre. L'Arboretum est une étape paisible avant et après le voyage."
+      },
+      "distance": {
+        "value": {
+          "en": "About an hour by road",
+          "rw": "Hafi isaha imwe mu modoka",
+          "fr": "Environ une heure de route"
+        },
+        "placeholder": true
+      },
+      "source": "https://www.ktpress.rw/2019/08/all-roads-lead-to-kibeho-rwandas-holy-land/"
+    },
+    {
       "slug": "university",
-      "name": { "en": "University of Rwanda, Huye Campus", "rw": "Kaminuza y'u Rwanda, Ishami rya Huye", "fr": "Université du Rwanda, campus de Huye" },
+      "name": {
+        "en": "University of Rwanda, Huye Campus",
+        "rw": "Kaminuza y'u Rwanda, Ishami rya Huye",
+        "fr": "Université du Rwanda, campus de Huye"
+      },
       "text": {
         "en": "The country's historic campus. Visiting faculty, parents and examiners stay close by.",
         "rw": "Ishami ry'amateka mu gihugu. Abarimu basura, ababyeyi n'abagenzuzi babona aho kuba hafi.",
         "fr": "Le campus historique du pays. Enseignants invités, parents et examinateurs logent tout près."
       },
-      "distance": { "value": { "en": "Minutes away", "rw": "Iminota mike", "fr": "À quelques minutes" }, "placeholder": true }
+      "distance": {
+        "value": {
+          "en": "Minutes away",
+          "rw": "Iminota mike",
+          "fr": "À quelques minutes"
+        },
+        "placeholder": true
+      }
     },
     {
       "slug": "museum",
-      "name": { "en": "Ethnographic Museum", "rw": "Ingoro y'Umurage y'i Huye", "fr": "Musée ethnographique" },
+      "name": {
+        "en": "Ethnographic Museum",
+        "rw": "Ingoro y'Umurage y'i Huye",
+        "fr": "Musée ethnographique"
+      },
       "text": {
         "en": "Rwanda's story told through crafts, tools and traditional architecture. Allow a full morning.",
         "rw": "Amateka y'u Rwanda abwirwa binyuze mu bukorikori, ibikoresho n'imyubakire gakondo. Wigenera igitondo cyose.",
         "fr": "L'histoire du Rwanda racontée par l'artisanat, les outils et l'architecture traditionnelle. Prévoyez une matinée."
       },
-      "distance": { "value": { "en": "A short drive", "rw": "Urugendo rugufi mu modoka", "fr": "À courte distance en voiture" }, "placeholder": true }
+      "distance": {
+        "value": {
+          "en": "A short drive",
+          "rw": "Urugendo rugufi mu modoka",
+          "fr": "À courte distance en voiture"
+        },
+        "placeholder": true
+      }
     },
     {
       "slug": "nyungwe",
-      "name": { "en": "Nyungwe National Park", "rw": "Pariki y'Igihugu ya Nyungwe", "fr": "Parc national de Nyungwe" },
+      "name": {
+        "en": "Nyungwe National Park",
+        "rw": "Pariki y'Igihugu ya Nyungwe",
+        "fr": "Parc national de Nyungwe"
+      },
       "text": {
         "en": "Ancient montane rainforest, the canopy walkway and chimpanzee tracking. An early start makes it a day trip.",
         "rw": "Ishyamba ry'imisozi rya kera, inzira yo hejuru y'ibiti no gukurikirana impundu. Uhagurutse kare, ni urugendo rw'umunsi umwe.",
         "fr": "Forêt tropicale de montagne ancienne, passerelle dans la canopée et suivi des chimpanzés. Parti tôt, c'est une excursion d'une journée."
       },
-      "distance": { "value": { "en": "About 2 hours by road", "rw": "Hafi amasaha 2 mu modoka", "fr": "Environ 2 heures de route" }, "placeholder": true }
+      "distance": {
+        "value": {
+          "en": "About 2 hours by road",
+          "rw": "Hafi amasaha 2 mu modoka",
+          "fr": "Environ 2 heures de route"
+        },
+        "placeholder": true
+      }
     },
     {
       "slug": "kigali",
-      "name": { "en": "From Kigali", "rw": "Uturutse i Kigali", "fr": "Depuis Kigali" },
+      "name": {
+        "en": "From Kigali",
+        "rw": "Uturutse i Kigali",
+        "fr": "Depuis Kigali"
+      },
       "text": {
         "en": "About 132 km south of Kigali International Airport by road.",
         "rw": "Hafi km 132 mu majyepfo y'Ikibuga cy'Indege Mpuzamahanga cya Kigali, mu muhanda.",
         "fr": "Environ 132 km au sud de l'aéroport international de Kigali par la route."
       },
-      "distance": { "value": { "en": "About 132 km", "rw": "Hafi km 132", "fr": "Environ 132 km" }, "placeholder": false },
+      "distance": {
+        "value": {
+          "en": "About 132 km",
+          "rw": "Hafi km 132",
+          "fr": "Environ 132 km"
+        },
+        "placeholder": false
+      },
       "source": "https://safarifind.com/destinations/ethnographic-museum"
     }
   ]
