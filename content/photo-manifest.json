@@ -95,16 +95,17 @@
       "src": "/photos/arboretum/grounds-entrance.jpg",
       "width": 2400,
       "height": 1600,
-      "focusY": 0.55,
+      "focusY": 0.6,
       "alt": {
-        "en": "The entrance gate and courtyard in late afternoon",
-        "fr": "Le portail d'entrée et la cour en fin d'après-midi",
-        "rw": "Irembo n'urugo ku gicamunsi"
+        "en": "Garden wall, gate and hand-wash basins by day",
+        "fr": "Mur végétal, portail et lavabos en journée",
+        "rw": "Urukuta rw'ubusitani, irembo n'aho gukarabira ku manywa"
       },
       "placeholder": false,
       "kenloSource": "Hagy Images Stud 0788360437 (138).jpg",
       "arboretum": "/photos/arboretum/grounds-entrance.jpg",
-      "arboretumSource": "HAGYIMAGESSTUDIO0788360437(86).jpg"
+      "arboretumSource": "HAGYIMAGESSTUDIO0788360437(10).jpg",
+      "edit": "Chosen or cropped so no person appears."
     },
     "room-deluxe-1": {
       "src": "/photos/arboretum/room-deluxe-1.jpg",
@@ -363,18 +364,19 @@
     },
     "dine-room": {
       "src": "/photos/arboretum/dine-room.jpg",
-      "width": 2400,
-      "height": 1600,
+      "width": 2016,
+      "height": 2400,
       "focusY": 0.6,
       "alt": {
-        "en": "The bar and restaurant room, with high tables and lounge chairs",
-        "fr": "La salle du bar-restaurant, mange-debout et fauteuils",
-        "rw": "Icyumba cy'akabari na resitora, ameza maremare n'intebe zo kwicaraho"
+        "en": "Lounge chairs and high tables in the bar and restaurant",
+        "fr": "Fauteuils et mange-debout du bar-restaurant",
+        "rw": "Intebe n'ameza maremare mu kabari na resitora"
       },
       "placeholder": false,
       "kenloSource": "Hagy Images Stud 0788360437 (183).jpg",
       "arboretum": "/photos/arboretum/dine-room.jpg",
-      "arboretumSource": "HAGYIMAGESSTUDIO0788360437(16).jpg"
+      "arboretumSource": "HAGYIMAGESSTUDIO0788360437(16).jpg",
+      "edit": "Chosen or cropped so no person appears."
     },
     "dine-room-2": {
       "src": "/photos/arboretum/dine-room-2.jpg",
@@ -469,18 +471,19 @@
     },
     "bar-lounge-2": {
       "src": "/photos/arboretum/bar-lounge-2.jpg",
-      "width": 2400,
-      "height": 1600,
-      "focusY": 0.5,
+      "width": 1600,
+      "height": 2400,
+      "focusY": 0.55,
       "alt": {
-        "en": "The lit entrance gate at night",
-        "fr": "Le portail d'entrée éclairé la nuit",
-        "rw": "Irembo rimurikiwe nijoro"
+        "en": "The garden terrace lit at night",
+        "fr": "La terrasse jardin éclairée la nuit",
+        "rw": "Terasi yo mu busitani imurikiwe nijoro"
       },
       "placeholder": false,
       "kenloSource": "Hagy Images Stud 0788360437 (224).jpg",
       "arboretum": "/photos/arboretum/bar-lounge-2.jpg",
-      "arboretumSource": "HAGYIMAGESSTUDIO0788360437(75).jpg"
+      "arboretumSource": "HAGYIMAGESSTUDIO0788360437(70).jpg",
+      "edit": "Chosen or cropped so no person appears."
     },
     "coffee-latte": {
       "src": "/photos/arboretum/coffee-latte.jpg",
@@ -499,48 +502,51 @@
     },
     "coffee-pour": {
       "src": "/photos/arboretum/coffee-pour.jpg",
-      "width": 1600,
-      "height": 2400,
+      "width": 2400,
+      "height": 2286,
       "focusY": 0.5,
       "alt": {
-        "en": "The coffee shop counter with its pastry case",
-        "fr": "Le comptoir du café et sa vitrine à pâtisseries",
-        "rw": "Konti ya café n'akabati k'imigati"
+        "en": "The pastry case at the coffee counter",
+        "fr": "La vitrine à pâtisseries du comptoir café",
+        "rw": "Akabati k'imigati kuri konti ya café"
       },
       "placeholder": false,
       "kenloSource": "Hagy Images Stud 0788360437 (170).jpg",
       "arboretum": "/photos/arboretum/coffee-pour.jpg",
-      "arboretumSource": "HAGYIMAGESSTUDIO0788360437.jpg"
+      "arboretumSource": "HAGYIMAGESSTUDIO0788360437(87).jpg",
+      "edit": "Chosen or cropped so no person appears."
     },
     "coffee-milk": {
       "src": "/photos/arboretum/coffee-milk.jpg",
-      "width": 2400,
-      "height": 1600,
+      "width": 2160,
+      "height": 2400,
       "focusY": 0.5,
       "alt": {
-        "en": "Barista at work behind the coffee counter",
-        "fr": "Barista au travail derrière le comptoir",
-        "rw": "Umukozi utegura ikawa inyuma ya konti"
+        "en": "Coffee counter with cups and pastries ready",
+        "fr": "Comptoir café, tasses et pâtisseries prêtes",
+        "rw": "Konti ya café, ibikombe n'imigati biteguye"
       },
       "placeholder": false,
       "kenloSource": "Hagy Images Stud 0788360437 (168).jpg",
       "arboretum": "/photos/arboretum/coffee-milk.jpg",
-      "arboretumSource": "HAGYIMAGESSTUDIO0788360437(1).jpg"
+      "arboretumSource": "HAGYIMAGESSTUDIO0788360437(88).jpg",
+      "edit": "Chosen or cropped so no person appears."
     },
     "coffee-grinder": {
       "src": "/photos/arboretum/coffee-grinder.jpg",
-      "width": 2400,
-      "height": 1600,
+      "width": 1548,
+      "height": 2208,
       "focusY": 0.5,
       "alt": {
-        "en": "Pastry case and espresso bar",
-        "fr": "Vitrine à pâtisseries et bar à espresso",
-        "rw": "Akabati k'imigati na espresso"
+        "en": "Shelves and pastry case behind the coffee bar",
+        "fr": "Étagères et vitrine derrière le bar à café",
+        "rw": "Utubati n'akabati k'imigati inyuma ya café"
       },
       "placeholder": false,
       "kenloSource": "Hagy Images Stud 0788360437 (173).jpg",
       "arboretum": "/photos/arboretum/coffee-grinder.jpg",
-      "arboretumSource": "HAGYIMAGESSTUDIO0788360437(87).jpg"
+      "arboretumSource": "HAGYIMAGESSTUDIO0788360437(6).jpg",
+      "edit": "Chosen or cropped so no person appears."
     },
     "meet-banquet": {
       "src": "/photos/arboretum/meet-banquet.jpg",
@@ -578,14 +584,15 @@
       "height": 1600,
       "focusY": 0.5,
       "alt": {
-        "en": "A chef cooking in the hotel kitchen",
-        "fr": "Un chef aux fourneaux dans la cuisine",
-        "rw": "Umutetsi uteka mu gikoni cya hoteli"
+        "en": "The hotel kitchen, clean and ready for service",
+        "fr": "La cuisine de l'hôtel, propre et prête pour le service",
+        "rw": "Igikoni cya hoteli, gisukuye kandi giteguye"
       },
       "placeholder": false,
       "kenloSource": "Hagy Images Stud 0788360437(24)k.jpg",
       "arboretum": "/photos/arboretum/kitchen-pans.jpg",
-      "arboretumSource": "HAGYIMAGESSTUDIO0788360437(57).jpg"
+      "arboretumSource": "HAGYIMAGESSTUDIO0788360437(55).jpg",
+      "edit": "Chosen or cropped so no person appears."
     },
     "reception": {
       "src": "/photos/arboretum/reception.jpg",
