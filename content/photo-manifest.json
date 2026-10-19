@@ -394,7 +394,7 @@
     "dine-booths": {
       "src": "/photos/arboretum/dine-booths.jpg",
       "width": 2400,
-      "height": 1600,
+      "height": 1850,
       "focusY": 0.55,
       "alt": {
         "en": "The terrace restaurant at dusk",
@@ -404,7 +404,8 @@
       "placeholder": false,
       "kenloSource": "Hagy Images Stud 0788360437 (179).jpg",
       "arboretum": "/photos/arboretum/dine-booths.jpg",
-      "arboretumSource": "HAGYIMAGESSTUDIO0788360437(45).jpg"
+      "arboretumSource": "HAGYIMAGESSTUDIO0788360437(45).jpg",
+      "edit": "Cropped at the right edge to remove a seated person (privacy)."
     },
     "dine-daylight": {
       "src": "/photos/arboretum/dine-daylight.jpg",
