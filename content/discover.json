@@ -46,6 +46,28 @@
       "source": "https://www.ktpress.rw/2019/08/all-roads-lead-to-kibeho-rwandas-holy-land/"
     },
     {
+      "slug": "kings-palace",
+      "name": {
+        "en": "King's Palace Museum, Nyanza",
+        "rw": "Ingoro y'Umwami i Nyanza",
+        "fr": "Musée du Palais royal, Nyanza"
+      },
+      "text": {
+        "en": "The old royal capital, on the road between Huye and Kigali. A reconstruction of the traditional thatched royal residence, the 1930s palace of Mwami Mutara III Rudahigwa, and a small herd of long-horned Inyambo cattle descended from the royal herd.",
+        "rw": "Umurwa w'ubwami bwa kera, ku muhanda uva i Huye ujya i Kigali. Hari inzu y'umwami gakondo yasubiwemo, ingoro y'Umwami Mutara III Rudahigwa yo mu myaka ya 1930, n'Inyambo zikomoka ku nka z'ibwami.",
+        "fr": "L'ancienne capitale royale, sur la route entre Huye et Kigali. Une reconstitution de la résidence royale traditionnelle au toit de chaume, le palais du Mwami Mutara III Rudahigwa des années 1930 et quelques vaches Inyambo aux longues cornes, issues du troupeau royal."
+      },
+      "distance": {
+        "value": {
+          "en": "About 40 minutes by road",
+          "rw": "Hafi iminota 40 mu modoka",
+          "fr": "Environ 40 minutes de route"
+        },
+        "placeholder": true
+      },
+      "source": "https://www.visitrwanda.com/interests/kings-palace/"
+    },
+    {
       "slug": "university",
       "name": {
         "en": "University of Rwanda, Huye Campus",
