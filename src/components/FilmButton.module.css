@@ -1,0 +1,42 @@
+.trigger {
+  background: none;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  cursor: pointer;
+  color: inherit;
+}
+.play {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--sky-400);
+  border-radius: 50%;
+  font-size: 10px;
+  color: var(--sky-400);
+  padding-left: 2px;
+}
+.dialog {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  width: min(1100px, 92vw);
+  max-width: none;
+}
+.dialog::backdrop { background: rgba(10, 22, 16, 0.88); }
+.frame { position: relative; border: 10px solid var(--sky-400); background: #000; }
+.video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; }
+.close {
+  position: absolute;
+  top: -54px;
+  right: -10px;
+  min-height: 44px;
+  padding: 0 16px;
+  background: none;
+  border: 1px solid var(--brass-300);
+  color: var(--ivory-50);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  cursor: pointer;
+}

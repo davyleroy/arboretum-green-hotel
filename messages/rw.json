@@ -174,5 +174,12 @@
     "preview": "Urubuga rw'igerageza. Amakuru afite akadomo munsi aracyategereje kwemezwa.",
     "rights": "© {year} Arboretum Green Hotel",
     "follow": "Dukurikire"
+  },
+  "lab": {
+    "pause": "Hagarika",
+    "play": "Komeza",
+    "watch": "Reba hoteli · umunota 1",
+    "filmTitle": "Arboretum Green Hotel mu munota umwe",
+    "close": "Funga"
   }
 }

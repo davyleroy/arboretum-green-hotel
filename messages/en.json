@@ -174,5 +174,12 @@
     "preview": "Preview site. Details with a dotted underline are still to be confirmed.",
     "rights": "© {year} Arboretum Green Hotel",
     "follow": "Follow"
+  },
+  "lab": {
+    "pause": "Pause",
+    "play": "Play",
+    "watch": "Watch the hotel · 1 min",
+    "filmTitle": "Arboretum Green Hotel in one minute",
+    "close": "Close"
   }
 }
