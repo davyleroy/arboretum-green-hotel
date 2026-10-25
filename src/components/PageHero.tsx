@@ -1,6 +1,6 @@
 import type { Locale } from "@/i18n/routing";
 import { Photo } from "./Photo";
-import { HeroVideo } from "./HeroVideo";
+import { HeroVideo, type HeroVideoSources } from "./HeroVideo";
 import styles from "./PageHero.module.css";
 
 type Props = {
@@ -10,8 +10,8 @@ type Props = {
   title: string;
   text?: string;
   tall?: boolean;
-  /** Video lab: silent looping background instead of the still photo. */
-  video?: { src: string; srcSmall: string; poster: string; pauseLabel: string; playLabel: string };
+  /** Silent looping background instead of the still photo (homepage). */
+  video?: HeroVideoSources & { pauseLabel: string; playLabel: string };
   children?: React.ReactNode;
 };
 

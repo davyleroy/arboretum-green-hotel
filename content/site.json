@@ -61,9 +61,12 @@
     "_note": "Homepage hero. type 'video' plays a silent loop; type 'image' shows a photo slot. Editable in the CMS.",
     "type": "video",
     "video": {
-      "src": "/video/hero-loop.mp4",
-      "srcSmall": "/video/hero-loop-960.mp4",
-      "poster": "/video/hero-poster.jpg"
+      "src": "/video/hero-v2-1600.mp4",
+      "srcSmall": "/video/hero-v2-960.mp4",
+      "srcAv1": "/video/hero-v2-1600.av1.mp4",
+      "srcSmallAv1": "/video/hero-v2-960.av1.mp4",
+      "poster": "/video/hero-v2-poster.jpg",
+      "posterSmall": "/video/hero-v2-poster-960.jpg"
     },
     "imageSlot": "home-hero-night"
   },

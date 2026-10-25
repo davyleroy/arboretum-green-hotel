@@ -78,7 +78,7 @@ async function seed() {
 
 async function pull() {
   const q = `{
-    "site": *[_id == "siteSettings"][0]{..., "heroVideoUrl": heroVideo.asset->url, "heroVideoSmallUrl": heroVideoSmall.asset->url, "heroPosterUrl": heroPoster.asset->url},
+    "site": *[_id == "siteSettings"][0]{..., "heroVideoUrl": heroVideo.asset->url, "heroVideoName": heroVideo.asset->originalFilename, "heroVideoSmallUrl": heroVideoSmall.asset->url, "heroPosterUrl": heroPoster.asset->url},
     "rooms": *[_type == "room" && !(_id in path("drafts.**"))] | order(order asc),
     "outlets": *[_type == "outlet" && !(_id in path("drafts.**"))] | order(order asc),
     "venue": *[_id == "venue"][0],
@@ -105,10 +105,14 @@ async function pull() {
     heroMedia: {
       ...site.heroMedia,
       type: s.heroType || site.heroMedia.type,
-      video: {
-        src: s.heroVideoUrl || site.heroMedia.video.src,
-        srcSmall: s.heroVideoSmallUrl || s.heroVideoUrl || site.heroMedia.video.srcSmall,
+      // A video uploaded in the Studio replaces the bundled files entirely (no stale AV1 or small poster)
+      video: s.heroVideoUrl && s.heroVideoName !== site.heroMedia.video.src.split("/").pop() ? {
+        src: s.heroVideoUrl,
+        srcSmall: s.heroVideoSmallUrl || s.heroVideoUrl,
         poster: s.heroPosterUrl || site.heroMedia.video.poster,
+      } : {
+        // Still the bundled loop (seeded from this repo): serve the local, cached, AV1-enabled files
+        ...site.heroMedia.video,
       },
       imageSlot: s.heroImageSlot || site.heroMedia.imageSlot,
     },

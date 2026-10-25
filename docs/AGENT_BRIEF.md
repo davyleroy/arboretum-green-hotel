@@ -85,7 +85,7 @@ content/                 hotel facts (JSON), written by the CMS sync at build ti
   photo-manifest.json    every photo slot: file, source frame, size, alt text EN/FR/RW
 messages/{en,rw,fr}.json interface and page copy
 public/photos/arboretum/ 40 graded photos (2400 px long side)
-public/video/            hero-loop.mp4 (desktop, about 5.2 MB), hero-loop-960.mp4 (mobile, about 1.9 MB), hero-poster.jpg
+public/video/            hero-v2-1600(.av1).mp4 desktop, hero-v2-960(.av1).mp4 mobile, two posters (section 5.3)
 public/brand/            logo set and touch icons
 scripts/cms-sync.mjs     seed Sanity once, then pull published content into content/*.json
 scripts/check-photos.mjs photo gate (fails production builds with missing photos)
@@ -135,15 +135,28 @@ Placeholder facts have the shape `{ "value": ..., "placeholder": true }`. In San
 `site.heroMedia` decides what opens the homepage:
 ```json
 { "type": "video",
-  "video": { "src": "/video/hero-loop.mp4", "srcSmall": "/video/hero-loop-960.mp4", "poster": "/video/hero-poster.jpg" },
+  "video": { "src": "/video/hero-v2-1600.mp4", "srcSmall": "/video/hero-v2-960.mp4",
+             "srcAv1": "/video/hero-v2-1600.av1.mp4", "srcSmallAv1": "/video/hero-v2-960.av1.mp4",
+             "poster": "/video/hero-v2-poster.jpg", "posterSmall": "/video/hero-v2-poster-960.jpg" },
   "imageSlot": "home-hero-night" }
 ```
 - `type: "image"` shows the photo slot instead. Staff switch this in the Studio (Site settings, hero type),
   and can upload another video or poster there.
-- `HeroVideo` always paints the poster first. It does not load the video for `prefers-reduced-motion`,
-  Save-Data or 2g connections. Mobile gets the 960 px file. A visible Pause/Play button satisfies WCAG 2.2.2.
-- The loop is about 19 s: 6 scenes, 0.45 s crossfades through `#12241B`, no sound. Any replacement video must be
-  muted, under 20 s, under 6 MB desktop and 2 MB mobile, with no people and no third-party logos.
+- `HeroVideo` paints the poster first (high-priority image, smaller file on phones). A tiny inline script
+  placed right after the `<video>` picks the source while the HTML is still parsing, before React hydrates,
+  so the download starts immediately on first load. It skips the video for `prefers-reduced-motion`,
+  Save-Data and 2g, picks the 960 px file under 900 px wide, and AV1 where the browser supports it.
+  The video stays invisible until its `playing` event, then fades in over the identical poster frame.
+  A Pause/Play button appears once it plays (WCAG 2.2.2). Do not move this logic into `useEffect`:
+  that delays the first frame by the whole JavaScript download.
+- Files: H.264 High 4:2:0 (plays with hardware decoding everywhere) at 2.7 MB desktop and 1.3 MB mobile,
+  AV1 at 1.6 MB and 0.8 MB. Keyframe every 2 s, `faststart`, colour grade baked in (no CSS filter on the
+  video: a filter on a full-screen video forces a repaint on every frame). The file opens on the welcome
+  sign, identical to the poster; the fade through forest green sits at the loop point, never at the start.
+- `/video/*` is served with a one-year immutable cache, so a new loop must ship under a new name (`hero-v3-*`).
+- The loop is about 19 s: 6 scenes, 0.45 s crossfades, no sound. Any replacement video must be muted,
+  H.264 **4:2:0** (never 4:4:4), under 20 s, under 3 MB desktop and 1.5 MB mobile, open on a frame that matches
+  its poster, and show no people and no third-party logos.
 
 ### 5.4 Photo gate
 `scripts/check-photos.mjs` runs before every build. With `SITE_MODE=production` it fails if any slot in

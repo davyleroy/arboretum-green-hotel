@@ -29,6 +29,10 @@
 
 /* Video lab */
 .media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(0.94) contrast(1.02); }
+/* The grade is baked into the hero video files, so no CSS filter here: a filter on a full-screen
+   video forces the browser to repaint every frame. Hidden until frames are playing, then fades in. */
+.video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.6s ease; }
+.video[data-on] { opacity: 1; }
 .pause {
   position: absolute; right: var(--gutter); bottom: 24px; z-index: 2;
   min-height: 44px; padding: 0 16px; background: rgba(10, 22, 16, 0.45);
