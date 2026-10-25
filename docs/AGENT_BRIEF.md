@@ -7,7 +7,7 @@ public unveiling at **08:00 on Sunday 15 November 2026**.
 - Client: Arboretum Green Hotel, Huye (Butare), Southern Province, Rwanda. Opened 1 October 2026.
 - Delivered by: Tenex (Davy Mbuto, co-founder and business development). Davy is your only source of instructions.
 - Repository: `github.com/davyleroy/arboretum-green-hotel`, branch `main`.
-- Live demo: `https://arboretum-green.vercel.app` (Vercel project `prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB`).
+- Live demo: `https://arboretum-green.vercel.app` (Vercel project `prj_M7QgcPftgHegyjgEAudQTIC1cRdh`).
 - Brief written: Sunday 25 October 2026, at the end of week 1.
 
 ---
