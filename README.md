@@ -71,3 +71,39 @@ Note: Vercel's free Hobby plan is for non-commercial use; move to Pro before the
 - Booking sheet builds a WhatsApp message in the visitor's language with dates, guests and room.
 
 Kinyarwanda and French copy still needs a native reviewer before soft launch (PRD risk register).
+
+## Content editing (Sanity CMS)
+
+Staff edit the site at **/studio** (for example `https://arboretum-green.vercel.app/studio`).
+They can change the homepage opening (silent video loop or a photo), rooms and rates, restaurant
+hours, the conference hall, places to discover, every photo and its description, contact details
+and the "Good to know" stay rules, in English, Kinyarwanda and French.
+
+How it works: every build runs `scripts/cms-sync.mjs`. It reads the published content from Sanity
+and writes it into `content/*.json`, so the public site stays fully static and fast on mobile data.
+Publishing in the Studio triggers a rebuild through a webhook; changes are live in about a minute.
+Without a Sanity project configured, the build simply uses the JSON in this repository.
+
+### One-time setup (owner of the Sanity account)
+1. Create a free project at sanity.io/manage, dataset `production`.
+2. In the project: **API → CORS origins**, add the site address (and `http://localhost:3000`), with credentials allowed.
+3. **API → Tokens**: create an *Editor* token. Never commit it.
+4. In Vercel → Project → Settings → Environment Variables, add:
+   - `NEXT_PUBLIC_SANITY_PROJECT_ID` = the project id
+   - `NEXT_PUBLIC_SANITY_DATASET` = `production`
+   - `SANITY_API_WRITE_TOKEN` = the Editor token
+5. Redeploy once. The first build finds an empty project and **seeds it** with today's content,
+   photos and the hero video, so the Studio opens already filled in.
+6. Vercel → Settings → Git → **Deploy Hooks**: create a hook for `main`. In Sanity → API →
+   **Webhooks**, add that URL, trigger on create/update/delete, filter
+   `_type in ["siteSettings","room","outlet","venue","place","photo"]`.
+7. Invite staff in Sanity → Members (role: Editor).
+
+## Booking references
+Every WhatsApp message and web enquiry ends with a reference such as `Ref AG-G-7K2Q`.
+The middle letter is where the guest first came from: D direct, G Google search,
+M Google Maps / Business Profile, I Instagram, F Facebook, T TikTok, B booking platform,
+Q printed QR code, R another website. Links shared on a channel can force the code with
+`?src=` (for example the Google profile website link: `/?src=gmb`, Instagram bio: `/?src=ig`,
+printed QR codes: `/?src=qr`). Reception logs the reference with each booking; that log is the
+basis for any commission reporting.
