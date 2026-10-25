@@ -1,4 +1,5 @@
 "use client";
+import { bookingRef } from "@/lib/source";
 
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
@@ -35,7 +36,7 @@ export function EnquiryForm({ whatsappHref }: { whatsappHref: string }) {
       const res = await fetch("/api/enquiry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, type, locale }),
+        body: JSON.stringify({ ...data, type, locale, ref: bookingRef() }),
       });
       setStatus(res.ok ? "sent" : "failed");
     } catch {

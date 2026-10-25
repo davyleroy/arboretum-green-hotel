@@ -31,19 +31,19 @@
   },
   "replyPromise": {
     "value": {
-      "en": "We reply within 30 minutes, 7am to 10pm.",
-      "rw": "Dusubiza mu minota 30, kuva saa moya za mu gitondo kugeza saa yine z'ijoro.",
-      "fr": "Nous répondons sous 30 minutes, de 7 h à 22 h."
+      "en": "Reception answers WhatsApp day and night, usually within 10 minutes.",
+      "rw": "Iyakira risubiza kuri WhatsApp amanywa n'ijoro, akenshi mu minota 10.",
+      "fr": "La réception répond sur WhatsApp jour et nuit, en général en 10 minutes."
     },
-    "placeholder": true
+    "placeholder": false
   },
   "checkIn": {
     "value": "14:00",
     "placeholder": true
   },
   "checkOut": {
-    "value": "11:00",
-    "placeholder": true
+    "value": "10:00",
+    "placeholder": false
   },
   "social": {
     "instagram": {
@@ -56,5 +56,46 @@
     }
   },
   "mapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2400!2d29.7409!3d-2.6211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19c30b007cd211e1%3A0x4ec0d2605d3974a3!2sArboretum%20Green%20H%C3%B4tel!5e0!3m2!1sen!2srw!4v1792358428492!5m2!1sen!2srw",
-  "mapsPlace": "https://www.google.com/maps?q=Arboretum+Green+H%C3%B4tel,+Huye&ftid=0x19c30b007cd211e1:0x4ec0d2605d3974a3"
+  "mapsPlace": "https://www.google.com/maps?q=Arboretum+Green+H%C3%B4tel,+Huye&ftid=0x19c30b007cd211e1:0x4ec0d2605d3974a3",
+  "heroMedia": {
+    "_note": "Homepage hero. type 'video' plays a silent loop; type 'image' shows a photo slot. Editable in the CMS.",
+    "type": "video",
+    "video": {
+      "src": "/video/hero-loop.mp4",
+      "srcSmall": "/video/hero-loop-960.mp4",
+      "poster": "/video/hero-poster.jpg"
+    },
+    "imageSlot": "home-hero-night"
+  },
+  "openingDate": "2026-10-01",
+  "policies": {
+    "_note": "Confirmed by the CEO in the facts form, 20 Oct 2026.",
+    "items": [
+      {
+        "en": "Pay by MTN MoMo, Visa or Mastercard, cash or bank transfer.",
+        "rw": "Mwishyura na MTN MoMo, Visa cyangwa Mastercard, amafaranga mu ntoki cyangwa kohereza kuri banki.",
+        "fr": "Paiement par MTN MoMo, Visa ou Mastercard, espèces ou virement."
+      },
+      {
+        "en": "A 50% deposit confirms your booking.",
+        "rw": "Kwishyura 50% mbere byemeza icyumba cyanyu.",
+        "fr": "Un acompte de 50 % confirme votre réservation."
+      },
+      {
+        "en": "Free cancellation up to 2 hours before your arrival time.",
+        "rw": "Guhagarika ni ubuntu kugeza amasaha 2 mbere y'igihe muzagerera.",
+        "fr": "Annulation gratuite jusqu'à 2 heures avant votre arrivée."
+      },
+      {
+        "en": "Rates in RWF or USD. Breakfast is included in some rooms, otherwise RWF 5,000 per person.",
+        "rw": "Ibiciro mu mafaranga y'u Rwanda cyangwa mu madolari. Ifunguro rya mu gitondo ririmo ku byumba bimwe, ahandi ni 5,000 Frw ku muntu.",
+        "fr": "Tarifs en RWF ou en USD. Petit-déjeuner inclus pour certaines chambres, sinon 5 000 RWF par personne."
+      },
+      {
+        "en": "Day use available from RWF 15,000.",
+        "rw": "Kuruhukira ku manywa guhera ku 15,000 Frw.",
+        "fr": "Chambre en journée à partir de 15 000 RWF."
+      }
+    ]
+  }
 }

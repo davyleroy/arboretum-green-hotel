@@ -61,7 +61,7 @@
     "heroText": "A garden hotel on the Huye–Tumba road. Quiet rooms, a warm table and room to gather.",
     "introEyebrow": "Welcome",
     "introTitle": "Comfort, nature and a quiet kind of excellence.",
-    "introText": "Arboretum Green Hotel takes its name from the old arboretum that shades Huye. We keep its pace: unhurried mornings, honest food, rooms that let you sleep.",
+    "introText": "Arboretum Green Hotel is a garden hotel on the Huye–Tumba road. We keep an unhurried pace: calm mornings, honest food, rooms that let you sleep.",
     "doorsEyebrow": "The hotel",
     "doors": {
       "stay": "Four room types, each calm and carefully kept.",
@@ -97,7 +97,8 @@
     "from": "From",
     "everyRoom": "In every room",
     "checkTimes": "Check-in from {in} · Check-out by {out}",
-    "photo": "Photo {n} of {total}"
+    "photo": "Photo {n} of {total}",
+    "goodToKnow": "Good to know"
   },
   "dine": {
     "eyebrow": "Dine",
@@ -124,8 +125,8 @@
     "eyebrow": "Discover Huye",
     "title": "Stay a day longer.",
     "text": "Huye is Rwanda's university town and its cultural heart. These are the places our guests ask about most.",
-    "nameTitle": "Why “Arboretum”",
-    "nameText": "Just across town, the Ruhande Arboretum has grown since 1933. Its calm is the feeling we want every guest to find here.",
+    "nameTitle": "Green, inside and out",
+    "nameText": "Bamboo along the terrace, plants at every door, a lawn under the string lights. The garden is how we slow the day down for you.",
     "source": "Source"
   },
   "gallery": {
@@ -181,5 +182,68 @@
     "watch": "Watch the hotel · 1 min",
     "filmTitle": "Arboretum Green Hotel in one minute",
     "close": "Close"
+  },
+  "legal": {
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "updated": "Last updated: November 2026",
+    "privacyTitle": "Privacy notice",
+    "termsTitle": "Booking terms",
+    "privacySections": [
+      [
+        "Who we are",
+        "Arboretum Green Hotel, Huye–Tumba Road, Huye, Rwanda, is responsible for the personal data collected on this website. Contact: arboretumgreenhotel@gmail.com or +250 781 600 065."
+      ],
+      [
+        "What we collect",
+        "Only what you choose to send us: your name, phone, email, dates, number of guests and message when you use the enquiry form, and the content of WhatsApp messages you send to reception."
+      ],
+      [
+        "Why we use it",
+        "To answer your request, confirm and manage your stay, table or event, and keep the records the law requires. We do not sell your data or use it for advertising."
+      ],
+      [
+        "Booking reference",
+        "Your browser keeps a small note of how you found us (for example Google or Instagram) for 30 days. It adds a short reference such as AG-G-7K2Q to your message so we know which channel works. It contains nothing that identifies you."
+      ],
+      [
+        "Visitor statistics",
+        "We count page visits with privacy-friendly analytics that use no cookies and store no personal data."
+      ],
+      [
+        "Services we rely on",
+        "WhatsApp (Meta) carries your WhatsApp messages; our email provider delivers form enquiries; the map on the contact page is provided by Google, which may set its own cookies when you use it."
+      ],
+      [
+        "Your rights",
+        "Under Rwanda's law on the protection of personal data and privacy (Law No. 058/2021), you can ask to see, correct or delete your data, or object to its use. Write to us at the email above and we will answer within 30 days."
+      ]
+    ],
+    "termsSections": [
+      [
+        "Rates",
+        "Rates are shown in Rwandan francs and can be quoted in US dollars. The rate confirmed to you in writing for your booking is the one that applies."
+      ],
+      [
+        "Confirming a booking",
+        "A 50% deposit confirms your booking. We accept MTN MoMo, Visa, Mastercard, cash and bank transfer."
+      ],
+      [
+        "Cancellation",
+        "You can cancel free of charge up to 2 hours before your planned arrival time. After that, the deposit may be kept."
+      ],
+      [
+        "Check-in and check-out",
+        "Check-out is by 10:00. The check-in time is confirmed with your booking."
+      ],
+      [
+        "Events and conference hall",
+        "Event bookings, menus and hall hire are confirmed in a separate written quote."
+      ],
+      [
+        "This website",
+        "We keep the information on this site accurate, but details such as menus and hours can change. Please confirm anything important with reception."
+      ]
+    ]
   }
 }

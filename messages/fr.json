@@ -61,7 +61,7 @@
     "heroText": "Un hôtel-jardin sur la route Huye–Tumba. Des chambres calmes, une table chaleureuse et de l'espace pour se réunir.",
     "introEyebrow": "Bienvenue",
     "introTitle": "Confort, nature et une excellence discrète.",
-    "introText": "L'Arboretum Green Hotel doit son nom au vieil arboretum qui ombrage Huye. Nous gardons son rythme : des matins sans hâte, une cuisine sincère, des chambres où l'on dort bien.",
+    "introText": "Arboretum Green Hotel est un hôtel-jardin sur la route Huye–Tumba. Nous gardons un rythme tranquille : des matins calmes, une cuisine honnête, des chambres où l'on dort bien.",
     "doorsEyebrow": "L'hôtel",
     "doors": {
       "stay": "Quatre types de chambres, calmes et soignées.",
@@ -97,7 +97,8 @@
     "from": "À partir de",
     "everyRoom": "Dans chaque chambre",
     "checkTimes": "Arrivée dès {in} · Départ avant {out}",
-    "photo": "Photo {n} sur {total}"
+    "photo": "Photo {n} sur {total}",
+    "goodToKnow": "Bon à savoir"
   },
   "dine": {
     "eyebrow": "Se restaurer",
@@ -124,8 +125,8 @@
     "eyebrow": "Découvrir Huye",
     "title": "Restez un jour de plus.",
     "text": "Huye est la ville universitaire du Rwanda et son cœur culturel. Voici les lieux que nos hôtes demandent le plus.",
-    "nameTitle": "Pourquoi « Arboretum »",
-    "nameText": "De l'autre côté de la ville, l'arboretum de Ruhande pousse depuis 1933. Son calme est ce que nous voulons offrir à chaque hôte.",
+    "nameTitle": "Vert, dedans comme dehors",
+    "nameText": "Des bambous le long de la terrasse, des plantes à chaque porte, une pelouse sous les guirlandes lumineuses. Le jardin est notre façon de ralentir la journée pour vous.",
     "source": "Source"
   },
   "gallery": {
@@ -181,5 +182,68 @@
     "watch": "Voir l'hôtel · 1 min",
     "filmTitle": "L'Arboretum Green Hotel en une minute",
     "close": "Fermer"
+  },
+  "legal": {
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "updated": "Dernière mise à jour : novembre 2026",
+    "privacyTitle": "Politique de confidentialité",
+    "termsTitle": "Conditions de réservation",
+    "privacySections": [
+      [
+        "Qui nous sommes",
+        "Arboretum Green Hotel, route Huye–Tumba, Huye, Rwanda, est responsable des données personnelles collectées sur ce site. Contact : arboretumgreenhotel@gmail.com ou +250 781 600 065."
+      ],
+      [
+        "Ce que nous collectons",
+        "Uniquement ce que vous choisissez de nous envoyer : nom, téléphone, e-mail, dates, nombre de personnes et message via le formulaire, ainsi que le contenu des messages WhatsApp envoyés à la réception."
+      ],
+      [
+        "Pourquoi nous l'utilisons",
+        "Pour répondre à votre demande, confirmer et gérer votre séjour, votre table ou votre événement, et tenir les registres exigés par la loi. Nous ne vendons pas vos données et ne les utilisons pas pour la publicité."
+      ],
+      [
+        "Référence de réservation",
+        "Votre navigateur garde 30 jours une petite note indiquant comment vous nous avez trouvés (par exemple Google ou Instagram). Elle ajoute une courte référence comme AG-G-7K2Q à votre message pour savoir quel canal fonctionne. Elle ne contient rien qui vous identifie."
+      ],
+      [
+        "Statistiques de visite",
+        "Nous comptons les visites avec un outil respectueux de la vie privée, sans cookies et sans données personnelles."
+      ],
+      [
+        "Services utilisés",
+        "WhatsApp (Meta) achemine vos messages WhatsApp ; notre prestataire d'e-mail transmet les demandes du formulaire ; la carte de la page contact est fournie par Google, qui peut déposer ses propres cookies si vous l'utilisez."
+      ],
+      [
+        "Vos droits",
+        "Selon la loi rwandaise sur la protection des données personnelles et de la vie privée (loi n° 058/2021), vous pouvez demander l'accès, la rectification ou la suppression de vos données, ou vous opposer à leur usage. Écrivez-nous à l'adresse ci-dessus ; nous répondons sous 30 jours."
+      ]
+    ],
+    "termsSections": [
+      [
+        "Tarifs",
+        "Les tarifs sont affichés en francs rwandais et peuvent être donnés en dollars américains. Le tarif confirmé par écrit pour votre réservation est celui qui s'applique."
+      ],
+      [
+        "Confirmation",
+        "Un acompte de 50 % confirme votre réservation. Nous acceptons MTN MoMo, Visa, Mastercard, espèces et virement."
+      ],
+      [
+        "Annulation",
+        "Annulation gratuite jusqu'à 2 heures avant l'heure d'arrivée prévue. Au-delà, l'acompte peut être conservé."
+      ],
+      [
+        "Arrivée et départ",
+        "Départ avant 10 h. L'heure d'arrivée est confirmée avec votre réservation."
+      ],
+      [
+        "Événements et salle de conférence",
+        "Les événements, menus et locations de salle sont confirmés par un devis écrit séparé."
+      ],
+      [
+        "Ce site",
+        "Nous veillons à l'exactitude des informations, mais les menus et horaires peuvent changer. Merci de confirmer tout point important avec la réception."
+      ]
+    ]
   }
 }

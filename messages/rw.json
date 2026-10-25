@@ -61,7 +61,7 @@
     "heroText": "Hoteli ifite ubusitani ku muhanda Huye–Tumba. Ibyumba bituje, amafunguro meza n'umwanya wo guhurira hamwe.",
     "introEyebrow": "Murakaza neza",
     "introTitle": "Ituze, kamere n'ubudasa butuje.",
-    "introText": "Arboretum Green Hotel yitiriwe ishyamba rya kera rihehereza Huye. Dukurikiza injyana yaryo: ibitondo bituje, amafunguro y'ukuri, ibyumba bigufasha gusinzira neza.",
+    "introText": "Arboretum Green Hotel ni hoteli y'ubusitani iri ku muhanda Huye–Tumba. Tugendera ku muvuduko utuje: mu gitondo hatuje, amafunguro meza, ibyumba bigufasha gusinzira.",
     "doorsEyebrow": "Hoteli",
     "doors": {
       "stay": "Ubwoko bune bw'ibyumba, byose bituje kandi byitaweho.",
@@ -97,7 +97,8 @@
     "from": "Guhera kuri",
     "everyRoom": "Muri buri cyumba",
     "checkTimes": "Kwinjira guhera {in} · Gusohoka mbere ya {out}",
-    "photo": "Ifoto {n} muri {total}"
+    "photo": "Ifoto {n} muri {total}",
+    "goodToKnow": "Ibyo mukwiye kumenya"
   },
   "dine": {
     "eyebrow": "Gufungura",
@@ -124,8 +125,8 @@
     "eyebrow": "Menya Huye",
     "title": "Ongeraho umunsi umwe.",
     "text": "Huye ni umujyi wa kaminuza mu Rwanda n'umutima w'umuco. Aha ni ahantu abashyitsi bacu babaza kenshi.",
-    "nameTitle": "Kuki “Arboretum”",
-    "nameText": "Hakurya y'umujyi, ishyamba rya Ruhande rimaze gukura kuva mu 1933. Ituze ryaryo ni ryo twifuza ko buri mushyitsi abona hano.",
+    "nameTitle": "Icyatsi imbere n'inyuma",
+    "nameText": "Imigano iruhande rwa terasi, ibimera kuri buri muryango, ubwatsi munsi y'amatara. Ubusitani ni bwo buduha ituze tubaha.",
     "source": "Inkomoko"
   },
   "gallery": {
@@ -181,5 +182,68 @@
     "watch": "Reba hoteli · umunota 1",
     "filmTitle": "Arboretum Green Hotel mu munota umwe",
     "close": "Funga"
+  },
+  "legal": {
+    "privacy": "Ibanga",
+    "terms": "Amategeko",
+    "updated": "Byavuguruwe: Ugushyingo 2026",
+    "privacyTitle": "Itangazo ku ibanga ry'amakuru",
+    "termsTitle": "Amategeko yo gufata icyumba",
+    "privacySections": [
+      [
+        "Abo turi bo",
+        "Arboretum Green Hotel, Umuhanda Huye–Tumba, Huye, Rwanda, ni yo ishinzwe amakuru bwite akusanyirizwa kuri uru rubuga. Twandikire: arboretumgreenhotel@gmail.com cyangwa +250 781 600 065."
+      ],
+      [
+        "Amakuru dukusanya",
+        "Ayo mwihitiyemo kutwoherereza gusa: amazina, telefoni, imeli, amatariki, umubare w'abashyitsi n'ubutumwa iyo mukoresheje ifishi, n'ibyo mwandikira iyakira kuri WhatsApp."
+      ],
+      [
+        "Icyo tuyakoresha",
+        "Gusubiza ubusabe bwanyu, kwemeza no gukurikirana icyumba, ameza cyangwa ibirori byanyu, no kubika inyandiko itegeko risaba. Ntitugurisha amakuru yanyu kandi ntituyakoresha mu kwamamaza."
+      ],
+      [
+        "Nimero y'ubusabe",
+        "Mudasobwa cyangwa telefoni yanyu ibika iminsi 30 akamenyetso gato kerekana uko mwatubonye (urugero Google cyangwa Instagram). Kongera nimero ngufi nka AG-G-7K2Q ku butumwa bwanyu kugira ngo tumenye inzira ikora. Nta kintu kibaranga kirimo."
+      ],
+      [
+        "Imibare y'abasura",
+        "Tubara abasura urubuga dukoresheje uburyo bwubahiriza ibanga, butagira cookies kandi butabika amakuru bwite."
+      ],
+      [
+        "Serivisi twifashisha",
+        "WhatsApp (Meta) itwara ubutumwa bwa WhatsApp; serivisi y'imeli itugezaho ubusabe bw'ifishi; ikarita iri ku ipaji ya Twandikire itangwa na Google, ishobora gushyiraho cookies zayo iyo muyikoresheje."
+      ],
+      [
+        "Uburenganzira bwanyu",
+        "Hakurikijwe itegeko ry'u Rwanda rirengera amakuru bwite n'ubuzima bwite (Itegeko N° 058/2021), mushobora gusaba kureba, gukosora cyangwa gusiba amakuru yanyu, cyangwa kwanga ko akoreshwa. Mutwandikire kuri imeli iri haruguru, tuzabasubiza mu minsi 30."
+      ]
+    ],
+    "termsSections": [
+      [
+        "Ibiciro",
+        "Ibiciro bigaragazwa mu mafaranga y'u Rwanda kandi bishobora gutangwa mu madolari. Igiciro mwemerewe mu nyandiko ku cyumba cyanyu ni cyo gikurikizwa."
+      ],
+      [
+        "Kwemeza icyumba",
+        "Kwishyura 50% mbere byemeza icyumba cyanyu. Twakira MTN MoMo, Visa, Mastercard, amafaranga mu ntoki no kohereza kuri banki."
+      ],
+      [
+        "Guhagarika",
+        "Mushobora guhagarika ku buntu kugeza amasaha 2 mbere y'igihe muteganya kugera. Nyuma yaho, avansi ishobora kudasubizwa."
+      ],
+      [
+        "Kwinjira no gusohoka",
+        "Gusohoka ni mbere ya saa yine (10:00). Isaha yo kwinjira yemezwa hamwe n'icyumba cyanyu."
+      ],
+      [
+        "Ibirori n'icyumba cy'inama",
+        "Gufata ibirori, menu n'ikodeshwa ry'icyumba cy'inama byemezwa mu nyandiko y'igiciro yihariye."
+      ],
+      [
+        "Uru rubuga",
+        "Tugerageza ko amakuru ari kuri uru rubuga aba ari ukuri, ariko menu n'amasaha bishobora guhinduka. Mwemeze ibikomeye n'iyakira."
+      ]
+    ]
   }
 }

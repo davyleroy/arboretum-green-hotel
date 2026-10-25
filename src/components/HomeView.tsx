@@ -4,7 +4,6 @@ import type { Locale } from "@/i18n/routing";
 import { PageHero } from "@/components/PageHero";
 import { Photo } from "@/components/Photo";
 import { BookButton } from "@/components/BookButton";
-import { FilmButton } from "@/components/FilmButton";
 import { Arrow, icons } from "@/components/Icons";
 import { getSite, telLink, whatsappLink } from "@/lib/content";
 import { hotelJsonLd } from "@/lib/seo";
@@ -19,34 +18,29 @@ const DOORS = [
 
 const AMENITIES = ["rooms", "restaurant", "coffee", "hall", "wifi", "parking", "reception", "garden"] as const;
 
-export type HomeVariant = "photo" | "loop" | "film";
-
-export async function HomeView({ locale, variant }: { locale: Locale; variant: HomeVariant }) {
+export async function HomeView({ locale }: { locale: Locale }) {
   const t = await getTranslations("home");
   const tc = await getTranslations("cta");
   const tn = await getTranslations("nav");
   const tl = await getTranslations("lab");
   const site = getSite();
+  const hero = site.heroMedia;
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(hotelJsonLd(locale)) }} />
 
       <PageHero
-        slot="home-hero-night"
+        slot={hero.imageSlot}
         locale={locale}
         eyebrow={t("place")}
         title={t("heroTitle")}
         text={t("heroText")}
         tall
-        video={variant === "loop" ? { src: "/video/hero-loop.mp4", srcSmall: "/video/hero-loop-960.mp4", poster: "/video/hero-poster.jpg", pauseLabel: tl("pause"), playLabel: tl("play") } : undefined}
+        video={hero.type === "video" ? { ...hero.video, pauseLabel: tl("pause"), playLabel: tl("play") } : undefined}
       >
         <BookButton>{tc("bookStay")}</BookButton>
-        {variant === "film" ? (
-          <FilmButton label={tl("watch")} title={tl("filmTitle")} close={tl("close")} src="/video/film-1min.mp4" poster="/video/film-poster.jpg" />
-        ) : (
-          <Link href="/stay" className="textlink">{tc("exploreRooms")}</Link>
-        )}
+        <Link href="/stay" className="textlink">{tc("exploreRooms")}</Link>
       </PageHero>
 
       {/* Welcome */}

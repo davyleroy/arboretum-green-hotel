@@ -1,24 +1,118 @@
 {
   "_schema": "venue (singleton for now). Maps to Sanity 'venue' in phase 2.",
   "capacities": [
-    { "layout": { "en": "Theatre", "rw": "Imirongo nk'iyo mu nzu y'imikino", "fr": "Théâtre" }, "people": { "value": 150, "placeholder": true } },
-    { "layout": { "en": "Classroom", "rw": "Nk'ishuri", "fr": "Salle de classe" }, "people": { "value": 80, "placeholder": true } },
-    { "layout": { "en": "Banquet", "rw": "Ibirori byo kurya", "fr": "Banquet" }, "people": { "value": 100, "placeholder": true } },
-    { "layout": { "en": "Boardroom", "rw": "Inama ntoya", "fr": "Conseil" }, "people": { "value": 30, "placeholder": true } }
+    {
+      "layout": {
+        "en": "Theatre",
+        "rw": "Imirongo nk'iyo mu nzu y'imikino",
+        "fr": "Théâtre"
+      },
+      "people": {
+        "value": 100,
+        "placeholder": false
+      }
+    },
+    {
+      "layout": {
+        "en": "Classroom",
+        "rw": "Nk'ishuri",
+        "fr": "Salle de classe"
+      },
+      "people": {
+        "value": 100,
+        "placeholder": false
+      }
+    },
+    {
+      "layout": {
+        "en": "Banquet",
+        "rw": "Ibirori byo kurya",
+        "fr": "Banquet"
+      },
+      "people": {
+        "value": 100,
+        "placeholder": false
+      }
+    },
+    {
+      "layout": {
+        "en": "Boardroom",
+        "rw": "Inama ntoya",
+        "fr": "Conseil"
+      },
+      "people": {
+        "value": 15,
+        "placeholder": false
+      }
+    }
   ],
   "included": [
-    { "en": "Projector and screen", "rw": "Porojekiteri n'ekara", "fr": "Projecteur et écran" },
-    { "en": "Sound system and microphones", "rw": "Indangururamajwi na mikoro", "fr": "Sonorisation et micros" },
-    { "en": "Fast Wi-Fi for every guest", "rw": "Wi-Fi yihuta kuri buri wese", "fr": "Wi-Fi rapide pour chaque invité" },
-    { "en": "Coffee breaks and lunch from our kitchen", "rw": "Ikawa n'ifunguro rya saa sita bivuye mu gikoni cyacu", "fr": "Pauses café et déjeuner de notre cuisine" },
-    { "en": "Secure parking", "rw": "Parikingi irinzwe", "fr": "Parking sécurisé" },
-    { "en": "Rooms for out-of-town delegates", "rw": "Ibyumba ku bashyitsi baturutse kure", "fr": "Chambres pour les délégués venus d'ailleurs" }
+    {
+      "en": "Projector and screen",
+      "rw": "Porojekiteri n'ekara",
+      "fr": "Projecteur et écran"
+    },
+    {
+      "en": "Microphones",
+      "rw": "Mikoro",
+      "fr": "Microphones"
+    },
+    {
+      "en": "Whiteboard and flip chart",
+      "rw": "Ikibaho cyera n'ikibaho cy'impapuro",
+      "fr": "Tableau blanc et paperboard"
+    },
+    {
+      "en": "Fast Wi-Fi for every guest",
+      "rw": "Wi-Fi yihuta kuri buri wese",
+      "fr": "Wi-Fi rapide pour chaque invité"
+    },
+    {
+      "en": "Generator backup, so the power never drops",
+      "rw": "Moteri y'umuriro, ku buryo umuriro utabura",
+      "fr": "Groupe électrogène de secours"
+    },
+    {
+      "en": "Coffee breaks and lunch from our kitchen",
+      "rw": "Ikawa n'ifunguro rya saa sita bivuye mu gikoni cyacu",
+      "fr": "Pauses café et déjeuner de notre cuisine"
+    },
+    {
+      "en": "Secure parking",
+      "rw": "Parikingi irinzwe",
+      "fr": "Parking sécurisé"
+    },
+    {
+      "en": "Rooms for out-of-town delegates",
+      "rw": "Ibyumba ku bashyitsi baturutse kure",
+      "fr": "Chambres pour les délégués venus d'ailleurs"
+    }
   ],
   "occasions": [
-    { "en": "Conferences and workshops", "rw": "Inama n'amahugurwa", "fr": "Conférences et ateliers" },
-    { "en": "Weddings and introductions", "rw": "Ubukwe no gusaba", "fr": "Mariages et présentations" },
-    { "en": "Graduations", "rw": "Ibirori byo kurangiza amashuri", "fr": "Remises de diplômes" },
-    { "en": "Birthdays and private dinners", "rw": "Iminsi mikuru y'amavuko n'amafunguro yihariye", "fr": "Anniversaires et dîners privés" },
-    { "en": "Retreats for NGOs and teams", "rw": "Umwiherero w'imiryango n'amatsinda", "fr": "Retraites d'ONG et d'équipes" }
+    {
+      "en": "Conferences and workshops",
+      "rw": "Inama n'amahugurwa",
+      "fr": "Conférences et ateliers"
+    },
+    {
+      "en": "Weddings and introductions",
+      "rw": "Ubukwe no gusaba",
+      "fr": "Mariages et présentations"
+    },
+    {
+      "en": "Graduations",
+      "rw": "Ibirori byo kurangiza amashuri",
+      "fr": "Remises de diplômes"
+    },
+    {
+      "en": "Birthdays and private dinners",
+      "rw": "Iminsi mikuru y'amavuko n'amafunguro yihariye",
+      "fr": "Anniversaires et dîners privés"
+    },
+    {
+      "en": "Retreats for NGOs and teams",
+      "rw": "Umwiherero w'imiryango n'amatsinda",
+      "fr": "Retraites d'ONG et d'équipes"
+    }
   ]
 }

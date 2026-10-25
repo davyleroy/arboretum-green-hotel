@@ -7,6 +7,7 @@ import styles from "./Footer.module.css";
 
 export function Footer({ locale }: { locale: Locale }) {
   const t = useTranslations("footer");
+  const tlg = useTranslations("legal");
   const tn = useTranslations("nav");
   const tc = useTranslations("contact");
   const site = getSite();
@@ -51,7 +52,9 @@ export function Footer({ locale }: { locale: Locale }) {
         </div>
         <hr className="hairline" />
         <div className={styles.bottom}>
-          <p>{t("rights", { year })}</p>
+          <p>
+            {t("rights", { year })} · <Link href="/privacy">{tlg("privacy")}</Link> · <Link href="/terms">{tlg("terms")}</Link>
+          </p>
           <p className={styles.preview}>{t("preview")}</p>
         </div>
       </div>

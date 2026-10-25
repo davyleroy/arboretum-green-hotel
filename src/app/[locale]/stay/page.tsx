@@ -74,6 +74,12 @@ export default async function Stay({ params }: { params: Promise<{ locale: Local
             <p style={{ marginTop: 28, color: "var(--ink-600)" }}>
               <Ph on={site.checkIn.placeholder}>{t("checkTimes", { in: site.checkIn.value, out: site.checkOut.value })}</Ph>
             </p>
+            <p className="eyebrow" style={{ marginTop: 40 }}>{t("goodToKnow")}</p>
+            <ul className={s.list}>
+              {site.policies.items.map((item) => (
+                <li key={item.en}>{tl(item, locale)}</li>
+              ))}
+            </ul>
           </div>
           <div className={`${s.photos} reveal`}>
             <Photo slot="detail-bath" locale={locale} sizes="(max-width: 900px) 100vw, 30vw" />

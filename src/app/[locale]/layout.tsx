@@ -7,6 +7,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BookSheet } from "@/components/BookSheet";
 import { Reveal } from "@/components/Reveal";
+import { SourceTracker } from "@/components/SourceTracker";
+import { Analytics } from "@vercel/analytics/next";
 import { getRooms, getSite, t } from "@/lib/content";
 import "../globals.css";
 
@@ -68,6 +70,8 @@ export default async function LocaleLayout({
           <Footer locale={locale as Locale} />
           <BookSheet rooms={rooms} whatsapp={site.whatsapp} phones={site.phones} />
           <Reveal />
+          <SourceTracker />
+          <Analytics />
         </NextIntlClientProvider>
       </body>
     </html>

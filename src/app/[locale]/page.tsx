@@ -5,5 +5,5 @@ import { HomeView } from "@/components/HomeView";
 export default async function Home({ params }: { params: Promise<{ locale: Locale }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <HomeView locale={locale} variant="photo" />;
+  return <HomeView locale={locale} />;
 }

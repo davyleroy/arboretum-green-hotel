@@ -24,6 +24,7 @@ export async function POST(req: Request) {
   const enquiry = {
     type: TYPES.has(String(body.type)) ? String(body.type) : "stay",
     locale: String(body.locale ?? "en").slice(0, 5),
+    ref: /^AG-[A-Z]-[2-9A-Z]{4}$/.test(String(body.ref)) ? String(body.ref) : "AG-D-WEB0",
     name: field("name"),
     phone: field("phone"),
     email: field("email"),
@@ -44,6 +45,7 @@ export async function POST(req: Request) {
 
   const text = [
     `New ${enquiry.type} enquiry (site language: ${enquiry.locale})`,
+    `Booking reference: ${enquiry.ref}`,
     "",
     `Name: ${enquiry.name}`,
     `Phone: ${enquiry.phone}`,
@@ -61,7 +63,7 @@ export async function POST(req: Request) {
       from: process.env.ENQUIRY_FROM ?? "Arboretum Website <onboarding@resend.dev>",
       to: [to],
       reply_to: enquiry.email || undefined,
-      subject: `Website enquiry · ${enquiry.type} · ${enquiry.name}`,
+      subject: `Website enquiry · ${enquiry.type} · ${enquiry.name} · ${enquiry.ref}`,
       text,
     }),
   });
