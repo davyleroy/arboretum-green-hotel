@@ -33,6 +33,9 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# launch-week secrets gathering file (tokens, deploy hook URL, contact numbers)
+/docs/launch-values.md
+
 # vercel
 .vercel
 
