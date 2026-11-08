@@ -3,6 +3,25 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
+// CSP starts report-only; promoted to enforced on Fri 13 Nov once the console is clean
+// on every page. 'unsafe-inline' for scripts is required because the pages are static
+// and the hero boot script + Hotel JSON-LD are inline. Switching to nonces would make
+// every page dynamic.
+const csp = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline'",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob: https://cdn.sanity.io https://*.googleapis.com https://*.gstatic.com https://*.google.com",
+  "media-src 'self' https://cdn.sanity.io",
+  "font-src 'self'",
+  "frame-src https://www.google.com https://maps.google.com",
+  "connect-src 'self'",
+  "form-action 'self' https://wa.me https://api.whatsapp.com",
+  "base-uri 'self'",
+  "frame-ancestors 'none'",
+  "object-src 'none'",
+].join("; ");
+
 const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
@@ -15,6 +34,31 @@ const nextConfig: NextConfig = {
     return [
       { source: "/video/:file*", headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }] },
       { source: "/photos/:file*", headers: [{ key: "Cache-Control", value: "public, max-age=2592000, stale-while-revalidate=86400" }] },
+      // Common security headers for every route. HSTS is omitted here because Vercel already
+      // sets it on the domain; adding includeSubDomains or preload would risk the booking
+      // subdomain and is irreversible on short notice.
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=()" },
+        ],
+      },
+      // Stricter set for public pages: frame-ancestors none and CSP report-only.
+      // Excludes /studio (Sanity Studio needs its own origins) and infra paths.
+      {
+        source: "/((?!studio|api|_next|_vercel|photos|video|brand).*)",
+        headers: [
+          { key: "X-Frame-Options", value: "DENY" },
+          { key: "Content-Security-Policy-Report-Only", value: csp },
+        ],
+      },
+      // Studio: allow framing by self only, no CSP from us.
+      {
+        source: "/studio/:path*",
+        headers: [{ key: "X-Frame-Options", value: "SAMEORIGIN" }],
+      },
     ];
   },
 };
