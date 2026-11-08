@@ -61,6 +61,13 @@ export const siteSettings = defineType({
     defineField({ name: "checkIn", title: "Check-in from (HH:MM)", type: "string", group: "stay" }),
     defineField({ name: "checkOut", title: "Check-out by (HH:MM)", type: "string", group: "stay" }),
     defineField({ name: "policies", title: "Good to know", type: "array", of: [{ type: "localeString" }], group: "stay" }),
+    defineField({
+      name: "bookingUrl",
+      title: "Online booking URL (leave empty to hide the link)",
+      type: "url",
+      group: "stay",
+      description: "Set to https://book.arboretumgreenhotel.rw once the booking system passes Gate 2. Empty = hidden.",
+    }),
   ],
   preview: { prepare: () => ({ title: "Hotel settings" }) },
 });

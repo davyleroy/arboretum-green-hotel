@@ -64,7 +64,7 @@ export default async function LocaleLayout({
           <Header />
           <main id="main">{children}</main>
           <Footer locale={locale as Locale} />
-          <BookSheet rooms={rooms} whatsapp={site.whatsapp} phones={site.phones} />
+          <BookSheet rooms={rooms} whatsapp={site.whatsapp} phones={site.phones} bookingUrl={site.bookingUrl || undefined} />
           <Reveal />
           <SourceTracker />
           <Analytics />

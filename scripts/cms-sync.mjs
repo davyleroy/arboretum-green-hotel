@@ -49,6 +49,7 @@ async function seed() {
     facebook: site.social.facebook.placeholder ? undefined : site.social.facebook.value,
     checkIn: site.checkIn.placeholder ? undefined : site.checkIn.value, checkOut: site.checkOut.value,
     policies: keyed(site.policies.items.map((x) => ({ _type: "localeString", ...x }))),
+    bookingUrl: site.bookingUrl || undefined,
   });
   rooms.rooms.forEach((r, i) => tx.createIfNotExists({
     _id: `room-${r.slug}`, _type: "room", slug: r.slug, order: (i + 1) * 10, name: r.name, summary: r.summary,
@@ -102,6 +103,7 @@ async function pull() {
       facebook: s.facebook ? { value: s.facebook, placeholder: false } : site.social.facebook,
     },
     policies: { ...site.policies, items: s.policies?.length ? s.policies.map(L) : site.policies.items },
+    bookingUrl: s.bookingUrl ?? site.bookingUrl ?? "",
     heroMedia: {
       ...site.heroMedia,
       type: s.heroType || site.heroMedia.type,

@@ -10,6 +10,7 @@ export function Footer({ locale }: { locale: Locale }) {
   const tlg = useTranslations("legal");
   const tn = useTranslations("nav");
   const tc = useTranslations("contact");
+  const tcta = useTranslations("cta");
   const site = getSite();
   const year = new Date().getFullYear();
 
@@ -31,6 +32,9 @@ export function Footer({ locale }: { locale: Locale }) {
                 <a key={p} href={telLink(p)} className={styles.phone}>{p}</a>
               ))}
               <a href={whatsappLink("")} className={styles.phone} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              {site.bookingUrl ? (
+                <a href={site.bookingUrl} target="_blank" rel="noopener noreferrer" className={styles.phone}>{tcta("bookOnline")}</a>
+              ) : null}
               <p className={styles.small}><Ph on={site.email.placeholder}>{site.email.value}</Ph></p>
             </div>
             <nav aria-label="Footer">

@@ -10,13 +10,14 @@ type Props = {
   rooms: { slug: string; name: string }[];
   whatsapp: string;
   phones: string[];
+  bookingUrl?: string;
 };
 
 /** Local calendar date (not UTC), so Kigali guests never see yesterday after midnight. */
 const iso = (d: Date) =>
   `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 
-export function BookSheet({ rooms, whatsapp, phones }: Props) {
+export function BookSheet({ rooms, whatsapp, phones, bookingUrl }: Props) {
   const t = useTranslations("book");
   const tc = useTranslations("cta");
   const ref = useRef<HTMLDialogElement>(null);
@@ -128,6 +129,17 @@ export function BookSheet({ rooms, whatsapp, phones }: Props) {
         </a>
 
         <div className={styles.alt}>
+          {bookingUrl ? (
+            <a
+              href={bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="textlink"
+              style={{ display: "block", marginBottom: 16 }}
+            >
+              {tc("bookOnline")}
+            </a>
+          ) : null}
           <p className={styles.altLabel}>{t("orCall")}</p>
           <div className={styles.phones}>
             {phones.map((p) => (
