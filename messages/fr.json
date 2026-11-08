@@ -15,6 +15,12 @@
       "terms": "Conditions d'utilisation d'Arboretum Green Hotel."
     }
   },
+  "notFound": {
+    "title": "Page introuvable",
+    "text": "Nous ne trouvons pas la page demandée. Les liens ci-dessous peuvent aider.",
+    "bookingLabel": "Vous cherchez la réservation en ligne ?",
+    "bookingHost": "book.arboretumgreenhotel.rw"
+  },
   "nav": {
     "home": "Accueil",
     "stay": "Séjourner",

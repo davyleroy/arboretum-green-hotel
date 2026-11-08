@@ -15,6 +15,12 @@
       "terms": "Terms of service for Arboretum Green Hotel."
     }
   },
+  "notFound": {
+    "title": "Page not found",
+    "text": "We could not find the page you asked for. The links below may help.",
+    "bookingLabel": "Looking for online booking?",
+    "bookingHost": "book.arboretumgreenhotel.rw"
+  },
   "nav": {
     "home": "Home",
     "stay": "Stay",

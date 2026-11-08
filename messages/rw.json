@@ -15,6 +15,12 @@
       "terms": "Amabwiriza ya serivisi ya Arboretum Green Hotel."
     }
   },
+  "notFound": {
+    "title": "Urupapuro ntitwarubonye",
+    "text": "Nta rupapuro rwo twabonye nk'uko mwarusabye. Amagize akurikira ashobora kubafasha.",
+    "bookingLabel": "Murashaka kwiyandikisha kuri interineti?",
+    "bookingHost": "book.arboretumgreenhotel.rw"
+  },
   "nav": {
     "home": "Ahabanza",
     "stay": "Kurara",
