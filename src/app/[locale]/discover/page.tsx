@@ -6,12 +6,18 @@ import { Photo } from "@/components/Photo";
 import { BookButton } from "@/components/BookButton";
 import { Ph } from "@/components/Ph";
 import { getPlaces, t as tl } from "@/lib/content";
+import { pageAlternates } from "@/lib/seo";
 import s from "../pages.module.css";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "nav" });
-  return { title: t("discover") };
+  const tm = await getTranslations({ locale, namespace: "meta" });
+  return {
+    title: t("discover"),
+    description: tm("desc.discover"),
+    alternates: pageAlternates(locale as Locale, "/discover"),
+  };
 }
 
 export default async function Discover({ params }: { params: Promise<{ locale: Locale }> }) {

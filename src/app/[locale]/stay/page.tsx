@@ -6,12 +6,18 @@ import { Photo } from "@/components/Photo";
 import { BookButton } from "@/components/BookButton";
 import { Ph } from "@/components/Ph";
 import { getInEveryRoom, getRooms, getSite, t as tl } from "@/lib/content";
+import { pageAlternates } from "@/lib/seo";
 import s from "../pages.module.css";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "nav" });
-  return { title: t("stay") };
+  const tm = await getTranslations({ locale, namespace: "meta" });
+  return {
+    title: t("stay"),
+    description: tm("desc.stay"),
+    alternates: pageAlternates(locale as Locale, "/stay"),
+  };
 }
 
 export default async function Stay({ params }: { params: Promise<{ locale: Locale }> }) {

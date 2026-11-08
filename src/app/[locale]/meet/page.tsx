@@ -7,12 +7,18 @@ import { BookButton } from "@/components/BookButton";
 import { Ph } from "@/components/Ph";
 import { Link } from "@/i18n/navigation";
 import { getVenue, t as tl } from "@/lib/content";
+import { pageAlternates } from "@/lib/seo";
 import s from "../pages.module.css";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "nav" });
-  return { title: t("meet") };
+  const tm = await getTranslations({ locale, namespace: "meta" });
+  return {
+    title: t("meet"),
+    description: tm("desc.meet"),
+    alternates: pageAlternates(locale as Locale, "/meet"),
+  };
 }
 
 export default async function Meet({ params }: { params: Promise<{ locale: Locale }> }) {

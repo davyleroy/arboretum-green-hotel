@@ -2,7 +2,18 @@
   "meta": {
     "title": "Arboretum Green Hotel · Huye, Rwanda",
     "description": "Hoteli ituje ifite ubusitani ku muhanda Huye–Tumba. Ibyumba, resitora, akabari, ikawa n'icyumba cy'inama n'ibirori.",
-    "langName": "Kinyarwanda"
+    "langName": "Kinyarwanda",
+    "desc": {
+      "home": "Hoteli ituje ifite ubusitani ku muhanda Huye–Tumba. Ibyumba, resitora, akabari, ikawa n'icyumba cy'inama n'ibirori.",
+      "stay": "Ibyumba kwa Arboretum Green Hotel i Huye. Amahitamo y'ifunguro rya mu gitondo, kwiyandikisha kuri WhatsApp cyangwa telefoni.",
+      "dine": "Resitora, akabari n'ikawa kwa Arboretum Green Hotel i Huye. Saba ameza kuri WhatsApp.",
+      "meet": "Icyumba cy'inama n'ubusitani ku bukwe, inama n'ibirori by'umuryango kwa Arboretum Green Hotel i Huye.",
+      "discover": "Ibyo kureba hafi ya Huye: Inzu Ndangamurage, Nyungwe, ubutaka bw'icyayi, amasoko.",
+      "gallery": "Amafoto y'ibyumba, resitora, ubusitani n'ahantu kwa Arboretum Green Hotel i Huye.",
+      "contact": "Telefoni, WhatsApp, inzira n'ifishi yo kubaza kwa Arboretum Green Hotel i Huye, u Rwanda.",
+      "privacy": "Itangazo ry'ibanga rya Arboretum Green Hotel.",
+      "terms": "Amabwiriza ya serivisi ya Arboretum Green Hotel."
+    }
   },
   "nav": {
     "home": "Ahabanza",

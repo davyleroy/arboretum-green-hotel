@@ -6,12 +6,18 @@ import { PageHero } from "@/components/PageHero";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { Ph } from "@/components/Ph";
 import { getSite, mapsLink, t as tl, telLink, whatsappLink } from "@/lib/content";
+import { pageAlternates } from "@/lib/seo";
 import s from "./contact.module.css";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "nav" });
-  return { title: t("contact") };
+  const tm = await getTranslations({ locale, namespace: "meta" });
+  return {
+    title: t("contact"),
+    description: tm("desc.contact"),
+    alternates: pageAlternates(locale as Locale, "/contact"),
+  };
 }
 
 export default async function Contact({ params }: { params: Promise<{ locale: Locale }> }) {

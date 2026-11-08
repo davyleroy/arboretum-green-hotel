@@ -4,11 +4,17 @@ import type { Locale } from "@/i18n/routing";
 import { PageHero } from "@/components/PageHero";
 import { Gallery, type GalleryItem } from "@/components/Gallery";
 import { photo } from "@/lib/content";
+import { pageAlternates } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "nav" });
-  return { title: t("gallery") };
+  const tm = await getTranslations({ locale, namespace: "meta" });
+  return {
+    title: t("gallery"),
+    description: tm("desc.gallery"),
+    alternates: pageAlternates(locale as Locale, "/gallery"),
+  };
 }
 
 const PICKS: [string, GalleryItem["mood"]][] = [

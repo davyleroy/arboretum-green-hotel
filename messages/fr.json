@@ -2,7 +2,18 @@
   "meta": {
     "title": "Arboretum Green Hotel · Huye, Rwanda",
     "description": "Un hôtel-jardin paisible sur la route Huye–Tumba. Chambres, restaurant, bar, café et une salle pour vos événements.",
-    "langName": "Français"
+    "langName": "Français",
+    "desc": {
+      "home": "Un hôtel-jardin paisible sur la route Huye–Tumba. Chambres, restaurant, bar, café et une salle pour vos événements.",
+      "stay": "Les chambres d'Arboretum Green Hotel à Huye. Options petit-déjeuner, arrivée souple, réservation par WhatsApp ou téléphone.",
+      "dine": "Restaurant, bar et café d'Arboretum Green Hotel à Huye. Réservez une table par WhatsApp.",
+      "meet": "Une salle et des jardins pour mariages, conférences et réunions familiales à Arboretum Green Hotel, Huye.",
+      "discover": "Que visiter autour de Huye : le Musée ethnographique, Nyungwe, les plantations de thé, les marchés et les points de vue.",
+      "gallery": "Photos des chambres, du restaurant, des jardins et du domaine d'Arboretum Green Hotel à Huye.",
+      "contact": "Téléphone, WhatsApp, itinéraire et formulaire de contact d'Arboretum Green Hotel à Huye, Rwanda.",
+      "privacy": "Avis de confidentialité d'Arboretum Green Hotel.",
+      "terms": "Conditions d'utilisation d'Arboretum Green Hotel."
+    }
   },
   "nav": {
     "home": "Accueil",

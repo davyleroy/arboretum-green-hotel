@@ -27,10 +27,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: { default: tm("title"), template: `%s · Arboretum Green Hotel` },
     description: tm("description"),
     icons: { icon: "/brand/monogram-forest.svg", apple: "/brand/apple-touch-icon.png" },
-    alternates: {
-      canonical: `/${locale}`,
-      languages: Object.fromEntries(routing.locales.map((l) => [l, `/${l}`])),
-    },
     openGraph: {
       title: tm("title"),
       description: tm("description"),

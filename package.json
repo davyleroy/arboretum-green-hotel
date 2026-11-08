@@ -11,6 +11,7 @@
     "qa:a11y": "node scripts/qa/a11y.mjs",
     "qa:shots": "node scripts/qa/shots.mjs",
     "qa:ref": "node scripts/qa/booking-ref.mjs",
+    "qa:canon": "node scripts/qa/canonical.mjs",
     "check:photos": "node scripts/check-photos.mjs"
   },
   "dependencies": {
