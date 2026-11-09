@@ -260,13 +260,13 @@ Vercel does not bill per concurrent user. The relevant dimensions are:
 | Item | Yearly (USD) | Notes |
 |---|---|---|
 | Vercel Pro | 240 | §6 above |
-| Domain renewal (`arboretumgreenhotel.rw`) | 30 to 50 | .rw registry; depends on registrar markup |
+| Domain renewal (`arboretumgreenhotel.rw`) | **~14** | RWF 19,000 maximum, confirmed with the hotel. Far cheaper than typical .rw registrar pricing. |
 | Sanity CMS | **0** | Free plan: 3 users, 10k docs, 5 GB bandwidth. You use < 50 docs and < 1 GB. Will stay free. |
 | Resend (transactional email for enquiry form, if enabled) | **0** | Free plan: 100 emails/day, 3,000/month. Hotel enquiries will not approach this. |
 | Google Analytics / Search Console / GBP | **0** | All free from Google. |
-| **Total yearly cost to the hotel** | **270 to 290** | **~370,000 RWF** |
+| **Total yearly cost to the hotel** | **~254** | **~343,000 RWF** |
 
-Add the recommended 50% safety buffer: **~$435/year = 585,000 RWF/year**.
+Add the recommended 50% safety buffer: **~$381/year = ~515,000 RWF/year**.
 
 **By comparison:** a shared-hosting WordPress plan with similar performance would cost 100 to 300 USD/year but need a developer to keep secure, and would not survive 400 concurrent users on a $5/month shared plan. The Vercel + Sanity stack is both cheaper to operate and more resilient.
 
@@ -293,7 +293,7 @@ Keep these in mind only if traffic grows substantially:
 | Google Business Profile | hotel | Manager | $0 |
 | Bing Webmaster Tools | hotel | Imported from GSC | $0 |
 | Resend (if used) | hotel | Admin | $0 |
-| Domain registrar | hotel (manager holds it) | Technical contact if possible | $30 to 50/yr |
+| Domain registrar | hotel (manager holds it) | Technical contact if possible | ~$14/yr (RWF 19,000 max) |
 | GitHub repo | Davy (option 1) or hotel org (option 2) | Owner / Admin | $0 (Free tier) |
 
 ---
