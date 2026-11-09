@@ -64,10 +64,14 @@ const nextConfig: NextConfig = {
           { key: "Content-Security-Policy-Report-Only", value: csp },
         ],
       },
-      // Studio: allow framing by self only, no CSP from us.
+      // Studio: allow framing by self only, no CSP from us. Also keep Studio out of search
+      // engines at the transport layer (belt and braces with the <meta> tag in page.tsx).
       {
         source: "/studio/:path*",
-        headers: [{ key: "X-Frame-Options", value: "SAMEORIGIN" }],
+        headers: [
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "X-Robots-Tag", value: "noindex, nofollow, noarchive, nosnippet, noimageindex" },
+        ],
       },
     ];
   },
