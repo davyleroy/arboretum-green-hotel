@@ -23,6 +23,9 @@ const csp = [
 ].join("; ");
 
 const nextConfig: NextConfig = {
+  // Drop the "X-Powered-By: Next.js" fingerprint. Does not hide Next entirely (chunk
+  // names, _next paths still reveal it) but removes the easy tell.
+  poweredByHeader: false,
   images: {
     formats: ["image/avif", "image/webp"],
     deviceSizes: [640, 828, 1080, 1440, 1920, 2400],
@@ -43,6 +46,13 @@ const nextConfig: NextConfig = {
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
           { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=()" },
+          // Isolate the browsing context from cross-origin popups (Spectre + tabnabbing).
+          { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
+          // Static assets can only be embedded by same-origin pages. COEP left off because it
+          // would break the Google Maps iframe and Sanity CDN loads.
+          { key: "Cross-Origin-Resource-Policy", value: "same-origin" },
+          // Prevent the browser from leaking destination domains via DNS prefetch.
+          { key: "X-DNS-Prefetch-Control", value: "off" },
         ],
       },
       // Stricter set for public pages: frame-ancestors none and CSP report-only.
