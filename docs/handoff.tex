@@ -181,6 +181,37 @@ The hotel's existing booking system has been moved to the subdomain \texttt{book
 
 This arrangement is reviewed after 60 days of post-launch analytics. If direct bookings through the subdomain stay strong, it continues as is. If analytics show most guests use WhatsApp instead, the subdomain can be simplified or retired.
 
+\subsection{Security posture}
+
+The website is built to a professional security standard. The hotel does not need to install any security software; everything below is already in place.
+
+\textbf{What the site does automatically:}
+\begin{itemize}
+\item \textbf{HTTPS everywhere.} Every page served over an encrypted connection with an automatically renewed certificate.
+\item \textbf{Strict transport headers.} Browsers refuse to render the site in a frame on another domain, decline to prefetch DNS to unknown hosts, and isolate the hotel's pages from cross-origin leakage.
+\item \textbf{Content Security Policy.} A list of exactly which domains the site is allowed to load scripts, images and fonts from. Any attempt to inject malicious code is blocked by the browser.
+\item \textbf{Framework fingerprint removed.} The default identifying header that advertises the website framework has been suppressed.
+\item \textbf{Rate limiting.} The contact form endpoint will reject a visitor sending more than five requests per minute, so spam campaigns cannot flood the hotel's inbox.
+\item \textbf{Input validation.} Every field in the contact form has a strict size limit and format check before any email is sent.
+\item \textbf{Payload size cap.} The contact form refuses any request larger than 4 kilobytes, so a malicious user cannot overwhelm the server with a giant payload.
+\item \textbf{Content editor is kept out of search engines.} The Sanity Studio at \texttt{/studio} tells every crawler to skip indexing, archiving, caching and snippets. Even if a staff member accidentally shared a Studio URL, search engines would not surface it.
+\item \textbf{Weekly dependency updates.} GitHub proposes updates to every underlying software library each Monday. Davy reviews and merges within a business day.
+\item \textbf{Security contact policy.} A standardised \texttt{SECURITY.md} file in the source repository tells any researcher who finds a vulnerability exactly how to report it privately, with a 2-business-day acknowledgement commitment.
+\end{itemize}
+
+\textbf{What the hotel should do (brief checklist):}
+\begin{itemize}
+\item Keep two-factor authentication on every account (Google, Sanity, Vercel, GitHub, Resend, registrar).
+\item Never paste API tokens into chat, email, a text file on the desktop or a shared drive. Vercel and Sanity both store tokens securely.
+\item Never share Studio login credentials. Each editor gets their own account via the Members page.
+\item Do not click Publish on content you do not recognise. If a document looks edited by someone unknown, call Davy before clicking Publish.
+\item Report anything that looks suspicious to Davy promptly; do not try to diagnose it yourself.
+\end{itemize}
+
+\textbf{What happens if something goes wrong.} If a security researcher reports a vulnerability, Davy acknowledges within two business days and patches on a severity-driven timeline: 24 hours for a critical exploitable issue, 7 days for a high severity one, 30 days for medium. The hotel is informed in plain language about what happened and what changed, after the patch is in place. No credentials are ever shared in the communication.
+
+\textbf{Independent audits.} The site is scanned monthly against the Mozilla Observatory and SSL Labs public tests; both target grade A or A+. The source code is reviewed quarterly for new issues. A formal external penetration test is budgeted for year 2 once traffic levels justify the cost (approximately USD 3{,}000 to USD 6{,}000 for a 3-to-5-day engagement).
+
 % ---------------------------------------------------------------- 3. TECH STACK
 \section{Technology summary}
 
