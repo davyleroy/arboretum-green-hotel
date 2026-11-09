@@ -32,13 +32,32 @@ Companion files:
 | Account holder name | TODO |
 | Account holder contact (mobile + email) | TODO |
 | Relationship to hotel | TODO (manager / IT partner / old-site agency) |
-| Chosen access option (brief §7.1) | TODO (a screen-share / b delegated contact / c temporary login) |
+| Chosen access option | **(d) Primary: holder makes every change, sends screenshot + confirmation; Davy verifies via public `dig` from both 1.1.1.1 and 8.8.8.8.** Fallback to (a) 15-min screen-share only if a dig check fails and a timing-critical window needs a live fix. No credentials move in either case. |
 | Date of registrar session 1 | Wed 11 Nov 2026, time TODO |
 | Date of registrar session 2 (cutover) | Thu 12 Nov 2026, around 09:00 Kigali |
 | Expiry date of current registration | TODO (check at https://whois.ricta.org.rw) |
 | Auto-renew enabled? | TODO |
 
-**Note on brief rule 2.1:** credentials never pass through chat or files. If option (c) is chosen, the account holder logs in on a screen-share and Davy reads out the change table; the holder changes the password after Thursday.
+**Note on brief rule 2.1:** credentials never pass through chat or files. Option (d) satisfies this by design: the holder is the only person who ever logs in. Davy verifies every change by public DNS lookup, never by seeing the registrar UI.
+
+**Verification pattern after each session:**
+```bash
+# After Session 1 (Wed), apex and www should be UNCHANGED (TTL 300 only):
+dig @1.1.1.1 arboretumgreenhotel.rw A
+dig @1.1.1.1 arboretumgreenhotel.rw AAAA
+dig @1.1.1.1 www.arboretumgreenhotel.rw
+# NEW records should resolve:
+dig @1.1.1.1 book.arboretumgreenhotel.rw A
+dig @1.1.1.1 kp7fatlmi3dh.arboretumgreenhotel.rw CNAME
+
+# After Session 2 (Thu), apex should point to Vercel:
+dig @1.1.1.1 arboretumgreenhotel.rw A
+dig @1.1.1.1 arboretumgreenhotel.rw AAAA     # expected: empty
+dig @1.1.1.1 www.arboretumgreenhotel.rw CNAME
+
+# Double-check from Google's resolver to catch any single-resolver caching:
+dig @8.8.8.8 arboretumgreenhotel.rw A
+```
 
 ---
 
