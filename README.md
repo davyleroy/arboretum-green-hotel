@@ -107,3 +107,10 @@ Q printed QR code, R another website. Links shared on a channel can force the co
 `?src=` (for example the Google profile website link: `/?src=gmb`, Instagram bio: `/?src=ig`,
 printed QR codes: `/?src=qr`). Reception logs the reference with each booking; that log is the
 basis for any commission reporting.
+
+## Security
+
+If you believe you have found a vulnerability, please read [SECURITY.md](SECURITY.md) and follow
+the private disclosure channel described there. Dependency updates are proposed weekly by
+Dependabot; run `npm run audit` locally to check the current advisory status against the
+pinned lockfile.

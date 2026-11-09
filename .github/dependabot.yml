@@ -1,0 +1,51 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: Africa/Kigali
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+    groups:
+      production-patch-minor:
+        dependency-type: production
+        update-types:
+          - patch
+          - minor
+      development-patch-minor:
+        dependency-type: development
+        update-types:
+          - patch
+          - minor
+    ignore:
+      # Majors of these are intentionally pinned by the project.
+      # Bump manually when we have time to test the full build + QA suite.
+      - dependency-name: next
+        update-types:
+          - version-update:semver-major
+      - dependency-name: react
+        update-types:
+          - version-update:semver-major
+      - dependency-name: react-dom
+        update-types:
+          - version-update:semver-major
+      - dependency-name: sanity
+        update-types:
+          - version-update:semver-major
+      - dependency-name: next-sanity
+        update-types:
+          - version-update:semver-major
+      - dependency-name: next-intl
+        update-types:
+          - version-update:semver-major
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    labels:
+      - ci
