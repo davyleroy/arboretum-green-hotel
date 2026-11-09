@@ -1,0 +1,479 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{parskip}
+
+\definecolor{forest}{HTML}{12241B}
+\definecolor{brass}{HTML}{A9844F}
+\definecolor{ink}{HTML}{2A3B30}
+\definecolor{ink600}{HTML}{556961}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=forest,
+  urlcolor=brass,
+  pdftitle={Arboretum Green Hotel Website Handoff and Operating Guide},
+  pdfauthor={Tenex},
+  pdfsubject={Website handoff, operating cost and ongoing servicing},
+  pdfkeywords={Arboretum Green Hotel, Tenex, handoff, Vercel, Sanity}
+}
+
+\titleformat{\section}{\color{forest}\large\bfseries}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\color{forest}\normalsize\bfseries}{\thesubsection}{0.6em}{}
+\setlist[itemize]{leftmargin=1.2em,itemsep=2pt,topsep=4pt}
+\setlist[enumerate]{leftmargin=1.5em,itemsep=2pt,topsep=4pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{ink600}{\small Arboretum Green Hotel website handoff}}
+\fancyhead[R]{\textcolor{ink600}{\small Tenex}}
+\fancyfoot[C]{\textcolor{ink600}{\small \thepage}}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\begin{document}
+
+% ---------------------------------------------------------------- COVER
+\thispagestyle{empty}
+\vspace*{3.5cm}
+
+\begin{center}
+\color{forest}
+{\Huge\bfseries Arboretum Green Hotel}\\[0.4em]
+{\LARGE Website Handoff and Operating Guide}
+
+\vspace{2.4cm}
+
+\color{ink}
+{\large Prepared by Tenex}\\[0.3em]
+{\normalsize Davy Mbuto, lead engineer}\\[1.2em]
+{\normalsize Version 1.0 \,{\color{brass}\textbullet}\, 9 November 2026}
+
+\vspace{3cm}
+
+\color{ink600}
+\rule{10cm}{0.3pt}\\[0.6em]
+\parbox{11cm}{\centering\normalsize What was built, what it costs to run, how ownership moves to the hotel, and how to request help after the unveiling of Sun 15 November 2026.}
+\end{center}
+
+\vspace{\fill}
+
+\begin{center}
+\color{ink600}\small
+Confidential. Prepared for the owners and management of Arboretum Green Hotel.
+\end{center}
+
+\newpage
+
+% ---------------------------------------------------------------- TOC
+\tableofcontents
+\newpage
+
+% ---------------------------------------------------------------- 1. EXEC
+\section{Executive summary}
+
+A new public website for Arboretum Green Hotel has been designed, built, tested and prepared for unveiling on \textbf{Sunday 15 November 2026 at 08:00 Kigali time}. This document describes what the hotel now owns, what it costs to operate, how account ownership is being transferred, and how to request help from Tenex after the launch.
+
+The site lives on a modern hosting platform (Vercel) and uses a hosted content system (Sanity) that lets a designated hotel staff member change prices, dining hours, photos and other facts without any technical knowledge. Changes publish to the public site in about two minutes.
+
+\begin{description}
+\item[Where it lives:] \url{https://arboretumgreenhotel.rw}
+\item[What it runs on:] Vercel (hosting) + Sanity (content management)
+\item[Annual operating cost to the hotel:] approximately USD 290 (RWF 390{,}000) in the first year, rising to USD 435 (RWF 585{,}000) once the Vercel account is transferred to the hotel. See Section 4.
+\item[Ongoing servicing:] on an ask and quote basis, see Section 7.
+\item[Primary contact:] Davy Mbuto, Tenex, \href{mailto:web@arboretumgreenhotel.rw}{web@arboretumgreenhotel.rw}.
+\end{description}
+
+The hotel's existing booking system has been preserved unchanged at the subdomain \texttt{book.arboretumgreenhotel.rw}. Guests and existing bookings are not disrupted.
+
+% ---------------------------------------------------------------- 2. WHAT WAS BUILT
+\section{What was built}
+
+\subsection{Public website}
+
+Nine pages, each available in \textbf{English}, \textbf{Kinyarwanda} and \textbf{French}, for a total of 27 distinct localised pages:
+
+\begin{itemize}
+\item \textbf{Home} with a silent 15-second video of the gardens (or a still photo, at the hotel's choice)
+\item \textbf{Stay} with every room type, rates, included amenities
+\item \textbf{Dine} with the restaurant, bar and coffee outlets and their hours
+\item \textbf{Meet \& Celebrate} with the venue, capacities and occasions
+\item \textbf{Discover Huye} with places of interest nearby
+\item \textbf{Gallery} with curated photography
+\item \textbf{Contact} with phone, WhatsApp, directions and a short enquiry form
+\item \textbf{Privacy} and \textbf{Terms} legal pages
+\end{itemize}
+
+Every page is responsive (works on phone, tablet and laptop), tested for accessibility (WCAG 2 AA, zero violations across all 27 pages), and tuned for mobile data connections typical of Rwandan visitors.
+
+\subsection{Content management system (Sanity Studio)}
+
+A designated hotel staff member can edit the site at \url{https://arboretumgreenhotel.rw/studio}. What they can change, without a developer:
+
+\begin{itemize}
+\item Hotel settings: tagline, address, phones, WhatsApp number, email, check-in and check-out times
+\item The homepage opening: switch between a video loop and a photo
+\item Rooms: name, summary, bed, maximum guests, rate, photos (per room)
+\item Dining outlets: name, text, opening hours, photos
+\item Venue capacities and occasion types
+\item Places of interest around Huye
+\item Any photo, including replacing the image and writing its alternative text in three languages
+\item The ``good to know'' policies (payment, deposit, cancellation, breakfast, day use)
+\item The online booking URL once the booking system is confirmed live at \texttt{book.arboretumgreenhotel.rw}
+\end{itemize}
+
+What they \emph{cannot} accidentally change, because it stays in the code:
+
+\begin{itemize}
+\item Navigation labels, button text, page section titles (to protect translation integrity)
+\item Legal page bodies (to prevent accidental edits to legally significant copy)
+\item Technical configuration
+\end{itemize}
+
+A full step-by-step editor manual in English and French is supplied separately as \texttt{STAFF\_GUIDE.md}.
+
+\subsection{SEO and discoverability}
+
+The site is prepared for Google and Bing from launch day:
+
+\begin{itemize}
+\item \textbf{Structured data (Hotel JSON-LD)} so Google shows a knowledge panel with address, phone, amenities
+\item \textbf{Three-language hreflang} tags so Google serves the right language to the right visitor
+\item \textbf{Sitemap and robots} files so search engines find every page
+\item \textbf{Google Business Profile} with photos and a booking link
+\item \textbf{Bing Webmaster Tools} property imported from Search Console
+\item \textbf{Per-page meta descriptions} in three languages
+\item A link from Google Maps and Google Business Profile that tags Maps-sourced bookings, so the hotel can see how many WhatsApp enquiries came from Maps
+\end{itemize}
+
+\subsection{Security, privacy and resilience}
+
+\begin{itemize}
+\item HTTPS with automatic certificate renewal (Let's Encrypt via Vercel)
+\item Security headers: strict content policy, no framing, no third-party referrers
+\item No third-party cookies, no advertising trackers, no social-media pixels
+\item Vercel Analytics (first-party, privacy-friendly visitor counts)
+\item Offline-capable content layer: if the content system is ever briefly unreachable, the last published version still serves to visitors
+\item Automatic image optimisation (AVIF, WebP) for mobile data users
+\end{itemize}
+
+\subsection{Booking continuity}
+
+The hotel's existing booking system has been moved to the subdomain \texttt{book.arboretumgreenhotel.rw}. Existing bookmarks, OTA deep links, and WhatsApp conversations that reference booking URLs continue to work. The new marketing site at the apex (\texttt{arboretumgreenhotel.rw}) links to the booking subdomain for actual reservations.
+
+This arrangement is reviewed after 60 days of post-launch analytics. If direct bookings through the subdomain stay strong, it continues as is. If analytics show most guests use WhatsApp instead, the subdomain can be simplified or retired.
+
+% ---------------------------------------------------------------- 3. TECH STACK
+\section{Technology summary}
+
+\begin{tabularx}{\textwidth}{@{} l X @{}}
+\toprule
+\textbf{Component} & \textbf{Purpose} \\
+\midrule
+Next.js 15 & The website application framework (also used by Nike, Hulu, TikTok) \\
+Sanity & Content management system (used by Figma, Puma, Spotify, Nike) \\
+Vercel & Hosting and global content delivery network \\
+Let's Encrypt & Automatic HTTPS certificates \\
+Resend & Transactional email (enquiry form notifications) \\
+Google Search Console & Search engine visibility and indexing status \\
+Google Business Profile & Map and discovery listings \\
+Bing Webmaster Tools & Secondary search engine coverage \\
+\bottomrule
+\end{tabularx}
+
+All of these are industry-standard choices. Any competent web developer can take over operation of the site using them; the hotel is not locked into Tenex as the only vendor.
+
+% ---------------------------------------------------------------- 4. COSTS
+\section{Operating costs to the hotel}
+
+\subsection{First year}
+
+In the first year of operation, the Vercel hosting account remains on Tenex's personal team at no cost to the hotel. The hotel pays only for the domain renewal. Sanity, Resend, Google and Bing services are all on their free tiers and will remain so at the hotel's expected traffic.
+
+\begin{tabularx}{\textwidth}{@{} X r r @{}}
+\toprule
+\textbf{Line item} & \textbf{USD per year} & \textbf{RWF per year} \\
+\midrule
+Domain renewal (\texttt{arboretumgreenhotel.rw}) & 30 to 50 & 40{,}000 to 68{,}000 \\
+Sanity content management & 0 & 0 \\
+Resend transactional email & 0 & 0 \\
+Google and Bing services & 0 & 0 \\
+Vercel hosting (year 1, on Tenex's account) & 0 & 0 \\
+\midrule
+\textbf{Year 1 total} & \textbf{30 to 50} & \textbf{40{,}000 to 68{,}000} \\
+\bottomrule
+\end{tabularx}
+
+\subsection{Year 2 onward, after the Vercel migration}
+
+When the Vercel account is transferred to the hotel (Section 6 proposal), the hotel takes over the hosting bill. The migration is scheduled for 3 to 6 weeks after launch.
+
+\begin{tabularx}{\textwidth}{@{} X r r @{}}
+\toprule
+\textbf{Line item} & \textbf{USD per year} & \textbf{RWF per year} \\
+\midrule
+Domain renewal & 30 to 50 & 40{,}000 to 68{,}000 \\
+Vercel Pro (one seat, USD 20 per month) & 240 & 325{,}000 \\
+Sanity, Resend, Google, Bing & 0 & 0 \\
+\midrule
+\textbf{Year 2 subtotal} & \textbf{270 to 290} & \textbf{365{,}000 to 393{,}000} \\
+50 percent safety buffer (recommended budget line) & 135 to 145 & 183{,}000 to 196{,}000 \\
+\midrule
+\textbf{Recommended annual budget} & \textbf{405 to 435} & \textbf{548{,}000 to 589{,}000} \\
+\bottomrule
+\end{tabularx}
+
+\subsection{How Vercel pricing scales}
+
+Vercel bills on bandwidth consumed, API calls made, and image optimisations performed. The hotel's expected traffic (500 to 1{,}000 daily visitors in peak season, up to 400 concurrent users) uses an estimated \textbf{100 to 150 gigabytes of bandwidth per month}, which is approximately \textbf{15 percent} of the 1 terabyte that Vercel Pro includes. Headroom for roughly \textbf{7 times current traffic} exists before any additional charges apply.
+
+\begin{tabularx}{\textwidth}{@{} X r r @{}}
+\toprule
+\textbf{Metric} & \textbf{Included in Vercel Pro} & \textbf{Expected monthly use} \\
+\midrule
+Bandwidth to visitors & 1{,}000 GB & 100 to 150 GB \\
+Function invocations (form submissions, etc.) & 1{,}000{,}000 & under 50{,}000 \\
+Edge requests (page views served) & 10{,}000{,}000 & 2 to 4 million \\
+Image optimisations & 5{,}000 unique & under 500 \\
+Build minutes (publishes per month) & 6{,}000 & 100 to 300 \\
+\bottomrule
+\end{tabularx}
+
+If visitor traffic grows 10 times (an exceptional year), Vercel's bandwidth overage charge of USD 0.15 per gigabyte applies. At 1.5 terabytes per month, that would add approximately USD 75 per month, taking the annual Vercel cost from USD 240 to roughly USD 1{,}140. Vercel sends an alert at 75 percent usage, well before any overage occurs.
+
+\subsection{Comparison: why not a cheaper shared host?}
+
+A shared-hosting provider offering WordPress on a USD 5 per month plan would appear to save roughly USD 180 per year. In reality, a shared host:
+
+\begin{itemize}
+\item Cannot serve 400 concurrent users without visible slowdowns (requires a far more expensive dedicated plan)
+\item Requires monthly manual security patching of WordPress plugins (billable to someone)
+\item Delivers unoptimised images to mobile users, degrading the site's appearance and search ranking
+\item Has no first-class content management system; staff edits require developer intervention
+\item Is more likely to be hacked or defaced, with the reputational damage that implies
+\end{itemize}
+
+Vercel Pro at USD 20 per month is the floor for a professional-grade small commercial site, and the expense is modest compared to any other line item in the hotel's operating budget.
+
+% ---------------------------------------------------------------- 5. OWNERSHIP
+\section{Account ownership today}
+
+Every account that touches the hotel's online presence is owned on a hotel-controlled email, with Tenex (Davy Mbuto) added as administrator. The hotel retains the ability to remove Tenex's access at any time.
+
+\begin{tabularx}{\textwidth}{@{} X X X r @{}}
+\toprule
+\textbf{Account} & \textbf{Hotel owner email} & \textbf{Tenex role} & \textbf{Hotel monthly cost} \\
+\midrule
+Sanity content system & arboretumgreenhotel@gmail.com & Administrator & 0 \\
+Google Search Console & arboretumgreenhotel@gmail.com & Owner & 0 \\
+Google Business Profile & arboretumgreenhotel@gmail.com & Manager & 0 \\
+Bing Webmaster Tools & arboretumgreenhotel@gmail.com & Imported from GSC & 0 \\
+Resend (email delivery) & arboretumgreenhotel@gmail.com & Administrator & 0 \\
+Domain registrar (.rw) & hotel manager personal & Technical contact & USD 30 to 50 per year \\
+Vercel hosting \emph{(see Section 6)} & currently Tenex personal & Owner & 0 in year 1 \\
+\bottomrule
+\end{tabularx}
+
+Once the Vercel migration described in Section 6 is complete, every single account in the above table is hotel-owned with Tenex as administrator.
+
+% ---------------------------------------------------------------- 6. VERCEL MIGRATION
+\section{Proposal: Vercel account migration}
+
+\subsection{Current state}
+
+For the launch, the Vercel hosting account is on Tenex's personal team (\texttt{davyleroys-projects}). This is deliberate: it lets Tenex deploy and debug without waiting on the hotel to approve every action during the critical launch window.
+
+\subsection{Why we move it}
+
+Three reasons:
+
+\begin{enumerate}
+\item \textbf{Ownership consistency.} Every other account is hotel-owned; Vercel should match.
+\item \textbf{Billing clarity.} The hotel pays its own hosting directly, not through Tenex as an intermediary.
+\item \textbf{Access resilience.} If Tenex ever steps back or becomes unreachable, the hotel's site cannot go dark because a personal account lapsed.
+\end{enumerate}
+
+\subsection{When we do it}
+
+\textbf{No earlier than Monday 7 December 2026}, which is 21 days after unveiling. We wait for three weeks so that:
+
+\begin{itemize}
+\item Traffic patterns have stabilised
+\item Any post-launch fixes are shipped
+\item The hotel has time to confirm the billing arrangement is acceptable
+\end{itemize}
+
+\subsection{What the migration actually looks like}
+
+Vercel supports project transfers between accounts. In practice:
+
+\begin{enumerate}
+\item The hotel creates a Vercel Pro team on a hotel-controlled email, adds a billing card.
+\item Tenex initiates a project transfer on his current account.
+\item The hotel accepts the transfer on the new team.
+\item The domain, environment variables, deploy hooks, and deployment history all travel with the project. \textbf{The public website does not go down. Visitors notice nothing.}
+\item Tenex is added back as administrator on the new team so engineering continues uninterrupted.
+\end{enumerate}
+
+The whole operation takes about an hour of calendar time, is fully reversible for several days afterwards, and has a documented rollback path (see the internal migration runbook).
+
+\subsection{Why not stay on Vercel's free (Hobby) plan?}
+
+The Hobby plan is explicitly for personal, non-commercial use under Vercel's terms of service. A hotel website that promotes paid stays is commercial. Three specific failure modes exist on Hobby:
+
+\begin{enumerate}
+\item \textbf{Terms of service suspension risk.} Vercel can and sometimes does suspend commercial sites running on Hobby. Enforcement is quiet but unpredictable. One suspension means the website goes offline for the hours or days it takes to upgrade and restore.
+\item \textbf{Image optimisation cap breaks the site monthly.} Hobby allows only 100 image transformations per month, versus 5{,}000 on Pro. The hotel's photography requires several hundred transformations each month. Once the cap is hit, visitors get the raw, unoptimised photographs (several megabytes each) instead of the optimised versions. On mobile data the site becomes unusable until the first day of the next month.
+\item \textbf{Deploy pipeline weirdness.} Hobby + a private code repository causes Vercel to block deploys of changes made by anyone other than the account owner. This creates fragile operational dependencies.
+\end{enumerate}
+
+For USD 20 per month, Vercel Pro removes all three failure modes. The savings of a free plan are not worth the risk.
+
+\subsection{Alternative (not recommended during launch): Cloudflare Pages}
+
+If the hotel ever genuinely cannot carry USD 20 per month, the only honest alternative is Cloudflare Pages (free, commercial-use-allowed, unlimited bandwidth). Moving to Cloudflare Pages is a one-day engineering job and could be considered in year 2 if the Vercel line item becomes a budgeting obstacle. We do not recommend this change during year 1.
+
+% ---------------------------------------------------------------- 7. SERVICING
+\section{Ongoing servicing}
+
+Tenex is available to continue supporting the Arboretum Green Hotel website on an \textbf{ask and quote} basis after launch.
+
+\subsection{What that means in practice}
+
+The hotel contacts Tenex with a request (bug report, content question, feature idea, training session for a new editor). Tenex replies with a short scope, time estimate, and price. The hotel approves, Tenex delivers, Tenex invoices. No monthly retainer, no minimum hours, no ongoing commitment on either side.
+
+\subsection{Examples of common requests}
+
+\begin{itemize}
+\item \textbf{Content help:} ``The breakfast price changed, can you update it and the related translation?''
+\item \textbf{Bug reports:} ``The contact form stopped sending emails yesterday.''
+\item \textbf{Small features:} ``Can we add a seasonal banner to the homepage for December?''
+\item \textbf{Larger features:} ``Can we add a page listing upcoming events?''
+\item \textbf{Training:} ``A new staff member will take over Studio editing, can you give them a one-hour walk-through?''
+\item \textbf{Security or compliance:} ``We received a question from the data protection authority, can you prepare a short technical description?''
+\end{itemize}
+
+\subsection{Response commitments (informal, no SLA)}
+
+Tenex will acknowledge any email or message within \textbf{two business days}. Bug reports that cause the site to be visibly broken (homepage down, booking link broken, Studio unreachable) are triaged within the same business day. Non-urgent requests are scheduled based on scope.
+
+For a formal service-level agreement (guaranteed response times, uptime guarantees, out-of-hours coverage), a monthly retainer can be discussed separately.
+
+\subsection{How to contact}
+
+\begin{itemize}
+\item Email: \href{mailto:web@arboretumgreenhotel.rw}{web@arboretumgreenhotel.rw}
+\item WhatsApp: through the number shared with the manager
+\end{itemize}
+
+Please include a clear description of the request, any relevant screenshots, and the pages or Studio documents involved. The more detail, the faster the quote.
+
+% ---------------------------------------------------------------- 8. FIRST 30 DAYS
+\section{First 30 days: what to do}
+
+A short checklist for the hotel manager in the month following the unveiling.
+
+\begin{enumerate}
+\item \textbf{Confirm you can log into Sanity Studio} at \url{https://arboretumgreenhotel.rw/studio} using the account email the hotel registered. If you cannot, email Tenex.
+\item \textbf{Nominate one hotel staff member as the Sanity editor.} Share the \texttt{STAFF\_GUIDE.md} document with them. They should test publishing a small change (a dining hour, a price) within the first week.
+\item \textbf{Confirm the Vercel migration date} with Tenex (target: Monday 7 December 2026). Have a hotel-controlled email and billing card ready by then.
+\item \textbf{Review Google Business Profile once a week} for the first month. Reply to new reviews. Add seasonal photos if available.
+\item \textbf{Report any visible site issues to Tenex} immediately.
+\item \textbf{Keep the \texttt{book.} subdomain untouched} for at least 60 days. Do not retire or change the existing booking system until the hotel reviews direct-booking analytics.
+\item \textbf{Review the operating cost} at month two. If the numbers in Section 4 match reality, lock the Vercel line item into the hotel's annual budget.
+\end{enumerate}
+
+% ---------------------------------------------------------------- 9. RISKS
+\section{Risks and how they are handled}
+
+\begin{tabularx}{\textwidth}{@{} X X @{}}
+\toprule
+\textbf{Risk} & \textbf{Handling} \\
+\midrule
+Domain registrar lapse (someone forgets to renew the \texttt{.rw} domain) & Registrar renewal is annual. The hotel manager holds the account. Tenex will send a reminder 60 days before each renewal, as long as Tenex is engaged on an ask-and-quote basis. \\
+Sanity account loss (staff forget the password) & The hotel owner email controls account recovery. Multiple administrators can be invited so no single person is a bottleneck. \\
+Vercel billing lapse (card expires, hotel billing team misses the charge) & Vercel sends two warning emails and a seven-day grace period before suspending a project for non-payment. Keep billing contact details current. \\
+Content errors published by mistake (wrong price, broken hours) & Any staff member can edit the field again and publish a correction; it goes live in two minutes. For irrecoverable mistakes, Sanity keeps 30 days of document history, and Tenex can restore any field to a prior version on request. \\
+Site hacked or defaced & The site has no login system (public visitors cannot create accounts). The administrative Studio requires Sanity authentication with multi-factor options. Tenex can rotate credentials and restore a known-good version at any time. \\
+Search ranking drop & Normal Google ranking fluctuations are not alarming. If the site falls off page one for the hotel's name for more than two weeks, contact Tenex for a diagnosis. \\
+\bottomrule
+\end{tabularx}
+
+% ---------------------------------------------------------------- APPENDICES
+\section*{Appendix A: Website page map}
+
+Every page is available in English, Kinyarwanda and French. The URL pattern is \texttt{arboretumgreenhotel.rw/<language>/<page>}.
+
+\begin{tabularx}{\textwidth}{@{} l X l @{}}
+\toprule
+\textbf{Page} & \textbf{Purpose} & \textbf{Managed in Sanity?} \\
+\midrule
+\texttt{/} & Homepage with hero video or photo & Partly (hero toggle, tagline) \\
+\texttt{/stay} & Rooms with rates, amenities, policies & Yes (rooms, policies) \\
+\texttt{/dine} & Restaurant, bar, coffee & Yes (outlets, hours) \\
+\texttt{/meet} & Venue, capacities, occasions & Yes (venue details) \\
+\texttt{/discover} & Places of interest around Huye & Yes (places) \\
+\texttt{/gallery} & Photography & Yes (photos, alt text) \\
+\texttt{/contact} & Phone, WhatsApp, directions, enquiry form & Yes (contact details) \\
+\texttt{/privacy} & Privacy policy & No (legal text in code) \\
+\texttt{/terms} & Terms of service & No (legal text in code) \\
+\texttt{/studio} & Sanity content management (staff only) & n/a \\
+\bottomrule
+\end{tabularx}
+
+\section*{Appendix B: Where everything lives}
+
+\begin{tabularx}{\textwidth}{@{} X X @{}}
+\toprule
+\textbf{Thing} & \textbf{URL} \\
+\midrule
+Public website & \url{https://arboretumgreenhotel.rw} \\
+Content editor (Studio) & \url{https://arboretumgreenhotel.rw/studio} \\
+Booking system (preserved) & \url{https://book.arboretumgreenhotel.rw} \\
+Vercel dashboard (hosting) & \url{https://vercel.com} \\
+Sanity dashboard (content) & \url{https://sanity.io/manage} \\
+Google Search Console & \url{https://search.google.com/search-console} \\
+Google Business Profile & \url{https://business.google.com} \\
+Bing Webmaster Tools & \url{https://www.bing.com/webmasters} \\
+Source code & \url{https://github.com/davyleroy/arboretum-green-hotel} \\
+\bottomrule
+\end{tabularx}
+
+\section*{Appendix C: Glossary}
+
+\begin{description}
+\item[CMS (content management system).] Software that lets non-technical staff change the website's content. Sanity is the hotel's CMS.
+\item[Deploy.] The process of making a changed version of the website live for visitors. Takes about two minutes end to end.
+\item[Domain.] The name visitors type into a browser. The hotel's domain is \texttt{arboretumgreenhotel.rw}.
+\item[DNS.] The internet's phone book. Maps the hotel's domain to the server that hosts the website. Managed at the registrar.
+\item[Hosting.] The company that runs the servers delivering the website. Vercel hosts the hotel's site.
+\item[Hreflang.] A technical hint to Google saying ``this page exists in three languages.'' Already configured.
+\item[HTTPS.] Encrypted connection between visitor and website. The lock icon in the browser. Mandatory and automatic.
+\item[Registrar.] The company where a domain is registered. The hotel's \texttt{.rw} domain is registered through a Rwandan registrar.
+\item[Sanity Studio.] The website at \texttt{/studio} where staff edit content.
+\item[SEO (search engine optimisation).] Making the website easy for Google to understand and rank.
+\item[Vercel Pro.] The paid plan on Vercel (USD 20 per month) required for commercial websites.
+\end{description}
+
+\vspace{2cm}
+
+\begin{center}
+\color{ink600}
+\rule{10cm}{0.3pt}\\[0.4em]
+\small End of document. Version 1.0, 9 November 2026.\\
+Prepared by Tenex (Davy Mbuto) for Arboretum Green Hotel.
+\end{center}
+
+\end{document}

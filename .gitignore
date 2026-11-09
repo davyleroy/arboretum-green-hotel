@@ -36,6 +36,13 @@ yarn-error.log*
 # launch-week secrets gathering file (tokens, deploy hook URL, contact numbers)
 /docs/launch-values.md
 
+# LaTeX build artefacts (keep .tex and .pdf, drop the rest)
+/docs/*.aux
+/docs/*.log
+/docs/*.out
+/docs/*.toc
+/docs/*.synctex.gz
+
 # vercel
 .vercel
 
