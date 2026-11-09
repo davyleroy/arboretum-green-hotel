@@ -77,9 +77,11 @@ export default async function Stay({ params }: { params: Promise<{ locale: Local
                 <li key={item.en}>{tl(item, locale)}</li>
               ))}
             </ul>
-            <p style={{ marginTop: 28, color: "var(--ink-600)" }}>
-              <Ph on={site.checkIn.placeholder}>{t("checkTimes", { in: site.checkIn.value, out: site.checkOut.value })}</Ph>
-            </p>
+            {site.checkIn.value ? (
+              <p style={{ marginTop: 28, color: "var(--ink-600)" }}>
+                <Ph on={site.checkIn.placeholder}>{t("checkTimes", { in: site.checkIn.value, out: site.checkOut.value })}</Ph>
+              </p>
+            ) : null}
             <p className="eyebrow" style={{ marginTop: 40 }}>{t("goodToKnow")}</p>
             <ul className={s.list}>
               {site.policies.items.map((item) => (
