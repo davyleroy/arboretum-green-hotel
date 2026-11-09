@@ -115,14 +115,86 @@ In the worst case where the transfer UI misbehaves: the previous production depl
 
 ---
 
-## 5. What stays on Davy's account forever
+## 5. GitHub repository migration
 
-Only his personal GitHub account owning the fork of the repo (if any). The GitHub repository itself (`davyleroy/arboretum-green-hotel`) is a personal asset. Two options for that too, both outside this doc's scope:
+The source code lives at `github.com/davyleroy/arboretum-green-hotel`, currently a personal repo on Davy's GitHub account. It moves to the hotel in two phases: **Phase A** adds the hotel as a collaborator immediately (zero risk, zero cost, recoverable). **Phase B** transfers ownership to a hotel-controlled GitHub account or organisation at the same window as the Vercel migration.
 
-1. **Leave the repo in Davy's name** with the hotel team as a Vercel collaborator. Cheapest, no disruption.
-2. **Transfer the repo to an Arboretum GitHub org** (hotel creates one, Davy transfers, both sides get access). More formal; costs the hotel nothing if the org stays on the free GitHub plan with a public or single-repo private setup. Needed only if the hotel wants true ownership of source code.
+### 5a. Phase A: add the hotel as collaborator (do this week)
 
-Discuss with the manager after the Vercel move is complete.
+Low-stakes action that gives the hotel visibility and recovery rights without changing ownership. If anything happened to Davy's GitHub account tomorrow, the hotel still has a copy of the code and the right to fork it.
+
+**Step A1 [HOTEL].** Create (or confirm) a GitHub account on the hotel-controlled email. Ideal: a new account like `arboretumgreen` at `github.com`, verified against `arboretumgreenhotel@gmail.com`. This stays as the hotel's long-term identity on GitHub.
+
+**Step A2 [HOTEL].** Enable **two-factor authentication** on that GitHub account. Required for any account that will later own a private repository.
+
+**Step A3 [DAVY].** On `github.com/davyleroy/arboretum-green-hotel`:
+- Settings → Collaborators and teams → **Add people**
+- Enter the hotel's GitHub username
+- Permission: **Admin** (so the hotel can later accept the repo transfer in Phase B)
+- Click Add
+
+**Step A4 [HOTEL].** Open the invitation email from GitHub, click Accept. You now see the repo in your GitHub account's list of repositories under "shared with me".
+
+**That's it for Phase A.** The repo still belongs to Davy. The hotel has read + write + admin access but no billing impact (private repos on GitHub Free plan allow unlimited collaborators).
+
+### 5b. Phase B: transfer ownership (same window as Vercel migration, around Mon 7 Dec)
+
+Converts the hotel from collaborator to owner. Vercel's GitHub integration tracks the repo by internal ID, so the transfer does not break the deploy pipeline. GitHub keeps the old URL redirecting to the new one for the foreseeable future.
+
+**Step B1 [HOTEL].** Decide: transfer to the **hotel's personal GitHub account** (simplest, $0), or to a new **GitHub organisation** called `arboretum-green-hotel` (more formal, $0 on the Free plan for this use case). Trade-offs:
+
+| Target | Pros | Cons | Cost |
+|---|---|---|---|
+| Hotel personal account | Simplest. One hotel-controlled identity for everything (GitHub + Google + Sanity) | If the hotel adds more developers later they share one login or the account becomes a bottleneck | $0 |
+| New GitHub organisation `arboretum-green-hotel` | Cleaner for future growth. Multiple members can be added with individual logins. Looks professional on the public profile | Slight extra setup. GitHub Free org has limited Actions minutes but that does not affect this project | $0 |
+
+**Recommendation:** personal account now, upgrade to an org later if the hotel ever brings on additional contributors. Both options are reversible.
+
+**Step B2 [HOTEL if choosing org path].** github.com → top-right profile menu → Your organizations → **New organization** → Free plan → name `arboretum-green-hotel` → verify hotel email → add Davy as owner.
+
+**Step B3 [DAVY].** On the repo: Settings → scroll to **Danger Zone** at the bottom → **Transfer** → enter the hotel's username or org name → type the repo name to confirm.
+
+**Step B4 [HOTEL].** Accept the transfer invitation in GitHub (shows in a yellow bar at the top of the destination account/org homepage). Confirm within 24 hours; otherwise GitHub cancels the transfer.
+
+**Step B5 [HOTEL].** Add Davy as a collaborator with **Admin** rights on the newly-owned repo:
+- Settings → Collaborators (or Members if org) → Add → `davyleroy` → Admin.
+- Davy accepts.
+
+**Step B6 [AGENT].** Verify the deploy pipeline survived the transfer:
+- Open Vercel → Project → Settings → Git. Repository should now show the new owner path (e.g. `arboretumgreen/arboretum-green-hotel`), not the old `davyleroy/...`. Vercel updates this automatically from GitHub's redirect.
+- Trigger a test deploy: push a trivial commit (whitespace change) or hit Redeploy in the Vercel dashboard. Deployment should succeed.
+- Trigger the Sanity webhook test (publish a small change in Studio). Deploy hook fires, Vercel deploys. Public site updates in ~2 min.
+
+If any of those three checks fail, the fix is almost always: Vercel GitHub App permissions need re-authorisation on the new owner. Vercel shows the exact remediation link.
+
+**Step B7 [DAVY, cleanup, +7 days].** After a week of stable operation on the hotel-owned repo:
+- Remove your personal account as a collaborator if it is no longer needed (you'd stay as Admin per Step B5; this would remove duplicate access).
+- Archive any personal forks of the repo (so they do not confuse future audits).
+
+### 5c. What transfers with the repo
+
+| Item | Transfers? | Notes |
+|---|---|---|
+| All commits, branches, tags | Yes | Full git history preserved |
+| Issues and pull requests | Yes | URLs update; old URLs redirect |
+| Releases and release assets | Yes | Including any `v1.0.0` tag from launch freeze |
+| Stars and watchers | Yes | |
+| Deployments (Vercel history) | Yes | Vercel tracks by internal ID |
+| GitHub Actions workflows | Yes | May need secret re-creation in the new owner's Actions settings |
+| Repository secrets | **No** | GitHub does not transfer secrets. We have none configured for this repo today, so no action needed. |
+| Webhooks | Yes | Vercel's deploy integration is a webhook, continues firing |
+| Settings (branch protection, etc.) | Yes | |
+| Old URLs | Redirect | `github.com/davyleroy/arboretum-green-hotel/*` keeps redirecting to the new path for the foreseeable future |
+
+### 5d. Rollback (if Phase B goes wrong)
+
+GitHub transfers are reversible within the UI for several days:
+
+1. On the new owner's side: repo Settings → Danger Zone → Transfer back to `davyleroy`.
+2. Davy accepts on his account.
+3. Vercel's GitHub App re-authorisation prompt reappears; approve it.
+
+No data loss; the git history is intact throughout.
 
 ---
 

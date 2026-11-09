@@ -14,6 +14,12 @@
 \usepackage{fancyhdr}
 \usepackage{hyperref}
 \usepackage{parskip}
+\usepackage{xurl}
+\urlstyle{tt}
+
+% Give LaTeX extra slack on lines that resist clean breaks (long URLs, emails)
+\emergencystretch=6em
+\hbadness=2000
 
 \definecolor{forest}{HTML}{12241B}
 \definecolor{brass}{HTML}{A9844F}
@@ -96,7 +102,7 @@ The site lives on a modern hosting platform (Vercel) and uses a hosted content s
 \item[Primary contact:] Davy Mbuto, Tenex, \href{mailto:web@arboretumgreenhotel.rw}{web@arboretumgreenhotel.rw}.
 \end{description}
 
-The hotel's existing booking system has been preserved unchanged at the subdomain \texttt{book.arboretumgreenhotel.rw}. Guests and existing bookings are not disrupted.
+The hotel's existing booking system has been preserved unchanged at the subdomain \texttt{book.\allowbreak arboretumgreenhotel.\allowbreak rw}. Guests and existing bookings are not disrupted.
 
 % ---------------------------------------------------------------- 2. WHAT WAS BUILT
 \section{What was built}
@@ -131,7 +137,7 @@ A designated hotel staff member can edit the site at \url{https://arboretumgreen
 \item Places of interest around Huye
 \item Any photo, including replacing the image and writing its alternative text in three languages
 \item The ``good to know'' policies (payment, deposit, cancellation, breakfast, day use)
-\item The online booking URL once the booking system is confirmed live at \texttt{book.arboretumgreenhotel.rw}
+\item The online booking URL once the booking system is confirmed live at \texttt{book.\allowbreak arboretumgreenhotel.\allowbreak rw}
 \end{itemize}
 
 What they \emph{cannot} accidentally change, because it stays in the code:
@@ -171,7 +177,7 @@ The site is prepared for Google and Bing from launch day:
 
 \subsection{Booking continuity}
 
-The hotel's existing booking system has been moved to the subdomain \texttt{book.arboretumgreenhotel.rw}. Existing bookmarks, OTA deep links, and WhatsApp conversations that reference booking URLs continue to work. The new marketing site at the apex (\texttt{arboretumgreenhotel.rw}) links to the booking subdomain for actual reservations.
+The hotel's existing booking system has been moved to the subdomain \texttt{book.\allowbreak arboretumgreenhotel.\allowbreak rw}. Existing bookmarks, OTA deep links, and WhatsApp conversations that reference booking URLs continue to work. The new marketing site at the apex (\texttt{arboretumgreenhotel.\allowbreak rw}) links to the booking subdomain for actual reservations.
 
 This arrangement is reviewed after 60 days of post-launch analytics. If direct bookings through the subdomain stay strong, it continues as is. If analytics show most guests use WhatsApp instead, the subdomain can be simplified or retired.
 
@@ -206,7 +212,7 @@ In the first year of operation, the Vercel hosting account remains on Tenex's pe
 \toprule
 \textbf{Line item} & \textbf{USD per year} & \textbf{RWF per year} \\
 \midrule
-Domain renewal (\texttt{arboretumgreenhotel.rw}) & 30 to 50 & 40{,}000 to 68{,}000 \\
+Domain renewal (\texttt{arboretumgreenhotel.\allowbreak rw}) & 30 to 50 & 40{,}000 to 68{,}000 \\
 Sanity content management & 0 & 0 \\
 Resend transactional email & 0 & 0 \\
 Google and Bing services & 0 & 0 \\
@@ -276,11 +282,11 @@ Every account that touches the hotel's online presence is owned on a hotel-contr
 \toprule
 \textbf{Account} & \textbf{Hotel owner email} & \textbf{Tenex role} & \textbf{Hotel monthly cost} \\
 \midrule
-Sanity content system & arboretumgreenhotel@gmail.com & Administrator & 0 \\
-Google Search Console & arboretumgreenhotel@gmail.com & Owner & 0 \\
-Google Business Profile & arboretumgreenhotel@gmail.com & Manager & 0 \\
-Bing Webmaster Tools & arboretumgreenhotel@gmail.com & Imported from GSC & 0 \\
-Resend (email delivery) & arboretumgreenhotel@gmail.com & Administrator & 0 \\
+Sanity content system & arboretumgreenhotel@\allowbreak gmail.\allowbreak com & Administrator & 0 \\
+Google Search Console & arboretumgreenhotel@\allowbreak gmail.\allowbreak com & Owner & 0 \\
+Google Business Profile & arboretumgreenhotel@\allowbreak gmail.\allowbreak com & Manager & 0 \\
+Bing Webmaster Tools & arboretumgreenhotel@\allowbreak gmail.\allowbreak com & Imported from GSC & 0 \\
+Resend (email delivery) & arboretumgreenhotel@\allowbreak gmail.\allowbreak com & Administrator & 0 \\
 Domain registrar (.rw) & hotel manager personal & Technical contact & USD 30 to 50 per year \\
 Vercel hosting \emph{(see Section 6)} & currently Tenex personal & Owner & 0 in year 1 \\
 \bottomrule
@@ -340,6 +346,21 @@ The Hobby plan is explicitly for personal, non-commercial use under Vercel's ter
 \end{enumerate}
 
 For USD 20 per month, Vercel Pro removes all three failure modes. The savings of a free plan are not worth the risk.
+
+\subsection{Source code repository: also moves to the hotel}
+
+The website's source code lives on GitHub at \url{https://github.com/davyleroy/arboretum-green-hotel}, currently on Davy's personal GitHub account. It transfers to a hotel-controlled GitHub account at the same time as the Vercel migration, in two phases to keep risk low.
+
+\paragraph{Phase A, this week: add the hotel as a collaborator.}
+The hotel creates (or confirms) a GitHub account on a hotel-controlled email, enables two-factor authentication, then Davy adds that account as an Admin collaborator on the repository. Zero cost, zero risk. The hotel now has visibility of the code and the right to copy it, but ownership has not changed.
+
+\paragraph{Phase B, same window as Vercel migration (around 7 December 2026): transfer ownership.}
+The hotel chooses whether to own the repo under a personal GitHub account or under a new GitHub organisation named \texttt{arboretum-green-hotel}. Both options cost the hotel nothing on GitHub's Free plan. Davy initiates the transfer, the hotel accepts, Davy is re-added as an Admin collaborator so engineering can continue.
+
+\paragraph{Does this break the website?} No. Vercel's integration with GitHub tracks the repository by an internal identifier, not by its URL, so deploys continue without interruption when ownership changes. GitHub also keeps the old URL redirecting to the new one for the foreseeable future, so any link that points to the old repository path keeps working. We verify both facts with a test deploy right after the transfer.
+
+\paragraph{What the hotel ends up owning.}
+Full git history, every commit from the first line of code through launch and beyond, every version tag (including \texttt{v1.0.0} from the launch freeze), every documented issue and pull request, every deployment record. The source code becomes an asset of Arboretum Green Hotel, under its own name on GitHub.
 
 \subsection{Alternative (not recommended during launch): Cloudflare Pages}
 
@@ -414,7 +435,7 @@ Search ranking drop & Normal Google ranking fluctuations are not alarming. If th
 % ---------------------------------------------------------------- APPENDICES
 \section*{Appendix A: Website page map}
 
-Every page is available in English, Kinyarwanda and French. The URL pattern is \texttt{arboretumgreenhotel.rw/<language>/<page>}.
+Every page is available in English, Kinyarwanda and French. The URL pattern is \texttt{arboretumgreenhotel.\allowbreak rw/\allowbreak <language>/\allowbreak <page>}.
 
 \begin{tabularx}{\textwidth}{@{} l X l @{}}
 \toprule
@@ -456,7 +477,7 @@ Source code & \url{https://github.com/davyleroy/arboretum-green-hotel} \\
 \begin{description}
 \item[CMS (content management system).] Software that lets non-technical staff change the website's content. Sanity is the hotel's CMS.
 \item[Deploy.] The process of making a changed version of the website live for visitors. Takes about two minutes end to end.
-\item[Domain.] The name visitors type into a browser. The hotel's domain is \texttt{arboretumgreenhotel.rw}.
+\item[Domain.] The name visitors type into a browser. The hotel's domain is \texttt{arboretumgreenhotel.\allowbreak rw}.
 \item[DNS.] The internet's phone book. Maps the hotel's domain to the server that hosts the website. Managed at the registrar.
 \item[Hosting.] The company that runs the servers delivering the website. Vercel hosts the hotel's site.
 \item[Hreflang.] A technical hint to Google saying ``this page exists in three languages.'' Already configured.
