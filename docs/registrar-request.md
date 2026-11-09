@@ -130,6 +130,28 @@ Looking forward to Wed.
 
 ---
 
+## If the holder replies "I don't see those settings" (Cloudflare clarification)
+
+A Mon 9 Nov crawl of the apex revealed DNS is actually hosted on *Cloudflare*, not on the registrar panel. If the person the manager named as the holder is only the registrar account owner (not the Cloudflare account owner), they will not find the records we asked about. Send this follow-up:
+
+~~~
+Thanks for checking. Quick clarification: the DNS for
+arboretumgreenhotel.rw lives on *Cloudflare*, not on the
+registrar's panel. The records I need changed are at
+dash.cloudflare.com, not at the .rw registrar.
+
+Do you also manage the Cloudflare account? If yes, we go
+ahead; the changes are the same records I listed.
+
+If no, who set up the Cloudflare proxy for the old site?
+That person is who we need. Often it was the original web
+developer or agency.
+
+Thanks.
+~~~
+
+---
+
 ## If Gate 1 fails (holder does not reply by Tuesday 20:00)
 
 Send this escalation to both the holder and the hotel manager:

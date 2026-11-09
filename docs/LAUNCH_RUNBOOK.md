@@ -68,9 +68,13 @@ Skeleton shipped at [docs/DOMAIN_PLAN.md](./DOMAIN_PLAN.md) with 11 sections rea
 
 ## Tue 10 Nov
 
-### 9. Gate 1: registrar access confirmed by 20:00 [MANAGER + HOLDER]
+### 9. Gate 1: DNS-host access confirmed by 20:00 [MANAGER + HOLDER]
 
-Primary access model: **option (d), holder does every change, sends screenshot + confirmation per session, Davy verifies via public `dig` from two resolvers (`@1.1.1.1` and `@8.8.8.8`)**. No credentials move.
+**IMPORTANT (Mon 9 Nov crawl finding):** DNS for `arboretumgreenhotel.rw` is on **Cloudflare**, not on the registrar (Irembo or similar). All record changes land on Cloudflare. The registrar is only needed for renewal and for ownership transfer, never for this cutover. Details in [DOMAIN_PLAN.md](./DOMAIN_PLAN.md) §2.
+
+The person we actually need is the **Cloudflare account holder**. This may or may not be the same person the manager named as "the domain holder". If the holder replies that they do not see the DNS records in the registrar panel, they are the registrar holder but not the Cloudflare holder; we then ask the manager who set up the Cloudflare proxy (likely the original web developer or old-site agency).
+
+Primary access model: **option (d), holder does every change on Cloudflare, sends screenshot + confirmation per session, Davy verifies via public `dig` from two resolvers (`@1.1.1.1` and `@8.8.8.8`)**. No credentials move.
 
 Fallback: **option (a), 15-minute screen-share** invoked only if a dig check reveals a typo in a time-critical window. No credentials shared in either option.
 
