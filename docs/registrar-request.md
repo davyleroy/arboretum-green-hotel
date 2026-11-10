@@ -100,38 +100,53 @@ Thank you,
 Vercel gave us CNAME values for BOTH apex and www (not an A record). This works because Cloudflare supports CNAME flattening. Every new record must have the **grey cloud (DNS only)** toggle, not the orange cloud (proxied). Send this as a reply in the same WhatsApp thread:
 
 ~~~
-Here are the final values for tomorrow (Wed) and Thursday. The DNS records live on *Cloudflare* (nameservers braelyn.ns.cloudflare.com and brian.ns.cloudflare.com), so all changes happen at dash.cloudflare.com.
+Here are the final values for Wed and Thu. The DNS records live on *Cloudflare* (nameservers braelyn.ns.cloudflare.com and brian.ns.cloudflare.com), so all changes happen at dash.cloudflare.com.
 
-*Important across every record you create:* set the proxy toggle to *DNS only (grey cloud)*, NOT Proxied (orange cloud). If the cloud stays orange, TLS breaks and the site returns errors to visitors.
+*Important for every NEW record you create:* set the proxy toggle to *DNS only (grey cloud)*, NOT Proxied (orange cloud). If the cloud stays orange, TLS breaks on Thursday and the site returns errors.
 
-*Wed book record:*
-```
-Host:   book
-Type:   [A or CNAME, waiting on booking host]
-Value:  [actual value from booking host]
-Proxy:  DNS only (grey cloud)
-TTL:    Auto
-```
+*Wed Session 1 (nothing public changes):*
 
-*Thu apex CNAME (REPLACES the current apex A and AAAA records):*
+1. Lower the TTL to 300 seconds on all six existing records:
+   - 2x apex A records (172.67.162.241, 104.21.57.102)
+   - 2x apex AAAA records
+   - 2x www A records
+
+   Values stay exactly the same, only the TTL drops. Leave the orange cloud as it is on these six; they are being retired Thursday.
+
+2. Add this one new record for Google Search Console verification:
+   ```
+   Host:   kp7fatlmi3dh
+   Type:   CNAME
+   Value:  gv-jt4m3wturavpmr.dv.googlehosted.com
+   TTL:    Auto
+   Proxy:  DNS only (grey cloud)
+   ```
+
+That is all for Wednesday. No booking subdomain is being created; we are retiring the old static site entirely and redirecting old URLs from the new site instead.
+
+*Thu Session 2 (the cutover, around 09:00):*
+
+First DELETE the six existing records listed in step 1 above. A CNAME cannot coexist with A on the same name, so the old ones must go first.
+
+Then add the two new CNAMEs with grey cloud:
+
+Apex:
 ```
 Host:   @  (or type the full domain if the panel asks)
 Type:   CNAME
 Value:  2bc27baebe0b5f18.vercel-dns-017.com.
-Proxy:  DNS only (grey cloud)
 TTL:    Auto
+Proxy:  DNS only (grey cloud)
 ```
 
-*Thu www CNAME (REPLACES the current www A records):*
+www:
 ```
 Host:   www
 Type:   CNAME
 Value:  2bc27baebe0b5f18.vercel-dns-017.com.
-Proxy:  DNS only (grey cloud)
 TTL:    Auto
+Proxy:  DNS only (grey cloud)
 ```
-
-Before adding the two CNAMEs on Thursday, please DELETE the existing records for @ and www (they are currently A records pointing at 172.67.162.241, 104.21.57.102 and AAAA records). A CNAME cannot coexist with an A on the same name.
 
 Please do not use any value you see in a web guide; only these exact values from Vercel.
 

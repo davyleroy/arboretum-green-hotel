@@ -113,43 +113,42 @@ sanity.io/manage → project → Members → Invite. One hotel staff person, rol
 
 ---
 
-## Wed 11 Nov: Registrar Session 1 (nothing public changes)
+## Wed 11 Nov: Cloudflare Session 1 (nothing public changes)
 
-Holder makes every change on the registrar panel; Davy verifies by public DNS lookup after each. Order matters:
+Cloudflare account holder makes every change on dash.cloudflare.com; Davy verifies by public DNS lookup after each. Scope is tiny under Option B (old site retirement): just lower TTLs and add the GSC verification CNAME.
 
-1. **Lower TTL to 300 seconds** on the apex A (and AAAA if any) and on the `www` record. Values stay the same, only TTL drops.
-2. **Add new record: `book`** (A or CNAME as the booking host specified in step 10c). Pointing at the booking system's current host.
-3. **Add Google Search Console verification CNAME** (updated: Google now uses a CNAME for URL-prefix verification, not a TXT on the apex):
+1. **Lower TTL to 300 seconds** on all six existing records (2× apex A, 2× apex AAAA, 2× www A). Values stay the same, only TTL drops. Proxy toggle stays as it is (currently orange on all).
+2. **Add Google Search Console verification CNAME** with grey cloud (DNS only):
    ```
    Host:  kp7fatlmi3dh
+   Type:  CNAME
    Value: gv-jt4m3wturavpmr.dv.googlehosted.com
-   TTL:   3600
+   TTL:   Auto (3600)
+   Proxy: DNS only (grey cloud)
    ```
-4. **Add Resend DNS records** if prepared in step 10d.
-5. **Do not touch** the apex A record value, the `www` value, MX, SPF, DKIM, DMARC, CAA, existing TXT, or NS records.
+3. **Do not touch** the apex A/AAAA values, the `www` A values, MX (none exist), SPF (none), DKIM (none), DMARC (none), CAA (none), existing TXT (none), or NS records.
+
+**No `book` record is added** — Option B retires the old static site entirely. The old URLs get 308 redirects in `next.config.ts` (added Thu after cutover).
 
 ### Verification by Davy after each holder-confirmation
 
 ```bash
-# After the TTL change
+# After the TTL change (values unchanged, TTL drops)
 dig @1.1.1.1 arboretumgreenhotel.rw A
-dig @1.1.1.1 www.arboretumgreenhotel.rw
-# After book. record added
-dig @1.1.1.1 book.arboretumgreenhotel.rw A
+dig @1.1.1.1 www.arboretumgreenhotel.rw A
 # After GSC CNAME added
 dig @1.1.1.1 kp7fatlmi3dh.arboretumgreenhotel.rw CNAME
 # Verify from a second resolver
 dig @8.8.8.8 kp7fatlmi3dh.arboretumgreenhotel.rw CNAME
 ```
 
-### Gate 2 test (by 18:00)
+### Wed verification (replaces former Gate 2)
 
-- `curl -sIL https://book.arboretumgreenhotel.rw` returns 200 with a valid certificate.
-- A full test booking flow works end to end on `book.` to the step **before** payment or confirmation (do not submit a real booking).
-- The booking app's internal links stay on `book.`, do not jump back to apex.
-- Search Console: click **Verify** on the URL-prefix property — must flip to "Ownership verified".
+- [ ] TTL on apex A records shows 300 seconds via `dig @1.1.1.1 arboretumgreenhotel.rw A` (the number after the IP in the dig output).
+- [ ] `dig @1.1.1.1 kp7fatlmi3dh.arboretumgreenhotel.rw CNAME` returns `gv-jt4m3wturavpmr.dv.googlehosted.com`.
+- [ ] Search Console → click **Verify** on the URL-prefix property for `https://arboretumgreenhotel.rw/` → must flip to "Ownership verified".
 
-**If Gate 2 fails: no cutover Thursday.** Fix the booking host first. Rolling the apex to Vercel with a broken `book.` would take the hotel's current booking system offline.
+**If any check fails:** each of the three items is independent of the others. Retry the one that failed. Nothing blocks Thursday's cutover.
 
 ### CSP burn-in review [AGENT] (Wed evening)
 

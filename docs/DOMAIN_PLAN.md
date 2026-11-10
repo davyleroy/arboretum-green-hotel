@@ -147,13 +147,20 @@ This means the "preserve the booking system at `book.*`" story from the brief is
 | Has the booking app's hard-coded URL been changed? | N/A under Option B |
 | Test booking flow walked end to end on `book.` | N/A under Option B |
 
-### Option A — preserve as-is at `book.`
+### CHOSEN: Option B — retire the old static site, redirect old URLs
 
-Point `book.arboretumgreenhotel.rw` at the current origin (behind or in front of Cloudflare proxy). The old static site stays live at `book.` for 60 days while analytics confirms whether anyone uses it. Cost: unchanged hosting. Needs: Cloudflare account holder's time to configure, origin IP, confirmation the old host will serve the new hostname.
+Decision made Tue 10 Nov. The new site at the apex already handles everything the old site did, in three languages, with WhatsApp booking, with proper SEO, with a Sanity CMS. There is nothing worth preserving about the old static HTML except the URLs users may have bookmarked. Those we handle with 308 redirects in [next.config.ts](../next.config.ts). The old host contract can be wound down.
 
-### Option B — retire the old static site, redirect old URLs (recommended)
+**Consequences of Option B:**
 
-The new site at the apex already handles everything the old site did, in three languages, with WhatsApp booking, with proper SEO, with a Sanity CMS. There is nothing worth preserving about the old static HTML except the URLs users may have bookmarked. Those we handle with 308 redirects in [next.config.ts](../next.config.ts). The old host contract can be wound down.
+- **No `book.` DNS record is created.** The Wed Session 1 change sheet drops step for `book`; Session 1 reduces to TTL lowering + GSC CNAME only.
+- **Gate 2 (book. live over HTTPS by Wed 18:00) is removed.** It was a test of the booking-host readiness; there is no booking host.
+- **`bookingUrl` in Sanity stays empty.** The "Book online" link in the Book sheet and footer does not render. When the hotel adds a real booking engine (year 2+), they set `bookingUrl` to that engine's URL in Studio and the link appears automatically.
+- **The 404 page's "Looking for online booking?" line is retargeted** from `book.arboretumgreenhotel.rw` to `/stay` on the new site.
+
+### (Option A — NOT CHOSEN) preserve old static site at `book.`
+
+Would have required the Cloudflare account holder's time to configure, the origin IP (hidden behind Cloudflare proxy), and confirmation the old host would serve the new hostname. None of this is needed now.
 
 **Redirects to add in Session 2 (after cutover, via `next.config.ts` `redirects()`):**
 
@@ -175,31 +182,32 @@ Pending from the manager: a decision between A and B.
 
 ---
 
-## 6. Session 1 change sheet (Wed 11 Nov)
+## 6. Session 1 change sheet (Wed 11 Nov) — UPDATED for Option B
 
-**Nothing public changes in this session.** The apex and `www` are untouched. We lower TTLs (enabling fast rollback on Thu), add the `book.` record, add the Google Search Console TXT, and if needed Resend's DNS.
+**Nothing public changes in this session.** The apex and `www` are untouched. We only lower TTLs (enabling fast rollback on Thu) and add the Google Search Console verification CNAME. No `book` record (Option B retires the old site).
 
-| Action | Record | Type | Old value | New value | TTL |
-|---|---|---|---|---|---|
-| **Lower TTL** | `arboretumgreenhotel.rw` | A | TODO (current TTL) | same IP, TTL 300 | 300 |
-| **Lower TTL** | `arboretumgreenhotel.rw` | AAAA (if any) | TODO | same v6 addr, TTL 300 | 300 |
-| **Lower TTL** | `www.arboretumgreenhotel.rw` | A or CNAME | TODO | same, TTL 300 | 300 |
-| **Add** | `book.arboretumgreenhotel.rw` | A or CNAME | (none) | TODO (from §5) | 3600 |
-| **Add** | `arboretumgreenhotel.rw` | TXT | (none) | `google-site-verification=TODO` | 3600 |
-| **Add** | `arboretumgreenhotel.rw` | TXT | (none) | TODO (Resend DKIM if applicable) | 3600 |
-| **Add** | `send.arboretumgreenhotel.rw` | CNAME | (none) | TODO (Resend domain target if applicable) | 3600 |
-| **Do NOT touch** | apex A/AAAA value | — | keep | keep | lowered TTL only |
-| **Do NOT touch** | `www` target | — | keep | keep | lowered TTL only |
-| **Do NOT touch** | MX, SPF, DKIM, DMARC, CAA, existing TXT, NS | — | keep | keep | keep |
+| Action | Record | Type | Old value | New value | TTL | Proxy |
+|---|---|---|---|---|---|---|
+| **Lower TTL** | apex (`@`) | A | `172.67.162.241`, TTL ? | same, TTL 300 | 300 | keep as-is |
+| **Lower TTL** | apex (`@`) | A | `104.21.57.102`, TTL ? | same, TTL 300 | 300 | keep as-is |
+| **Lower TTL** | apex (`@`) | AAAA | `2606:4700:3036::ac43:a2f1`, TTL ? | same, TTL 300 | 300 | keep as-is |
+| **Lower TTL** | apex (`@`) | AAAA | `2606:4700:3035::6815:3966`, TTL ? | same, TTL 300 | 300 | keep as-is |
+| **Lower TTL** | `www` | A | `172.67.162.241`, TTL ? | same, TTL 300 | 300 | keep as-is |
+| **Lower TTL** | `www` | A | `104.21.57.102`, TTL ? | same, TTL 300 | 300 | keep as-is |
+| **Add** | `kp7fatlmi3dh` | CNAME | (none) | `gv-jt4m3wturavpmr.dv.googlehosted.com` | 3600 | DNS only (grey) |
+| **Do NOT touch** | apex A/AAAA values | — | keep | keep | lowered TTL only | keep orange |
+| **Do NOT touch** | `www` values | — | keep | keep | lowered TTL only | keep orange |
+| **Do NOT touch** | MX, SPF, DKIM, DMARC, CAA, existing TXT, NS | — | keep | keep | keep | — |
 
-### Gate 2 test (by Wed 11 Nov 18:00)
+### Gate 2 — REMOVED (no longer applicable)
 
-- [ ] `curl -sIL https://book.arboretumgreenhotel.rw` → 200 with valid certificate
-- [ ] Test booking flow works end to end on `book.` to the step before payment
-- [ ] Booking app's internal links stay on `book.` (do not jump back to apex)
-- [ ] Search Console property `arboretumgreenhotel.rw` shows "Verified"
+Previously: "book. live over HTTPS by Wed 18:00". Option B dropped the `book.` record entirely, so there is nothing to verify at this gate. Verification Wednesday now reduces to:
 
-**If Gate 2 fails:** do NOT cut over the apex on Thursday. Fix `book.` first.
+- [ ] `dig @1.1.1.1 arboretumgreenhotel.rw A` returns the same two Cloudflare IPs as before, TTL 300
+- [ ] `dig @1.1.1.1 kp7fatlmi3dh.arboretumgreenhotel.rw CNAME` returns `gv-jt4m3wturavpmr.dv.googlehosted.com`
+- [ ] Search Console → click "Verify" on the URL-prefix property → "Ownership verified"
+
+**If verification fails:** the TTL reduction and the GSC CNAME are independent, so we can retry each one. Nothing blocks Thursday.
 
 ---
 
