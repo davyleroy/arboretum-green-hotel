@@ -18,8 +18,8 @@
   "notFound": {
     "title": "Urupapuro ntitwarubonye",
     "text": "Nta rupapuro rwo twabonye nk'uko mwarusabye. Amagize akurikira ashobora kubafasha.",
-    "bookingLabel": "Murashaka kwiyandikisha kuri interineti?",
-    "bookingHost": "book.arboretumgreenhotel.rw"
+    "bookingLabel": "Murashaka kwiyandikisha kurara?",
+    "bookingCta": "Reba ibyumba byacu"
   },
   "nav": {
     "home": "Ahabanza",

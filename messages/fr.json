@@ -18,8 +18,8 @@
   "notFound": {
     "title": "Page introuvable",
     "text": "Nous ne trouvons pas la page demandée. Les liens ci-dessous peuvent aider.",
-    "bookingLabel": "Vous cherchez la réservation en ligne ?",
-    "bookingHost": "book.arboretumgreenhotel.rw"
+    "bookingLabel": "Envie de réserver un séjour ?",
+    "bookingCta": "Découvrir nos chambres"
   },
   "nav": {
     "home": "Accueil",

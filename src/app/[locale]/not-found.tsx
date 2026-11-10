@@ -4,7 +4,6 @@ import { Link } from "@/i18n/navigation";
 export default function NotFound() {
   const t = useTranslations("notFound");
   const tn = useTranslations("nav");
-  const bookingHost = t("bookingHost");
   return (
     <section className="section" style={{ paddingTop: 160 }}>
       <div className="wrap" style={{ maxWidth: 720 }}>
@@ -18,7 +17,7 @@ export default function NotFound() {
         </ul>
         <p style={{ marginTop: 40, color: "var(--ink-600)" }}>
           {t("bookingLabel")}{" "}
-          <a href={`https://${bookingHost}`} className="textlink">{bookingHost}</a>
+          <Link href="/stay" className="textlink">{t("bookingCta")}</Link>
         </p>
       </div>
     </section>

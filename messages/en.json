@@ -18,8 +18,8 @@
   "notFound": {
     "title": "Page not found",
     "text": "We could not find the page you asked for. The links below may help.",
-    "bookingLabel": "Looking for online booking?",
-    "bookingHost": "book.arboretumgreenhotel.rw"
+    "bookingLabel": "Looking to book a stay?",
+    "bookingCta": "Explore our rooms"
   },
   "nav": {
     "home": "Home",
