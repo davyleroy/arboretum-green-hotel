@@ -177,9 +177,11 @@ The site is prepared for Google and Bing from launch day:
 
 \subsection{Booking continuity}
 
-The hotel's existing booking system has been moved to the subdomain \texttt{book.\allowbreak arboretumgreenhotel.\allowbreak rw}. Existing bookmarks, OTA deep links, and WhatsApp conversations that reference booking URLs continue to work. The new marketing site at the apex (\texttt{arboretumgreenhotel.\allowbreak rw}) links to the booking subdomain for actual reservations.
+The previous hotel website was a static HTML site with a booking page that routed guests to WhatsApp. The new website replaces it entirely: every old URL (for example \texttt{/book.html}, \texttt{/rooms.html}, \texttt{/contact.html}) is redirected with a permanent 308 to the matching page on the new site, so existing bookmarks, printed QR codes, and OTA deep links continue to work with zero broken links.
 
-This arrangement is reviewed after 60 days of post-launch analytics. If direct bookings through the subdomain stay strong, it continues as is. If analytics show most guests use WhatsApp instead, the subdomain can be simplified or retired.
+Bookings today use the same channel they used before: visitors click the Book button, which opens a prepared WhatsApp message to the hotel's number. The hotel reception confirms availability and price in conversation, as they do already. No booking engine is required for this to work.
+
+A subdomain \texttt{book.\allowbreak arboretumgreenhotel.\allowbreak rw} is reserved for future use. When the hotel later adds a dedicated booking engine (SiteMinder, Cloudbeds, or similar), the engine's URL is entered in the \textbf{Online booking URL} field of Sanity Studio, and a prominent "Book online" link appears across the site automatically. No code change is needed; the hotel decides when it is ready.
 
 \subsection{Security posture}
 
