@@ -107,14 +107,27 @@ book.arboretumgreenhotel.rw     (does not exist)
 
 ---
 
-## 4. Vercel-assigned DNS values (fill in on Tue 10 Nov, step 9b of runbook)
+## 4. Vercel-assigned DNS values (captured Tue 10 Nov from Vercel Domains page)
 
-Captured exactly as Vercel displays them in Project → Settings → Domains after adding `arboretumgreenhotel.rw` and `www.arboretumgreenhotel.rw`. **Do not use any value from a tutorial.** Vercel assigns these per project.
+Vercel chose the **CNAME-flattening approach** for both records, taking advantage of Cloudflare's native support for CNAME-on-apex. Both apex and www point at the same target.
 
-| Record | Target | Source |
-|---|---|---|
-| `arboretumgreenhotel.rw` A | TODO (exact IP shown by Vercel) | Vercel Domains page |
-| `www.arboretumgreenhotel.rw` CNAME | TODO (e.g. `cname.vercel-dns.com`) | Vercel Domains page |
+| Record | Type | Name | Value | Cloudflare proxy |
+|---|---|---|---|---|
+| Apex | CNAME | `@` | `2bc27baebe0b5f18.vercel-dns-017.com.` | **Disabled (grey cloud)** |
+| www | CNAME | `www` | `2bc27baebe0b5f18.vercel-dns-017.com.` | **Disabled (grey cloud)** |
+
+### Critical: "Disabled" proxy setting
+
+In the Cloudflare DNS panel each record has a cloud icon:
+
+- **Orange cloud = Proxied** (Cloudflare terminates TLS, serves from Cloudflare's edge, hides the origin IP)
+- **Grey cloud = DNS only** (Cloudflare only answers DNS; traffic goes direct to the origin)
+
+Vercel requires **grey cloud** on both records. With orange cloud, Cloudflare serves its own Let's Encrypt cert instead of Vercel's, Vercel's edge routing breaks, and visitors see errors. The current apex is on orange cloud today (why `dig` returns only Cloudflare IPs); the holder must toggle it to grey when creating the new records.
+
+### Why CNAME on apex works here
+
+Standard DNS prohibits CNAME at the zone apex (RFC conflicts with SOA/NS). Cloudflare implements **CNAME flattening**: at query time Cloudflare resolves the CNAME to its underlying A record and returns the A record to the resolver. Vercel sees this and assigns a CNAME value for both records, knowing Cloudflare will flatten it correctly. If DNS were hosted somewhere without CNAME flattening (plain BIND, most old registrar panels), Vercel would have given us an A record for apex instead.
 
 ---
 
@@ -190,18 +203,53 @@ Pending from the manager: a decision between A and B.
 
 ---
 
-## 7. Session 2 change sheet (Thu 12 Nov, ~09:00)
+## 7. Session 2 change sheet (Thu 12 Nov, ~09:00) — UPDATED for CNAME-flattening approach
 
-At least 24 hours after Session 1.
+At least 24 hours after Session 1. The Vercel values are in §4; the proxy toggle MUST be grey cloud (DNS only) on every new record.
 
-| Action | Record | Type | Old value | New value | TTL |
-|---|---|---|---|---|---|
-| **Replace** | `arboretumgreenhotel.rw` | A | TODO (old apex IP) | TODO (Vercel A from §4) | 300 then 3600 |
-| **Delete** | `arboretumgreenhotel.rw` | AAAA (if any) | TODO | (delete record) | — |
-| **Replace** | `www.arboretumgreenhotel.rw` | CNAME | TODO (old) | TODO (Vercel CNAME from §4) | 300 then 3600 |
-| **Delete** | `www.arboretumgreenhotel.rw` | A (if any, replaced by CNAME) | TODO | (delete record) | — |
-| **Add if none exist** | `arboretumgreenhotel.rw` | CAA | (none) | `0 issue "letsencrypt.org"` | 3600 |
-| **Do NOT touch** | MX, SPF, DKIM, DMARC, book, send, existing TXT, NS | — | keep | keep | keep |
+**Step-by-step on Cloudflare DNS panel:**
+
+| Step | Action | Record | Type | Value | TTL | Proxy |
+|---|---|---|---|---|---|---|
+| 1 | **Delete** | apex (`@`) | A | `172.67.162.241` (existing Cloudflare IP) | — | — |
+| 2 | **Delete** | apex (`@`) | A | `104.21.57.102` (existing Cloudflare IP) | — | — |
+| 3 | **Delete** | apex (`@`) | AAAA | `2606:4700:3036::ac43:a2f1` | — | — |
+| 4 | **Delete** | apex (`@`) | AAAA | `2606:4700:3035::6815:3966` | — | — |
+| 5 | **Delete** | `www` | A | `172.67.162.241` | — | — |
+| 6 | **Delete** | `www` | A | `104.21.57.102` | — | — |
+| 7 | **Add** | apex (`@`) | **CNAME** | `2bc27baebe0b5f18.vercel-dns-017.com.` | Auto (300 for first hour) | **DNS only (grey)** |
+| 8 | **Add** | `www` | **CNAME** | `2bc27baebe0b5f18.vercel-dns-017.com.` | Auto (300 for first hour) | **DNS only (grey)** |
+| 9 | **Do NOT touch** | MX, SPF, DKIM, DMARC, `book`, `send`, existing TXT, NS, the GSC CNAME added Wed | — | keep | — | — |
+
+**CAA record:** none currently exist (confirmed in §3 snapshot). Brief instructs "add only if other CAA records exist", so **skip CAA entirely**.
+
+### Expected end state on Cloudflare after Session 2
+
+```
+arboretumgreenhotel.rw          CNAME   2bc27baebe0b5f18.vercel-dns-017.com.   DNS only
+www.arboretumgreenhotel.rw      CNAME   2bc27baebe0b5f18.vercel-dns-017.com.   DNS only
+book.arboretumgreenhotel.rw     (unchanged from Session 1)
+kp7fatlmi3dh.arboretumgreenhotel.rw  CNAME   gv-jt4m3wturavpmr.dv.googlehosted.com   (GSC verification from Session 1)
+NS records                      (unchanged)
+```
+
+### Verification immediately after the holder confirms Session 2 done
+
+```bash
+# Apex should resolve to Vercel IPs (not Cloudflare IPs)
+dig @1.1.1.1 arboretumgreenhotel.rw A
+dig @8.8.8.8 arboretumgreenhotel.rw A
+# AAAA on apex should be empty (we deleted both)
+dig @1.1.1.1 arboretumgreenhotel.rw AAAA
+# www should resolve same
+dig @1.1.1.1 www.arboretumgreenhotel.rw A
+# The actual CNAME chain
+dig @1.1.1.1 arboretumgreenhotel.rw CNAME
+dig @1.1.1.1 www.arboretumgreenhotel.rw CNAME
+# Vercel should turn Valid within 5-30 minutes; cert issued automatically
+```
+
+If `dig` still returns Cloudflare IPs (`172.67.*`, `104.21.*`) after 10 minutes, the holder left the proxy orange. Ask them to toggle the cloud icon to grey on both records.
 
 After the change takes effect on Vercel's end (Vercel Domains page shows both as "Valid" with TLS certs issued, usually 5 to 30 min):
 

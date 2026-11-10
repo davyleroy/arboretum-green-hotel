@@ -95,35 +95,45 @@ Thank you,
 
 ---
 
-## Tuesday night follow-up template
+## Tuesday night follow-up template (UPDATED for Cloudflare + CNAME-flattening)
 
-Once you have the booking-host target and the two Vercel-assigned values, send this as a reply in the same WhatsApp thread:
+Vercel gave us CNAME values for BOTH apex and www (not an A record). This works because Cloudflare supports CNAME flattening. Every new record must have the **grey cloud (DNS only)** toggle, not the orange cloud (proxied). Send this as a reply in the same WhatsApp thread:
 
 ~~~
-Here are the final values for tomorrow (Wed) and Thursday:
+Here are the final values for tomorrow (Wed) and Thursday. The DNS records live on *Cloudflare* (nameservers braelyn.ns.cloudflare.com and brian.ns.cloudflare.com), so all changes happen at dash.cloudflare.com.
+
+*Important across every record you create:* set the proxy toggle to *DNS only (grey cloud)*, NOT Proxied (orange cloud). If the cloud stays orange, TLS breaks and the site returns errors to visitors.
 
 *Wed book record:*
 ```
-Host:  book
-Type:  [A or CNAME]
-Value: [actual value from booking host]
+Host:   book
+Type:   [A or CNAME, waiting on booking host]
+Value:  [actual value from booking host]
+Proxy:  DNS only (grey cloud)
+TTL:    Auto
 ```
 
-*Thu apex A record (will replace the current one):*
+*Thu apex CNAME (REPLACES the current apex A and AAAA records):*
 ```
-Host:  @  (or leave blank for apex)
-Type:  A
-Value: [exact value Vercel showed me]
-```
-
-*Thu www CNAME (will replace the current one):*
-```
-Host:  www
-Type:  CNAME
-Value: [exact target Vercel showed me]
+Host:   @  (or type the full domain if the panel asks)
+Type:   CNAME
+Value:  2bc27baebe0b5f18.vercel-dns-017.com.
+Proxy:  DNS only (grey cloud)
+TTL:    Auto
 ```
 
-Please do not use any value you see in a web guide; only these exact values.
+*Thu www CNAME (REPLACES the current www A records):*
+```
+Host:   www
+Type:   CNAME
+Value:  2bc27baebe0b5f18.vercel-dns-017.com.
+Proxy:  DNS only (grey cloud)
+TTL:    Auto
+```
+
+Before adding the two CNAMEs on Thursday, please DELETE the existing records for @ and www (they are currently A records pointing at 172.67.162.241, 104.21.57.102 and AAAA records). A CNAME cannot coexist with an A on the same name.
+
+Please do not use any value you see in a web guide; only these exact values from Vercel.
 
 Looking forward to Wed.
 ~~~
