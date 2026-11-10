@@ -36,9 +36,14 @@ Companion files:
 | **DNS host (where cutover happens)** | **Cloudflare** |
 | Cloudflare account holder | TODO (ask the manager who owns the Cloudflare account; may be the same person as the registrar or a different person who set up the old site) |
 | Cloudflare account holder contact | TODO |
-| Registrar name (name ownership only) | TODO (likely Irembo; confirm via WHOIS or manager) |
-| Registrar account holder name | TODO |
+| **Registrar name** (confirmed via WHOIS Tue 10 Nov) | **Irembo** (operated by Esicia) |
+| Registrar support email | `domain@esicia.rw` |
+| Registrar support phone | `+250 788 301 700` |
+| Registrar account holder name | TODO (whoever registered the domain on 2026-09-29) |
 | Registrar account holder contact | TODO |
+| Domain created | 2026-09-29 |
+| Domain expiry | 2027-09-29 (11 months; set a calendar reminder for Aug 2027) |
+| Registry domain ID | `2705336RICTA` |
 | Relationship to hotel | TODO (manager / IT partner / old-site agency) |
 | Chosen access option | **(d) Primary: holder makes every change, sends screenshot + confirmation; Davy verifies via public `dig` from both 1.1.1.1 and 8.8.8.8.** Fallback to (a) 15-min screen-share only if a dig check fails and a timing-critical window needs a live fix. No credentials move in either case. |
 | Date of registrar session 1 | Wed 11 Nov 2026, time TODO |
