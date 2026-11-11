@@ -75,6 +75,20 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  // Legacy URLs from the previous static site (Option B retirement, see docs/DOMAIN_PLAN.md).
+  // Permanent 308s so OTA deep links, printed collateral, and old bookmarks continue to
+  // resolve to the matching page on the new site after the Thu 12 Nov DNS cutover.
+  async redirects() {
+    return [
+      { source: "/about.html",    destination: "/en/discover",            permanent: true },
+      { source: "/rooms.html",    destination: "/en/stay",                permanent: true },
+      { source: "/services.html", destination: "/en/dine",                permanent: true },
+      { source: "/discover.html", destination: "/en/discover",            permanent: true },
+      { source: "/contact.html",  destination: "/en/contact",             permanent: true },
+      { source: "/book.html",     destination: "/en/stay?src=book",       permanent: true },
+      { source: "/feedback.html", destination: "/en/contact?type=feedback", permanent: true },
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);
