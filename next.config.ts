@@ -78,6 +78,8 @@ const nextConfig: NextConfig = {
   // Legacy URLs from the previous static site (Option B retirement, see docs/DOMAIN_PLAN.md).
   // Permanent 308s so OTA deep links, printed collateral, and old bookmarks continue to
   // resolve to the matching page on the new site after the Thu 12 Nov DNS cutover.
+  // Also: canonicalise the Vercel preview host to the apex, but keep /studio reachable on
+  // the vercel.app host as a backup editor entry.
   async redirects() {
     return [
       { source: "/about.html",    destination: "/en/discover",            permanent: true },
@@ -87,6 +89,12 @@ const nextConfig: NextConfig = {
       { source: "/contact.html",  destination: "/en/contact",             permanent: true },
       { source: "/book.html",     destination: "/en/stay?src=book",       permanent: true },
       { source: "/feedback.html", destination: "/en/contact?type=feedback", permanent: true },
+      {
+        source: "/:path((?!studio).*)",
+        has: [{ type: "host", value: "arboretum-green.vercel.app" }],
+        destination: "https://arboretumgreenhotel.rw/:path",
+        permanent: true,
+      },
     ];
   },
 };
