@@ -42,6 +42,14 @@ updates:
       - dependency-name: next-intl
         update-types:
           - version-update:semver-major
+      # eslint-config-next 15.5.28 declares peer eslint "^7 || ^8 || ^9".
+      # Allow eslint 10 only when eslint-config-next supports it.
+      - dependency-name: eslint
+        update-types:
+          - version-update:semver-major
+      - dependency-name: eslint-config-next
+        update-types:
+          - version-update:semver-major
 
   - package-ecosystem: github-actions
     directory: /
